@@ -1,0 +1,3085 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025 대한민국 개인정보 유출 사고 사례집</title>
+<style>
+@page {
+  size: A4;
+  margin: 1.8cm 2cm;
+  @bottom-center {
+    content: counter(page);
+    font-family: 'Helvetica Neue', 'Noto Sans KR', Arial, sans-serif;
+    font-size: 9px;
+    color: #c0c0c0;
+  }
+}
+@page :first { margin: 0; @bottom-center { content: none; } }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #ffffff;
+  --ink: #222222;
+  --text: #444444;
+  --sec: #707070;
+  --light: #999999;
+  --faint: #c0c0c0;
+  --rule: #d8d8d8;
+  --rule-heavy: #222222;
+  --accent: #2d6a4f;
+  --accent-bg: #f5faf7;
+  --bg-alt: #f7f7f6;
+}
+
+body {
+  font-family: 'Helvetica Neue', 'Noto Sans KR', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ── COVER ── */
+.cover {
+  background: #000000;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px;
+  page-break-after: always;
+}
+.cover .label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.cover h1 {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.cover .subtitle {
+  color: var(--faint);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  line-height: 1.7;
+  max-width: 580px;
+}
+.cover .stat-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+.cover .stat-item .stat-num {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.cover .stat-item .stat-label {
+  font-size: 11px;
+  color: var(--faint);
+  letter-spacing: 1px;
+}
+
+/* ── TOC ── */
+.toc {
+  page-break-after: always;
+  padding: 48px 80px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.toc-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.toc-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.toc-bar {
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 28px;
+}
+.toc-section { margin-bottom: 16px; }
+.toc-section.toc-two-col .toc-items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+}
+.toc-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.toc-item {
+  display: flex;
+  align-items: baseline;
+  padding: 3px 0;
+  font-size: 13.5px;
+  color: var(--sec);
+}
+.toc-item a {
+  color: var(--sec);
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+}
+.toc-item a:hover { color: var(--accent); }
+.toc-item .num {
+  font-weight: 600;
+  color: var(--ink);
+  min-width: 32px;
+  font-size: 11px;
+}
+.toc-item .name { flex: 1; }
+
+/* ── CONTENT ── */
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 80px 80px;
+}
+
+/* ── CHAPTER ── */
+.chapter { margin-top: 56px; }
+.chapter-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.chapter-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.chapter-bar {
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 48px;
+}
+
+/* ── METHOD BOX ── */
+.method-box {
+  background: var(--bg-alt);
+  padding: 28px 32px;
+  margin-bottom: 24px;
+}
+.method-box h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--sec);
+}
+
+/* ── TAGS ── */
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border: 1px solid var(--rule);
+  color: var(--sec);
+  background: transparent;
+}
+.tag-source-3 { border-color: var(--accent); color: var(--accent); }
+.tag-source-2 { border-color: var(--sec); color: var(--sec); }
+.tag-source-1 { border-color: var(--faint); color: var(--light); }
+.tag-confirmed { border-color: var(--accent); color: var(--accent); }
+.tag-reported { border-color: var(--sec); color: var(--sec); }
+.tag-estimated { border-color: var(--ink); color: var(--ink); }
+.tag-unknown { border-color: var(--faint); color: var(--light); }
+.tag-fine { border-color: var(--ink); color: var(--ink); font-weight: 700; }
+.tag-lawsuit { border-color: var(--ink); color: var(--ink); }
+.tag-law { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+
+/* ── STAT SUMMARY ── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.stat-card {
+  border-top: 2px solid var(--rule-heavy);
+  padding: 16px 0 8px;
+}
+.stat-card .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.stat-card .label {
+  font-size: 11px;
+  color: var(--sec);
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+/* ── TIMELINE ── */
+.timeline { margin-bottom: 32px; }
+.tl-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.tl-month {
+  width: 48px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  padding-top: 4px;
+  flex-shrink: 0;
+}
+.tl-bar-area {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  padding: 2px 0;
+}
+.tl-chip {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border: 1px solid var(--rule);
+  color: var(--sec);
+  white-space: nowrap;
+}
+.tl-chip::after { content: none; }
+.tl-chip.major { border-color: var(--ink); color: var(--ink); font-weight: 700; }
+.tl-chip.supplement { border-color: var(--faint); color: var(--light); }
+.tl-chip.pipc { border-color: var(--accent); color: var(--accent); }
+
+/* ── INCIDENT ── */
+.incident {
+  margin-bottom: 40px;
+  page-break-inside: avoid;
+}
+.incident-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.incident-num {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 2px;
+  min-width: 28px;
+}
+.incident-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.incident-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+.incident-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-bottom: 10px;
+}
+.incident-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--sec);
+  padding: 6px 16px 6px 0;
+  width: 100px;
+  vertical-align: top;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid var(--rule);
+}
+.incident-table td {
+  padding: 6px 0;
+  color: var(--sec);
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+.incident-table td.highlight {
+  font-weight: 700;
+  color: var(--ink);
+}
+.incident-analysis {
+  background: var(--accent-bg);
+  padding: 20px 24px;
+  margin: 12px 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--text);
+}
+.incident-analysis.warning {
+  background: var(--accent-bg);
+  padding: 20px 24px;
+  border-left: 3px solid var(--ink);
+  border-top: none;
+  margin: 12px 0;
+}
+.incident-analysis strong { color: var(--ink); }
+.incident-source {
+  font-size: 11px;
+  color: var(--sec);
+  padding: 6px 0;
+}
+.incident-source a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.incident-source a:hover { text-decoration: underline; }
+.incident-sep {
+  height: 1px;
+  background: var(--rule);
+  margin: 40px 0;
+}
+
+/* ── FINES TABLE ── */
+.fines-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-bottom: 28px;
+}
+.fines-table thead th {
+  border-top: 2px solid var(--rule-heavy);
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 16px 10px 0;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sec);
+  letter-spacing: 0.3px;
+}
+.fines-table tbody td {
+  padding: 10px 16px 10px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--sec);
+}
+.fines-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+}
+.fines-table .amount {
+  font-weight: 700;
+  color: var(--ink);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── CAUSE ── */
+.cause-section { margin-bottom: 24px; }
+.cause-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+}
+.cause-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  padding-left: 14px;
+}
+.cause-chip {
+  font-size: 12px;
+  border: 1px solid var(--rule);
+  color: var(--sec);
+  padding: 3px 10px;
+}
+
+/* ── SOURCE TABLE ── */
+.source-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-bottom: 16px;
+}
+.source-table th {
+  text-align: left;
+  padding: 8px 12px 8px 0;
+  border-top: 2px solid var(--rule-heavy);
+  border-bottom: 1px solid var(--rule);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sec);
+}
+.source-table td {
+  padding: 8px 12px 8px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--sec);
+}
+.source-table td:first-child { font-weight: 600; color: var(--ink); }
+
+/* ── INSIGHT ── */
+.insight-card {
+  border-left: 2px solid var(--accent);
+  padding-left: 24px;
+  margin: 36px 0;
+  page-break-inside: avoid;
+}
+.insight-card .insight-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.insight-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.insight-card p, .insight-card ul {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--text);
+}
+.insight-card ul {
+  padding-left: 24px;
+  margin-top: 8px;
+  list-style: none;
+}
+.insight-card li {
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+.insight-card li::before {
+  content: "\2014";
+  position: absolute;
+  left: 0;
+  color: var(--faint);
+}
+.insight-card .callout {
+  background: var(--accent-bg);
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+}
+.insight-card .callout strong { color: var(--ink); }
+
+/* Pattern F uses ink instead of accent */
+.insight-card[data-pattern="F"] .insight-label { color: var(--ink); }
+.insight-card[data-pattern="F"] { border-left-color: var(--ink); }
+
+/* ── DISCLAIMER ── */
+.disclaimer {
+  background: var(--bg-alt);
+  padding: 24px 28px;
+  margin-top: 40px;
+  font-size: 13px;
+  color: var(--sec);
+  line-height: 1.7;
+}
+.disclaimer strong { color: var(--ink); }
+
+/* ── PRINT ── */
+@media print {
+  .cover { height: 100vh; min-height: 100vh; }
+  .content { padding: 0; max-width: none; }
+  .toc { padding: 12px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="label">2025 KOREA PERSONAL DATA BREACH CASEBOOK</div>
+  <h1>2025 대한민국<br>개인정보 유출 사고 사례집</h1>
+  <div class="subtitle">2025년 한국에서 발생한 개인정보 유출 사고 49건, 개인정보보호위원회(PIPC)의 과거 사고 제재 처분 13건을 전수 조사하여 각 사례의 기술적 경위, 법적 분석, 구조적 원인을 심층 기술한 사례집.</div>
+  <div class="subtitle">2026년 3월 24일 기준</div>
+  <div class="stat-row">
+    <div class="stat-item"><div class="stat-num">62</div><div class="stat-label">수록 사고</div></div>
+    <div class="stat-item"><div class="stat-num">2,023억</div><div class="stat-label">확정 과징금 총액</div></div>
+    <div class="stat-item"><div class="stat-num">1억+</div><div class="stat-label">누적 피해 규모</div></div>
+    <div class="stat-item"><div class="stat-num">31</div><div class="stat-label">제재 기업 수</div></div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-label">TABLE OF CONTENTS</div>
+  <div class="toc-title">목차</div>
+  <div class="toc-bar"></div>
+
+  <div class="toc-section">
+    <div class="toc-section-title">연구 개요 및 배경</div>
+    <div class="toc-item"><a href="#abstract"><span class="num">&mdash;</span><span class="name">연구 개요 (Executive Summary) &middot; 핵심 발견 6건</span></a></div>
+    <div class="toc-item"><a href="#background"><span class="num">&mdash;</span><span class="name">연구 배경 &middot; 2023년 개정법과 2025년의 의미 &middot; 주요 법률 조항 해설</span></a></div>
+    <div class="toc-item"><a href="#legend"><span class="num">&mdash;</span><span class="name">범례 &middot; 방법론 &middot; 출처 등급</span></a></div>
+    <div class="toc-item"><a href="#stats"><span class="num">&mdash;</span><span class="name">연간 통계 요약</span></a></div>
+    <div class="toc-item"><a href="#timeline"><span class="num">&mdash;</span><span class="name">월별 타임라인</span></a></div>
+  </div>
+
+  <div class="toc-section toc-two-col">
+    <div class="toc-section-title">I &mdash; 2025년 개인정보 유출 사고 (49건)</div>
+    <div class="toc-items-grid">
+    <div class="toc-item"><a href="#i01"><span class="num">01</span><span class="name">GS리테일 (GS25) &mdash; 크리덴셜 스터핑</span></a></div>
+    <div class="toc-item"><a href="#i02"><span class="num">02</span><span class="name">GS리테일 (GS샵) &mdash; 크리덴셜 스터핑 8개월</span></a></div>
+    <div class="toc-item"><a href="#i03"><span class="num">03</span><span class="name">듀오 &mdash; 설 연휴 해킹</span></a></div>
+    <div class="toc-item"><a href="#i04"><span class="num">04</span><span class="name">iM뱅크 &mdash; 해킹</span></a></div>
+    <div class="toc-item"><a href="#i05"><span class="num">05</span><span class="name">인크루트 &mdash; 438GB &middot; 과징금 4.6억</span></a></div>
+    <div class="toc-item"><a href="#i06"><span class="num">06</span><span class="name">우리카드 &mdash; 내부자 &middot; 과징금 134.5억</span></a></div>
+    <div class="toc-item"><a href="#i07"><span class="num">07</span><span class="name">블랙야크 &mdash; SQL 인젝션 &middot; 과징금 13.9억</span></a></div>
+    <div class="toc-item"><a href="#i08"><span class="num">08</span><span class="name">티머니 &mdash; 크리덴셜 스터핑 &middot; 과징금 5.3억</span></a></div>
+    <div class="toc-item"><a href="#i09"><span class="num">09</span><span class="name">SK텔레콤 &mdash; APT 4년 &middot; 역대 최대 과징금 1,348억</span></a></div>
+    <div class="toc-item"><a href="#i10"><span class="num">10</span><span class="name">KS한국고용정보 &mdash; 인포스틸러</span></a></div>
+    <div class="toc-item"><a href="#i11"><span class="num">11</span><span class="name">테무 &mdash; 해외 무단 반출 &middot; 과징금 13.7억</span></a></div>
+    <div class="toc-item"><a href="#i12"><span class="num">12</span><span class="name">알바몬 &mdash; 웹 취약점</span></a></div>
+    <div class="toc-item"><a href="#i13"><span class="num">13</span><span class="name">법인보험대리점 &mdash; 공급망</span></a></div>
+    <div class="toc-item"><a href="#i14"><span class="num">14</span><span class="name">디올 코리아 &mdash; SaaS 탈취 (LVMH 1/3)</span></a></div>
+    <div class="toc-item"><a href="#i15"><span class="num">15</span><span class="name">티파니 코리아 &mdash; 보이스피싱 (LVMH 2/3)</span></a></div>
+    <div class="toc-item"><a href="#i16"><span class="num">16</span><span class="name">아디다스 코리아 &mdash; 제3자 침해</span></a></div>
+    <div class="toc-item"><a href="#i17"><span class="num">17</span><span class="name">KB라이프 &middot; 노무라 &middot; SC제일 &middot; 하나카드</span></a></div>
+    <div class="toc-item"><a href="#i18"><span class="num">18</span><span class="name">저축은행 직원 &mdash; 내부자 22만 명</span></a></div>
+    <div class="toc-item"><a href="#i19"><span class="num">19</span><span class="name">루이비통 코리아 &mdash; SaaS (LVMH 3/3) &middot; 과징금 214억</span></a></div>
+    <div class="toc-item"><a href="#i20"><span class="num">20</span><span class="name">YES24 &mdash; 랜섬웨어 &middot; 최대 2,000만 명</span></a></div>
+    <div class="toc-item"><a href="#i21"><span class="num">21</span><span class="name">한국연구재단 &mdash; 12만 명 &middot; 과징금 7억</span></a></div>
+    <div class="toc-item"><a href="#i22"><span class="num">22</span><span class="name">대성학력개발연구소</span></a></div>
+    <div class="toc-item"><a href="#i23"><span class="num">23</span><span class="name">KT &mdash; 펨토셀 &middot; 1년 6개월 은폐</span></a></div>
+    <div class="toc-item"><a href="#i24"><span class="num">24</span><span class="name">롯데카드 &mdash; 서버 해킹 &middot; 과징금 96.2억</span></a></div>
+    <div class="toc-item"><a href="#i25"><span class="num">25</span><span class="name">AXA손해보험</span></a></div>
+    <div class="toc-item"><a href="#i26"><span class="num">26</span><span class="name">NHN커머스 &mdash; SQL 인젝션 레거시</span></a></div>
+    <div class="toc-item"><a href="#i27"><span class="num">27</span><span class="name">건강보험공단</span></a></div>
+    <div class="toc-item"><a href="#i28"><span class="num">28</span><span class="name">LG유플러스 &mdash; APPM &middot; 증거인멸</span></a></div>
+    <div class="toc-item"><a href="#i29"><span class="num">29</span><span class="name">쿠팡 &mdash; 퇴사자 접근키 &middot; 3,370만 계정</span></a></div>
+    <div class="toc-item"><a href="#i30"><span class="num">30</span><span class="name">넷마블 &mdash; 포털 해킹 &middot; 611만 명</span></a></div>
+    <div class="toc-item"><a href="#i31"><span class="num">31</span><span class="name">한마음혈액원 &mdash; 랜섬웨어</span></a></div>
+    <div class="toc-item"><a href="#i32"><span class="num">32</span><span class="name">신한카드 &mdash; 내부 직원 유출</span></a></div>
+    <div class="toc-item"><a href="#i33"><span class="num">33</span><span class="name">IP카메라 &mdash; 12만 대 해킹</span></a></div>
+    <div class="toc-item"><a href="#i34"><span class="num">34</span><span class="name">LG유플러스 익시오</span></a></div>
+    <div class="toc-item"><a href="#i35"><span class="num">35</span><span class="name">인하대학교 &mdash; 건라 랜섬웨어</span></a></div>
+    <div class="toc-item"><a href="#i36"><span class="num">36</span><span class="name">법무법인 로고스 &mdash; 과징금 5.2억</span></a></div>
+    <div class="toc-item"><a href="#i37"><span class="num">37</span><span class="name">업비트 &mdash; 암호화폐 해킹 ~4,000억 원</span></a></div>
+    <div class="toc-item"><a href="#i38"><span class="num">38</span><span class="name">GPKI &mdash; 북한 킴수키 3년 잠복 &middot; 공무원 650명</span></a></div>
+    <div class="toc-item"><a href="#i39"><span class="num">39</span><span class="name">SGI서울보증보험 &mdash; 랜섬웨어 &middot; 478조 원 업무 중단</span></a></div>
+    <div class="toc-item"><a href="#i40"><span class="num">40</span><span class="name">YES24 2차 &mdash; 동일 연도 재공격</span></a></div>
+    <div class="toc-item"><a href="#i41"><span class="num">41</span><span class="name">SFA엔지니어링 &mdash; 랜섬웨어 2.3TB &middot; 여권</span></a></div>
+    <div class="toc-item"><a href="#i42"><span class="num">42</span><span class="name">웰릭스대부 &mdash; 랜섬웨어 139만 파일</span></a></div>
+    <div class="toc-item"><a href="#i43"><span class="num">43</span><span class="name">화천기계&middot;삼화콘덴서 &mdash; 랜섬웨어 &middot; CVV</span></a></div>
+    <div class="toc-item"><a href="#i44"><span class="num">44</span><span class="name">SK쉴더스 &mdash; 허니팟 해킹 &middot; 고객사 120곳</span></a></div>
+    <div class="toc-item"><a href="#i45"><span class="num">45</span><span class="name">LG에너지솔루션 &mdash; 랜섬웨어 1.67TB &middot; 여권·의료기록</span></a></div>
+    <div class="toc-item"><a href="#i46"><span class="num">46</span><span class="name">대한항공 협력사 &mdash; 공급망 &middot; 직원 계좌 유출</span></a></div>
+    </div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title">II &mdash; 2025년 개인정보위 제재: 과거 사고 (13건)</div>
+    <div class="toc-item"><a href="#pipc-section"><span class="num">&mdash;</span><span class="name">섹타나인, 비즈니스온/NHN위투, 모두투어, 클래스유/KT알파, 한국토픽, 쿠카게임즈/잡보스, 몽클레르, 테라스타/아이스트로, 한양CC/서울CC, 이젠/더존/레저플러스, 2K게임즈, 국립항공박물관, 부산국제금융진흥원</span></a></div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title">III &mdash; 종합 분석</div>
+    <div class="toc-item"><a href="#fines"><span class="num">&mdash;</span><span class="name">확정 과징금 전체 목록 (약 2,023억 원)</span></a></div>
+    <div class="toc-item"><a href="#quant"><span class="num">&mdash;</span><span class="name">정량 분석 &middot; 업종별·공격유형별·규모별 교차 분석</span></a></div>
+    <div class="toc-item"><a href="#intl"><span class="num">&mdash;</span><span class="name">국제 비교 &middot; EU GDPR 집행 사례와의 비교</span></a></div>
+    <div class="toc-item"><a href="#insights"><span class="num">&mdash;</span><span class="name">패턴 분석 및 인사이트 (A&ndash;F)</span></a></div>
+    <div class="toc-item"><a href="#causes"><span class="num">&mdash;</span><span class="name">원인 유형별 분류</span></a></div>
+    <div class="toc-item"><a href="#response"><span class="num">&mdash;</span><span class="name">2025년 입법·정책 대응 현황 &middot; 국회·행정부·업계</span></a></div>
+    <div class="toc-item"><a href="#recommendations"><span class="num">&mdash;</span><span class="name">정책 제언 &middot; 구조적 개선 방안 6건</span></a></div>
+    <div class="toc-item"><a href="#sources"><span class="num">&mdash;</span><span class="name">출처 목록 및 신뢰도 평가</span></a></div>
+    <div class="toc-item"><a href="#limitations"><span class="num">&mdash;</span><span class="name">연구의 한계</span></a></div>
+  </div>
+</div>
+<!-- CONTENT START -->
+<div class="content">
+
+<!-- ══ 연구 개요 (EXECUTIVE SUMMARY) ══ -->
+<div class="chapter" id="abstract">
+  <div class="chapter-label">연구 개요</div>
+  <div class="chapter-title">Executive Summary</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<div class="method-box" style="border-top:2px solid var(--rule-heavy);padding:28px 28px 24px;">
+  <p style="font-size:14.5px;color:var(--text);line-height:2;">
+    본 사례집은 <strong>2025년 1월~12월 발생(인지) 개인정보 유출 사고</strong>와 <strong>2025~2026년 초 개인정보보호위원회(PIPC) 전체회의 의결</strong>을 전수 조사하여, 총 <strong>62건</strong>의 사고를 수록한 연간 종합 보고서이다.
+  </p>
+
+  <h3 style="margin-top:20px;">핵심 발견</h3>
+  <table class="incident-table" style="margin:10px 0 16px;">
+    <tr><th style="width:40px;">#</th><td style="font-weight:700;color:var(--ink);">관리 실패가 기술 공격보다 피해를 키웠다</td></tr>
+    <tr><td style="font-weight:600;color:var(--accent);">1</td><td><strong>퇴사자 접근 권한 미회수</strong>가 전체 피해의 절반 이상을 초래했다. 쿠팡(3,370만)+넷마블(611만) 단 2건이 약 3,980만 명의 피해를 만들었으며, 이는 정교한 해킹이 아니라 퇴사 시 키 회수라는 기본 절차의 부재에서 비롯되었다.</td></tr>
+    <tr><td style="font-weight:600;color:var(--accent);">2</td><td><strong>SQL 인젝션</strong>이 PIPC 제재 최다 원인(8건 이상)이다. 1990년대부터 알려진 가장 기초적인 웹 공격이 2025년에도 반복되고 있으며, 피해 기업 대부분이 WAF 미적용·입력값 검증 미실시 상태였다.</td></tr>
+    <tr><td style="font-weight:600;color:var(--accent);">3</td><td><strong>제29조(안전조치의무)</strong>가 확정 과징금 23건 중 22건(96%)의 근거로, 사실상 유일한 과징금 법적 근거이다. 기술적 보호조치의 '기본'이 지켜지지 않은 것이 한국 개인정보 유출의 구조적 원인임을 보여준다.</td></tr>
+    <tr><td style="font-weight:600;color:var(--accent);">4</td><td><strong>잠복 기간(Dwell Time)</strong>이 극단적이다. SK텔레콤 4년, GPKI 3년, 한국연구재단 12년 등 &mdash; 2025년에 '발생'한 것이 아니라 2025년에 '드러난' 사고가 다수이다.</td></tr>
+    <tr><td style="font-weight:600;color:var(--accent);">5</td><td><strong>통신 3사(SKT·KT·LGU+) 전부 해킹</strong>되었고, 전부 투명성 문제(은폐·증거 인멸 의혹·신고 지연)를 노출했다. 이는 개별 기업의 문제가 아닌 업종 전반의 구조적 취약성을 시사한다.</td></tr>
+    <tr><td style="font-weight:600;color:var(--accent);">6</td><td><strong>SaaS 공급망</strong>이 새로운 침투 경로로 부상했다. LVMH 3사가 3개월 내 동일 SaaS 경로로 연쇄 침해(합산 과징금 360억 원, 피해 550만 명)를 당했으며, 보안 경계가 자사 인프라 너머 공급망 전체로 확장되어야 함을 보여준다.</td></tr>
+  </table>
+
+  <h3 style="margin-top:20px;">주요 수치</h3>
+  <table class="incident-table" style="margin:10px 0 0;">
+    <tr><th style="width:160px;">2025년 확정 과징금 총액</th><td class="highlight">약 2,023억 원 (31개 기업)</td></tr>
+    <tr><th>최대 단일 과징금</th><td class="highlight">SK텔레콤 1,347.9억 원 (역대 최대, 취소소송 중)</td></tr>
+    <tr><th>상위 4건 집중도</th><td>SKT+LVMH+우리카드+롯데카드 = 전체 과징금의 <strong>96%</strong></td></tr>
+    <tr><th>PIPC 의결 건수</th><td>2025년 발생 사고 14건(17개 기업) + 과거 사고 13건(18개 기업) = <strong>27건(35개 기업)</strong></td></tr>
+    <tr><th>조사·수사 진행 중</th><td>25건 (쿠팡·YES24·넷마블 등 &mdash; 추가 과징금 예상)</td></tr>
+  </table>
+</div>
+
+<div class="method-box" style="margin-top:2px;padding:20px 28px;">
+  <h3>연구의 의의</h3>
+  <p style="font-size:13px;color:var(--text);line-height:1.9;">
+    본 사례집은 단순한 사고 나열이 아니라, <strong>PIPC 공식 의결을 1차 출처로 한 전수 조사</strong>에 기반하여 다음의 학술적·실무적 가치를 제공한다.
+  </p>
+  <table class="incident-table" style="margin:10px 0 0;">
+    <tr><th style="width:120px;">전수성</th><td>2025.1~12 PIPC 전체회의 의결 및 2026.1~3 의결 중 2025년 관련 건을 빠짐없이 포함. 개별 사고 보도에서는 파악하기 어려운 <strong>전체상(全體像)</strong>을 제공한다.</td></tr>
+    <tr><th>출처 투명성</th><td>3단계 출처 등급(★★★/★★☆/★☆☆)과 PIPC 보도자료 직접 URL을 통해 <strong>모든 사실 주장의 검증 가능성</strong>을 보장한다.</td></tr>
+    <tr><th>패턴 도출</th><td>개별 사고를 횡단하여 퇴사자 관리·SQL 인젝션·SaaS 공급망·은폐 등 <strong>6개 구조적 패턴</strong>을 식별하였으며, 이는 정책 수립 및 기업 보안 전략에 직접 활용 가능하다.</td></tr>
+    <tr><th>정량 분석</th><td>업종별·공격유형별·과징금 규모별 교차 분석을 통해, 보도 중심의 정성적 이해를 넘어 <strong>통계적 근거에 기반한 현황 판단</strong>을 가능하게 한다.</td></tr>
+    <tr><th>국제 맥락</th><td>EU GDPR 집행 사례와의 비교를 통해 한국 개인정보 보호 집행의 국제적 위상과 차이를 조명한다.</td></tr>
+  </table>
+</div>
+
+<!-- ══ 연구 배경 및 법적 체계 ══ -->
+<div class="chapter" id="background">
+  <div class="chapter-label">배경</div>
+  <div class="chapter-title">연구 배경 및 법적 체계</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<div class="method-box">
+  <h3>2023년 개인정보 보호법 전면 개정과 2025년의 의미</h3>
+  <p style="font-size:13px;color:var(--text);line-height:1.9;">
+    2023년 3월 개정·2024년 3월 15일 시행된 개인정보 보호법(법률 제19234호)은 한국 개인정보 보호 체계의 전환점이다. 핵심 변화는 다음과 같다.
+  </p>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:160px;">과징금 상한 상향</th><td>위반 매출액의 <strong>3%</strong> (구법 위반 유형별 수천만~수억 원 수준에서 대폭 강화). 이에 따라 SK텔레콤 과징금 1,348억 원이라는 역대 최대 제재가 가능해졌다.</td></tr>
+    <tr><th>유출 통지 기한 단축</th><td>기존 '지체 없이' &rarr; <strong>72시간 이내</strong> 신고 의무(1,000명 이상 시 24시간). 2025년 사고 중 디올(24시간 초과)·티파니(13일)·쿠팡(28일)·모두투어(2개월)가 이 기한을 위반하여 제34조 병과 처분을 받았다.</td></tr>
+    <tr><th>해외 이전 규제 신설</th><td>제28조의6 신설 &mdash; 정보주체 동의 없는 해외 이전 금지. 테무(Temu) 13.7억 원 과징금의 직접 근거가 되었다.</td></tr>
+    <tr><th>PIPC 독립성 강화</th><td>2020년 출범한 개인정보보호위원회가 2기(2023.8~)로 전환되며 조사·제재 역량 강화. 2025년 26회 전체회의에서 27건 의결이라는 전례 없는 집행량을 기록했다.</td></tr>
+  </table>
+  <p style="font-size:13px;color:var(--text);line-height:1.9;margin-top:8px;">
+    즉, <strong>2025년은 개정법 시행 첫 해의 본격적 집행 결과가 나타난 원년</strong>이다. 과징금 총액 2,023억 원은 2024년 이전 연간 과징금 합계(수십억 원대)와 비교하면 <strong>수십 배 규모의 도약</strong>이며, 이는 법 개정에 따른 제도적 전환의 직접적 산물이다.
+  </p>
+</div>
+
+<div class="method-box" style="border-top:2px solid var(--accent);background:var(--accent-bg);">
+  <h3>2026.9.11 시행 예정: 개인정보 보호법 4차 개정 (징벌적 과징금)</h3>
+  <p style="font-size:13px;color:var(--text);line-height:1.9;">
+    2025년의 연쇄 대형 유출 사고에 직접적으로 대응하여, <strong>2026.2.12 국회 본회의를 통과</strong>하고 2026.3.10 공포된 개인정보 보호법 4차 개정안은 <strong>2026년 9월 11일</strong>부터 시행된다. 이 개정은 본 사례집에 수록된 사고들이 직접적 입법 동기가 된, 한국 개인정보 보호 역사상 가장 강력한 제재 강화이다.
+  </p>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:160px;"><strong>징벌적 과징금</strong></th><td>반복적이거나 중대한 위반에 대해 과징금 상한을 <strong>전체 매출액 3% → 10%</strong>로 상향하는 특례 도입. 적용 요건: (1) 최근 3년간 고의·중과실 반복 위반, (2) 1,000만 명 이상 대규모 피해, (3) 시정명령 미이행 후 사고 발생.<br><em>* 만약 SK텔레콤 사고가 이 법 시행 후 발생했다면, 과징금이 최대 약 <strong>4,000억 원</strong>까지 가능했을 것이다.</em></td></tr>
+    <tr><th><strong>CEO·CPO 책임 강화</strong></th><td>사업주 또는 대표자를 개인정보의 안전한 처리 및 정보주체 권리 보호의 <strong>최종 책임자</strong>로 명시. CPO에게는 전문인력 관리·예산 확보·대표자 및 이사회 보고 의무 부과. CPO 자격 요건: 개인정보보호·정보보호·정보기술 경력 총 4년 이상(개인정보보호 경력 2년 필수).</td></tr>
+    <tr><th><strong>유출 통지 기산점 변경</strong></th><td>'유출 확인 시'에서 <strong>'유출 가능성 인지 시'</strong>로 앞당김. 위조·변조·훼손까지 통지 대상 확대. 쿠팡(28일 지연)·KT(1.5년 은폐) 같은 사례의 재발 방지 효과 기대.</td></tr>
+    <tr><th><strong>ISMS-P 인증 의무화</strong></th><td>매출액·개인정보 처리 규모가 일정 기준 이상인 기업에 ISMS-P(정보보호 및 개인정보보호 관리체계) 인증 의무화. <strong>2027.7.1부터 적용 예정.</strong></td></tr>
+  </table>
+</div>
+
+<div class="method-box" style="margin-top:2px;">
+  <h3>2026년 정보통신망법 개정 (동시 시행)</h3>
+  <p style="font-size:13px;color:var(--text);line-height:1.9;">
+    개인정보보호법과 함께 정보통신망법도 개정되어 침해사고 대응 체계가 강화되었다.
+  </p>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:160px;">반복 침해사고 과징금</th><td>고의·중과실로 <strong>5년 이내 2회 이상</strong> 침해사고 발생 시 매출액의 3% 이내 과징금 부과 가능. GS리테일(4년 내 3회 동일 수법), LG유플러스(3년 연속 사고) 같은 반복 위반 기업에 직접 적용될 수 있다.</td></tr>
+    <tr><th>조사 방해 이행강제금</th><td>침해사고 조사 과정에서 시정명령 미이행·자료제출 거부·조사 방해 시 <strong>1일 평균매출액의 0.03%</strong> 이행강제금 부과. LG유플러스의 서버 폐기·KT의 서버 폐기 같은 <strong>증거 인멸 행위에 대한 직접적 제재 근거</strong>가 된다.</td></tr>
+  </table>
+</div>
+
+<div class="method-box" style="margin-top:2px;background:var(--accent-bg);">
+  <h3>입법 연혁 종합: 2023~2027 개인정보 보호법 진화</h3>
+  <table class="fines-table" style="margin:10px 0 0;">
+    <thead><tr><th>시기</th><th>개정 내용</th><th>과징금 상한</th><th>시행</th></tr></thead>
+    <tbody>
+      <tr><td><strong>2차 개정</strong> (2023.3)</td><td>과징금 체계 전면 개편, 유출통지 72시간, 해외이전 규제 신설</td><td>매출액 <strong>3%</strong></td><td>2024.3.15</td></tr>
+      <tr><td><strong>3차 개정</strong> (2024.3)</td><td>개인정보 전송요구권(마이데이터), 자동화된 의사결정 거부권</td><td>매출액 3%</td><td>2025.4.1</td></tr>
+      <tr><td style="background:var(--accent-bg);font-weight:700;">4차 개정 (2026.2)</td><td style="background:var(--accent-bg);">징벌적 과징금, CEO·CPO 책임 강화, 통지 기산점 변경, ISMS-P 의무화</td><td style="background:var(--accent-bg);font-weight:700;">매출액 <strong>10%</strong></td><td style="background:var(--accent-bg);">2026.9.11</td></tr>
+      <tr><td>ISMS-P 의무화</td><td>일정 규모 이상 기업 인증 의무</td><td>&mdash;</td><td>2027.7.1</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:var(--sec);margin-top:8px;">본 사례집의 62건 사고는 2차 개정법(2024.3 시행) 하에서 발생·처분된 것이다. 4차 개정법(2026.9 시행)이 적용되었다면 과징금 규모가 현저히 달라졌을 사고가 다수 있다.</p>
+</div>
+
+<div class="method-box">
+  <h3>주요 법률 조항 해설</h3>
+  <p style="font-size:12px;color:var(--sec);margin-bottom:8px;">본 사례집에서 반복 인용되는 개인정보 보호법 조항의 요지. 법률 제19234호(2024.3.15 시행) 기준.</p>
+  <table class="incident-table" style="margin:0;">
+    <tr><th style="width:100px;">제29조</th><td><strong>안전조치의무.</strong> 개인정보처리자는 개인정보가 분실·도난·유출·위조·변조·훼손되지 아니하도록 기술적·관리적·물리적 조치를 하여야 한다. &mdash; <em>확정 과징금 23건 중 22건(96%)의 근거. 가장 광범위하게 적용되는 조항.</em></td></tr>
+    <tr><th>제34조</th><td><strong>유출 통지의무.</strong> 유출 인지 시 72시간 이내 PIPC 신고, 1,000명 이상 시 24시간 이내. 정보주체에게 유출 항목·시점·대응방법 통지. &mdash; <em>11건(48%) 병과. 은폐·지연 시 가중 처분.</em></td></tr>
+    <tr><th>제21조</th><td><strong>파기의무.</strong> 보유기간 경과·처리 목적 달성 시 지체 없이 파기. &mdash; <em>모두투어: 2013년 비회원 316만 건 미파기가 피해 확대의 직접 원인.</em></td></tr>
+    <tr><th>제28조의6</th><td><strong>해외 이전 제한.</strong> 정보주체 동의 또는 적정 보호조치 없는 해외 이전 금지. &mdash; <em>테무(Temu) 과징금 13.7억 원의 근거.</em></td></tr>
+    <tr><th>제24조의2</th><td><strong>주민등록번호 처리 제한.</strong> 법령에 근거 없이 주민번호 수집 금지. &mdash; <em>쿠카게임즈 9,370만 원 과징금의 근거.</em></td></tr>
+    <tr><th>제26조</th><td><strong>위탁 관리감독.</strong> 수탁자의 안전조치 감독 의무. &mdash; <em>서울CC: 위탁계약서 미기재·개인정보처리방침 오류로 5,310만 원.</em></td></tr>
+  </table>
+</div>
+
+<!-- LEGEND -->
+<div class="chapter" id="legend">
+  <div class="chapter-label">범례</div>
+  <div class="chapter-title">방법론 &middot; 출처 등급 &middot; 수치 표기</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<div class="method-box">
+  <h3>출처 등급</h3>
+  <div class="legend-grid">
+    <div class="legend-item"><span class="tag tag-source-3">★★★ 1차 출처</span> 개인정보위 의결서, 정부 보도자료</div>
+    <div class="legend-item"><span class="tag tag-source-2">★★☆ 신뢰 보도</span> 주요 언론 2개 이상 교차 확인</div>
+    <div class="legend-item"><span class="tag tag-source-1">★☆☆ 단일/미확정</span> 1개 매체 또는 조사 진행 중</div>
+  </div>
+</div>
+
+<div class="method-box">
+  <h3>수치 확정 상태</h3>
+  <div class="legend-grid">
+    <div class="legend-item"><span class="tag tag-confirmed">확정</span> 개인정보위 의결 또는 합동조사단 발표</div>
+    <div class="legend-item"><span class="tag tag-reported">보도</span> 복수 언론 보도, 공식 의결 전</div>
+    <div class="legend-item"><span class="tag tag-estimated">추정</span> 전체 회원 수 등 기반 최대치</div>
+    <div class="legend-item"><span class="tag tag-unknown">미확인</span> 규모 미공개 또는 조사 중</div>
+  </div>
+</div>
+
+<div class="method-box">
+  <h3>법률 근거 표기</h3>
+  <div class="legend-grid">
+    <div class="legend-item"><span class="tag tag-law">제29조</span> 안전조치의무 위반 (기술적&middot;관리적 보호조치)</div>
+    <div class="legend-item"><span class="tag tag-law">제34조</span> 유출통지의무 위반 (72시간/24시간 이내)</div>
+    <div class="legend-item"><span class="tag tag-law">제21조</span> 개인정보 파기의무 위반 (보유기간 경과)</div>
+    <div class="legend-item"><span class="tag tag-law">제28조의6</span> 해외 이전 위반</div>
+  </div>
+  <p style="font-size:11px;color:var(--sec);margin-top:8px;">* 개인정보 보호법(법률 제19234호, 2024.3.15 시행) 기준. PIPC 의결서 확인 가능 건에 한해 위반 조항 명시.</p>
+</div>
+
+<div class="method-box">
+  <h3>방법론</h3>
+  <p style="font-size:12px;color:var(--sec);line-height:1.7;">
+    본 사례집은 <strong>개인정보보호위원회(PIPC) 공식 보도자료 전수조사</strong>를 1차 기반으로 하고, 보안 전문매체 및 주요 언론 보도를 교차 검증하여 작성하였다.
+    2025년 1월~12월 개인정보위 전체회의 의결 및 2026년 1~3월 의결 중 2025년 발생 사고 관련 건을 모두 포함한다.
+    PIPC 보도자료 URL은 <code>pipc.go.kr nttId=</code> 형식으로 직접 링크하였으며, 정책브리핑(<code>korea.kr</code>) 원문도 병기하였다.<br>
+    <strong>주의:</strong> 월별 타임라인은 사고 "인지/공개" 시점 기준이며, 실제 공격 시작 시점과 상이할 수 있다 (잠복 기간 분석 참조).
+  </p>
+</div>
+
+<!-- STATS -->
+<div class="chapter" id="stats">
+  <div class="chapter-label">통계</div>
+  <div class="chapter-title">연간 통계 요약</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<div class="stat-grid">
+  <div class="stat-card">
+    <div class="num">2,383</div>
+    <div class="label">침해사고 신고 건수<br>(전년 대비 +26.3%)</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">311</div>
+    <div class="label">개인정보 유출 신고<br>(1~9월, 전년 초과)</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">62건</div>
+    <div class="label">본 사례집 수록<br>주요 사고</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">2,023억</div>
+    <div class="label">확정 과징금<br>총액 (원)</div>
+  </div>
+</div>
+
+<div class="method-box" style="margin-bottom:32px;">
+  <h3>2025년 PIPC 제재 현황</h3>
+  <table class="fines-table" style="margin-top:8px;margin-bottom:0;">
+    <thead><tr><th>구분</th><th>건수</th><th style="text-align:right;">과징금 합계</th></tr></thead>
+    <tbody>
+      <tr><td>2025년 발생 사고 &mdash; PIPC 처분 완료</td><td>14건 (17개 기업)</td><td style="text-align:right;font-weight:700;">약 1,985억</td></tr>
+      <tr><td>과거 발생 사고 &mdash; 2025년 PIPC 처분</td><td>13건 (18개 기업)</td><td style="text-align:right;">약 38억</td></tr>
+      <tr><td>2025년 발생 &mdash; 조사/수사 진행 중</td><td>25건</td><td style="text-align:right;color:var(--faint);">미확정</td></tr>
+      <tr style="background:var(--accent-bg);"><td><strong>합계</strong></td><td><strong>52건 (35개 기업)</strong></td><td style="text-align:right;font-weight:700;color:var(--ink);">약 2,023억</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- TIMELINE -->
+<div class="chapter" id="timeline">
+  <div class="chapter-label">타임라인</div>
+  <div class="chapter-title">월별 사고 현황 (인지/공개 시점 기준)</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<div class="timeline">
+  <div class="tl-row"><div class="tl-month">1월</div><div class="tl-bar-area"><span class="tl-chip">GS25</span><span class="tl-chip">GS샵(~2월)</span></div></div>
+  <div class="tl-row"><div class="tl-month">2월</div><div class="tl-bar-area"><span class="tl-chip">듀오</span><span class="tl-chip">iM뱅크</span><span class="tl-chip major">인크루트</span><span class="tl-chip pipc">섹타나인[P]</span><span class="tl-chip pipc">비즈니스온[P]</span></div></div>
+  <div class="tl-row"><div class="tl-month">3월</div><div class="tl-bar-area"><span class="tl-chip">우리카드</span><span class="tl-chip">블랙야크</span><span class="tl-chip">티머니</span><span class="tl-chip pipc">모두투어[P]</span></div></div>
+  <div class="tl-row"><div class="tl-month">4월</div><div class="tl-bar-area"><span class="tl-chip major">SK텔레콤</span><span class="tl-chip">KS한국고용</span><span class="tl-chip">알바몬(~5월)</span><span class="tl-chip">테무</span><span class="tl-chip">보험대리점(~5월)</span><span class="tl-chip pipc">클래스유[P]</span></div></div>
+  <div class="tl-row"><div class="tl-month">5월</div><div class="tl-bar-area"><span class="tl-chip">디올</span><span class="tl-chip">티파니</span><span class="tl-chip">아디다스</span><span class="tl-chip">KB라이프</span><span class="tl-chip">노무라</span><span class="tl-chip">SC제일</span><span class="tl-chip">저축은행</span></div></div>
+  <div class="tl-row"><div class="tl-month">6월</div><div class="tl-bar-area"><span class="tl-chip">루이비통</span><span class="tl-chip major">YES24</span><span class="tl-chip">하나카드</span><span class="tl-chip">한국연구재단</span><span class="tl-chip supplement">업비트</span><span class="tl-chip supplement">GPKI(~7월)</span></div></div>
+  <div class="tl-row"><div class="tl-month">7월</div><div class="tl-bar-area"><span class="tl-chip">대성학력</span><span class="tl-chip pipc">블랙야크/토픽[P]</span><span class="tl-chip pipc">쿠카게임즈[P]</span><span class="tl-chip supplement">SGI서울보증</span></div></div>
+  <div class="tl-row"><div class="tl-month">8월</div><div class="tl-bar-area"><span class="tl-chip">KT</span><span class="tl-chip">롯데카드(~9월)</span><span class="tl-chip">AXA</span><span class="tl-chip supplement">YES24 2차</span><span class="tl-chip supplement">SFA</span><span class="tl-chip supplement">웰릭스</span></div></div>
+  <div class="tl-row"><div class="tl-month">9월</div><div class="tl-bar-area"><span class="tl-chip">건보공단</span><span class="tl-chip">NHN커머스</span><span class="tl-chip pipc">몽클레르[P]</span><span class="tl-chip pipc">테라스타[P]</span><span class="tl-chip supplement">화천&middot;삼화</span></div></div>
+  <div class="tl-row"><div class="tl-month">10월</div><div class="tl-bar-area"><span class="tl-chip">LG유플러스</span><span class="tl-chip pipc">인크루트[P]</span><span class="tl-chip pipc">한양CC[P]</span><span class="tl-chip supplement">SK쉴더스</span></div></div>
+  <div class="tl-row"><div class="tl-month">11월</div><div class="tl-bar-area"><span class="tl-chip major">쿠팡</span><span class="tl-chip">넷마블</span><span class="tl-chip">한마음혈액원</span><span class="tl-chip pipc">이젠/더존/레저[P]</span><span class="tl-chip supplement">LG에너지</span></div></div>
+  <div class="tl-row"><div class="tl-month">12월</div><div class="tl-bar-area"><span class="tl-chip">신한카드</span><span class="tl-chip">IP카메라</span><span class="tl-chip">익시오</span><span class="tl-chip">인하대</span><span class="tl-chip pipc">2K게임즈[P]</span><span class="tl-chip pipc">항공박물관[P]</span><span class="tl-chip supplement">대한항공협력사</span></div></div>
+</div>
+<div style="font-size:11px;color:var(--faint);margin-bottom:32px;">
+  <span class="tl-chip major" style="font-size:10px;">빨간 굵게</span> = 대형 사고 &nbsp;|&nbsp;
+  <span class="tl-chip pipc" style="font-size:10px;">[P]</span> = PIPC 의결 시점 &nbsp;|&nbsp;
+  <span class="tl-chip supplement" style="font-size:10px;">노란</span> = 수사·조사 중
+</div>
+<!-- SECTION I -->
+<div class="chapter">
+  <div class="chapter-label">SECTION I</div>
+  <div class="chapter-title">2025년 개인정보 유출 사고 (49건)</div>
+  <div class="chapter-bar"></div>
+  <p style="font-size:12px;color:var(--sec);margin-bottom:24px;">2025년 중 발생 또는 인지된 개인정보 침해 사고. 인지/공개 시점 순 정렬.</p>
+</div>
+
+<!-- #01 GS25 -->
+<div class="incident" id="i01">
+  <div class="incident-header">
+    <div class="incident-num">#01</div>
+    <div class="incident-title">GS리테일 (GS25)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">유통 &middot; 편의점</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2024.12.27 ~ 2025.1.4</td></tr>
+    <tr><th>유형</th><td>크리덴셜 스터핑 (Credential Stuffing)</td></tr>
+    <tr><th>유출 정보</th><td>이름, 성별, 생년월일, 연락처, 주소, 아이디, 이메일 (7개 항목)</td></tr>
+    <tr><th>피해 규모</th><td>약 9만 명</td></tr>
+    <tr><th>과징금</th><td>&mdash; (조사 진행 중)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2024.12.27~2025.1.4, 외부에서 유출된 타 사이트 ID/PW 조합을 GS25 '나만의냉장고' 앱에 자동 대입(크리덴셜 스터핑)하여 약 9만 명의 계정에 무단 로그인하였다. GS리테일은 이상 로그인을 자체 탐지한 뒤 1월 6일 PIPC에 자진 신고했다. 유출 항목은 이름·성별·생년월일·연락처·주소·아이디·이메일 등 7개 항목으로, 결제 정보나 비밀번호는 포함되지 않았다.<br>
+    <strong>기술적 맥락:</strong> 크리덴셜 스터핑은 사용자의 비밀번호 재사용 습관을 악용하는 공격으로, 봇이 수백만 개의 ID/PW 조합을 자동 대입한다. GS25는 로그인 시도 횟수 제한(Rate Limiting), CAPTCHA, 이상 IP 대역 차단 등 기본적인 봇 방어 체계가 부재했다. <strong>2021년에도 GS25에서 동일한 수법의 사고가 발생</strong>한 바 있어 4년간 재발 방지 조치가 미흡했다는 비판을 받았다.<br>
+    <strong>대응:</strong> GS리테일은 해당 IP 차단, 비밀번호 초기화, 피해 고객 개별 통지를 시행했으나, 같은 시기에 GS샵(#02)에서도 동일 공격이 8개월간 진행 중이었음이 추후 확인되었다.<br>
+    <strong>교차 참조:</strong> 동일 수법 &mdash; #02 GS샵, #08 티머니, P.01 섹타나인. 2025년 크리덴셜 스터핑 6건 모두 이상 탐지 체계 부재가 공통 원인이다.<br>
+    <strong>공격 벡터 엔지니어링 분석:</strong> 크리덴셜 스터핑은 다른 사이트에서 유출된 ID/PW 조합을 자동화 도구(Sentry MBA, OpenBullet, STORM 등)로 대량 투입하는 공격이다. GS25 모바일 앱의 로그인 API가 exploit된 핵심 취약점은 세 가지이다. 첫째, API 엔드포인트에 Rate Limiting(요청 빈도 제한)이 미적용되어 단일 IP에서 초당 수십~수백 건의 로그인 시도가 차단 없이 통과하였다. 둘째, CAPTCHA나 디바이스 핑거프린팅 등 봇 탐지 메커니즘이 부재하여 자동화 도구의 요청을 정상 사용자와 구분하지 못했다. 셋째, 로그인 실패 임계치 기반의 계정 잠금(Account Lockout) 정책이 없어 무제한 시도가 가능했다. 이 세 가지 방어 계층은 OWASP Credential Stuffing Prevention Cheat Sheet에서 최소 요구사항으로 명시하는 기본 방어선이다. API Gateway 레벨에서 IP별·세션별 요청 빈도를 제한하고, 비정상 로그인 패턴(동일 IP에서 다수 계정 시도, 지리적으로 불가능한 로그인 등)을 탐지하는 실시간 모니터링만 있었어도 대규모 유출을 방지할 수 있었다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스 2025.1.8, 캐치시큐 2025.1, 뉴닉 2025.2</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #02 GS샵 -->
+<div class="incident" id="i02">
+  <div class="incident-header">
+    <div class="incident-num">#02</div>
+    <div class="incident-title">GS리테일 (GS샵)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">유통 &middot; 홈쇼핑</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2024.6.21 ~ 2025.2.13 (약 8개월간 지속)</td></tr>
+    <tr><th>유형</th><td>크리덴셜 스터핑</td></tr>
+    <tr><th>피해 규모</th><td>약 158만 건</td></tr>
+    <tr><th>과징금</th><td>&mdash; (3년 이내 반복 시 가중 가능)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> GS25 사고(#01) 조사 과정에서 동일 GS리테일의 GS샵(홈쇼핑) 서비스에서도 크리덴셜 스터핑이 <strong>2024.6.21부터 약 8개월간(약 240일)</strong> 진행 중이었음이 추가 확인되었다. GS리테일은 2025.2.13 PIPC에 추가 신고하였다. 유출 정보는 GS25와 유사하게 이름·성별·생년월일·연락처·주소·이메일·구매이력 등이다.<br>
+    <strong>핵심 문제 — 8개월 미탐지:</strong> 공격이 약 240일간 지속되었음에도 GS샵의 보안 시스템이 이를 전혀 탐지하지 못했다. 이는 (1) 일일 로그인 실패율·성공률에 대한 자동 경보(alert) 부재, (2) 비정상 IP 대역에서의 대량 로그인 시도를 차단하는 로직 부재, (3) 로그 분석·SIEM(보안정보이벤트관리) 체계 미운용을 의미한다. 동일 회사의 두 서비스가 같은 수법에 동시 피해를 입은 것은 <strong>그룹 차원의 보안 거버넌스 실패</strong>이다.<br>
+    <strong>피해 규모 비교:</strong> GS25(8일, 9만 명) vs GS샵(240일, 158만 건) — <strong>탐지까지의 시간이 피해 규모를 결정</strong>하는 핵심 변수임을 보여준다. 크리덴셜 스터핑 피해는 공격 기간에 거의 비례한다.<br>
+    <strong>향후 전망:</strong> PIPC 조사 중. GS리테일은 2021년(GS25) + 2024~2025년(GS25·GS샵) 총 3건의 동일 수법 사고를 기록하여, 3년 이내 반복 위반 시 과징금 가중(매출액 3% 상한) 적용 가능성이 있다.<br>
+    <strong>8개월 미탐지의 엔지니어링 실패:</strong> GS샵에서 크리덴셜 스터핑이 8개월간 탐지되지 않은 것은 단순한 모니터링 부재를 넘어 로그 아키텍처의 구조적 결함을 시사한다. 정상적인 보안 운영 환경에서는 SIEM(Security Information and Event Management)이 로그인 실패율 급증, 동일 IP의 다중 계정 접근, 비정상 User-Agent 패턴 등을 상관 분석(correlation)하여 수 시간 내 알림을 생성한다. 8개월 미탐지는 (1) 로그인 이벤트 로그가 SIEM에 연동되지 않았거나, (2) SIEM 자체가 부재하거나, (3) 알림 규칙(detection rule)이 크리덴셜 스터핑 패턴을 포함하지 않았음을 의미한다. 또한 GS25(#01)와 GS샵(#02)이 동일 그룹(GS리테일) 산하임에도 별도의 인증 시스템을 운영하면서 보안 정책이 통합 관리되지 않은 점은, 대기업 그룹의 자회사·서비스별 보안 거버넌스 분절 문제를 보여준다. 통합 인증(SSO) 아키텍처를 채택했다면 한쪽에서 탐지된 공격 패턴이 즉시 다른 서비스에도 차단 규칙으로 전파되었을 것이다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스 2025.2.14, 인스피언 2025.2, 뉴닉 2025.3</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #03 듀오 -->
+<div class="incident" id="i03">
+  <div class="incident-header">
+    <div class="incident-num">#03</div>
+    <div class="incident-title">듀오</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">결혼정보</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.1.28 (설 연휴 전날)</td></tr>
+    <tr><th>유형</th><td>외부 해킹</td></tr>
+    <tr><th>유출 정보</th><td>이름, 성별, 생년월일, 연락처, 주소, 기혼 여부, 결혼기념일, 개인통관고유번호</td></tr>
+    <tr><th>피해 규모</th><td>3만 명 이상</td></tr>
+    <tr><th>과징금</th><td>&mdash; (PIPC 조사 중)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.1.28 설 연휴 전날, 외부 해커가 듀오 시스템에 침투하여 약 3만 명 이상의 회원 정보를 탈취하였다. 듀오는 1월 30일(설 연휴 중) 이를 인지하고 PIPC에 신고하였다. 해킹 경로의 세부 사항은 현재까지 공개되지 않았다.<br>
+    <strong>민감정보 특성:</strong> 결혼정보회사의 데이터는 일반 이커머스와 달리 <strong>기혼 여부, 결혼기념일, 개인통관고유번호</strong> 등 극도로 민감한 프로필 정보를 포함한다. 이러한 정보는 보이스피싱, 스토킹, 신원 사칭 등 2차 범죄에 직접 활용될 수 있어 단순 연락처 유출보다 피해 위험이 크다.<br>
+    <strong>공격 타이밍:</strong> 설 연휴 전날은 보안 인력이 축소 운영되는 시점으로, 공격자가 이를 의도적으로 노린 것으로 추정된다. 연휴·공휴일 보안 취약성은 2025년 다른 사고(YES24 — 일요일 새벽 4시)에서도 반복 확인된다.<br>
+    <strong>향후 전망:</strong> PIPC 조사 진행 중. 해킹 경로가 밝혀지면 제29조(안전조치의무) 위반 여부가 판단될 것이다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스 2025.1.30, 데일리시큐 2025.2.3</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #04 iM뱅크 -->
+<div class="incident" id="i04">
+  <div class="incident-header">
+    <div class="incident-num">#04</div>
+    <div class="incident-title">iM뱅크 (구 대구은행)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-1">★☆☆</span>
+    <span class="tag tag-unknown">미확인</span>
+    <span class="tag">금융 &middot; 은행</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.2.28</td></tr>
+    <tr><th>유형</th><td>해킹 (세부 미공개)</td></tr>
+    <tr><th>피해 규모</th><td>미확인</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>상태:</strong> 2025.2.28 해킹 사고가 발생한 것으로 보안 솔루션 기업 블로그에 기록되어 있으나, iM뱅크(구 대구은행, DGB금융그룹) 측의 공식 발표나 주요 언론 보도가 확인되지 않아 <strong>교차 검증이 불가능</strong>한 상태이다.<br>
+    <strong>맥락:</strong> 2025년 금융권에서는 우리카드(#06, 134.5억), 롯데카드(#24, 96.2억), 신한카드(#32), 저축은행(#18), KB라이프·노무라·SC제일·하나카드(#17) 등 8건 이상의 유출이 발생하여 금융업 전반의 보안 취약성이 부각되었다. iM뱅크 건이 사실이라면 금융권 사고는 9건 이상으로 늘어난다.<br>
+    <strong>주의:</strong> ★☆☆(단일 출처) 등급. 추후 PIPC 조사나 금감원 발표로 사실관계가 확인되거나 부정될 수 있다.
+  </div>
+  <div class="incident-source">출처: 클라우다이크 금융권 블로그 (단일 출처 — 교차 확인 필요)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #05 인크루트 ★NEW★ -->
+<div class="incident" id="i05">
+  <div class="incident-header">
+    <div class="incident-num">#05</div>
+    <div class="incident-title">인크루트</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 4.63억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag">구인구직</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>침해</th><td>2025년 2월</td></tr>
+    <tr><th>의결</th><td>2025.10.22 개인정보위 제22회 전체회의</td></tr>
+    <tr><th>유형</th><td>DB 해킹 (438GB 탈취)</td></tr>
+    <tr><th>유출 정보</th><td>이름, 연락처, 이력서, 자기소개서, 자격증 사본</td></tr>
+    <tr><th>피해 규모</th><td class="highlight">약 727만 명 (전체 회원)</td></tr>
+    <tr><th>과징금</th><td class="highlight">4억 6,300만 원</td></tr>
+    <tr><th>위반 조항</th><td>개인정보 보호법 제29조 (안전조치의무)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 2월, 외부 공격자가 인크루트 데이터베이스에 침투하여 전체 회원 약 727만 명의 이력서·자기소개서·자격증 사본 등을 포함한 <strong>438GB</strong>의 데이터를 탈취하였다. 인크루트는 해커로부터 협박 이메일을 수신한 후에야 사고를 인지하였으며, 침해 발생으로부터 <strong>약 2개월이 경과</strong>한 시점이었다. 이는 업무 외 시간 비정상 DB 접근 및 대량 트래픽에 대한 자동 탐지 체계가 전무했기 때문이다.<br>
+    <strong>반복 위반:</strong> 인크루트는 <strong>2023년에도 크리덴셜 스터핑으로 약 3만 건의 유출 사고로 PIPC 제재</strong>를 받은 이력이 있다. 2년 이내 재발은 '반복 위반'에 해당하여 <strong>가중 처분</strong>이 적용되었으며, 전담 CPO(개인정보보호책임자) 선임 명령이 병과되었다.<br>
+    <strong>구인구직 플랫폼의 데이터 민감성:</strong> 이력서에는 학력·경력·자격증·자기소개서·사진·주소 등 개인의 경제적·사회적 프로필이 총망라되어 있어, 유출 시 (1) 스피어피싱(개인 맞춤형 피싱), (2) 취업 사기, (3) 신분 도용에 직접 활용 가능하다. 알바몬(#12, 2.2만 건)도 동일 업종에서 유출되어, 2025년 구인구직 업종이 해커의 <strong>주요 표적</strong>이 되었음을 보여준다.<br>
+    <strong>위반 상세:</strong> PIPC는 (1) DB 접근 서버의 네트워크 분리(Segmentation) 미흡, (2) 이상 접근(비업무시간 대량 쿼리) 탐지 체계 부재, (3) 접근 로그 모니터링 미시행을 위반 사항으로 적시하였다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11610">개인정보보호위원회 제22회 전체회의 의결</a> (전자신문, 데일리시큐)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #06 우리카드 -->
+<div class="incident" id="i06">
+  <div class="incident-header">
+    <div class="incident-num">#06</div>
+    <div class="incident-title">우리카드</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 134.5억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag">금융 &middot; 카드</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2024년 4월 (4개월간 지속)</td></tr>
+    <tr><th>의결</th><td>2025.3.26 개인정보위 전체회의</td></tr>
+    <tr><th>유형</th><td>내부자 무단 활용</td></tr>
+    <tr><th>유출 정보</th><td>가맹점 대표자 성명, 휴대폰번호, 카드 보유 여부</td></tr>
+    <tr><th>피해 규모</th><td>약 7.5만 명 가맹점 대표자</td></tr>
+    <tr><th>과징금</th><td class="highlight">134억 5,100만 원</td></tr>
+    <tr><th>위반 조항</th><td>개인정보 보호법 제29조 (안전조치의무)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2024년 4월부터 약 4개월간, 우리카드 인천영업센터 소속 <strong>카드모집인</strong>이 업무용 시스템에서 가맹점 대표자 약 7.5만 명의 개인정보(성명, 휴대폰번호, 카드 보유 여부)를 무단으로 추출하여 외부 영업 목적에 활용하였다. 외부 해킹이 아닌 <strong>내부자(Insider Threat)</strong> 소행으로, 카드모집인이 가맹점 대표자를 대상으로 카드 가입 영업을 하기 위해 데이터를 빼돌린 것이다.<br>
+    <strong>접근권한 관리 실패:</strong> PIPC 조사에 따르면 (1) 카드모집인의 시스템 접근 권한이 업무 범위를 초과하여 부여되었고, (2) 대량 조회·다운로드에 대한 자동 경보(Alert) 체계가 없었으며, (3) 접근 로그 모니터링이 사실상 작동하지 않았다. 이는 "알 필요(Need-to-Know)" 원칙과 "최소 권한(Least Privilege)" 원칙이 모두 미적용된 것이다.<br>
+    <strong>과징금 134.5억의 의미:</strong> 피해 규모(7.5만 명)만 보면 인크루트(727만 명, 4.6억)보다 훨씬 적은데도 과징금은 <strong>29배</strong> 높다. 이는 매출액 비례 과징금 체계(매출 3% 상한)에서 <strong>대기업일수록 동일 위반에도 절대 금액이 크게 산정</strong>되기 때문이다. 우리카드(우리금융그룹) 관련 매출 대비 비율로 보면 인크루트와 큰 차이가 없으나, 금액 자체는 금융권에 강력한 경고가 되었다.<br>
+    <strong>구조적 반복:</strong> 신한카드(#32, 19.2만 명)에서도 동일한 패턴(카드모집인/직원의 가맹점 대표자 정보 무단 추출)이 반복되었다. 이는 카드업의 영업 구조 — 실적 압박 → DB 접근 → 무단 활용 — 가 개별 기업의 문제가 아닌 <strong>업종 전체의 구조적 취약점</strong>임을 보여준다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11092">개인정보보호위원회 의결 (nttId=11092)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #07 블랙야크 ★NEW★ -->
+<div class="incident" id="i07">
+  <div class="incident-header">
+    <div class="incident-num">#07</div>
+    <div class="incident-title">블랙야크</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 13.9억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제34조</span>
+    <span class="tag">패션 &middot; 아웃도어</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.3.1~4 (SQL 인젝션)</td></tr>
+    <tr><th>의결</th><td>2025.7.9 개인정보위 전체회의</td></tr>
+    <tr><th>유형</th><td>SQL 인젝션 &rarr; 관리자 계정 탈취</td></tr>
+    <tr><th>유출 정보</th><td>이름, 성별, 휴대폰번호, 주소 등</td></tr>
+    <tr><th>피해 규모</th><td class="highlight">342,253명</td></tr>
+    <tr><th>과징금</th><td class="highlight">13억 9,100만 원 + 공표명령</td></tr>
+    <tr><th>위반 조항</th><td>제29조 (안전조치의무), 제34조 (유출통지의무)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.3.1~4 공격자가 블랙야크 온라인몰의 SQL 인젝션 취약점을 악용하여 관리자 계정을 탈취하고, DB에서 342,253명의 고객 정보를 추출하였다. PIPC 조사에서 해당 SQL 인젝션 취약점은 <strong>2021년 10월부터 약 3년 5개월간 방치</strong>되어 있었음이 확인되었다. 웹 애플리케이션 방화벽(WAF)이 미설치되었고, 관리자 페이지에 다중인증이 적용되지 않았으며, 접속기록이 법정 보관기간(최소 6개월) 이상 보관되지 않았다.<br>
+    <strong>SQL 인젝션 — 2025년 최다 위반 유형:</strong> 블랙야크 건은 2025년 PIPC 제재에서 <strong>가장 빈번하게 적시된 공격 유형인 SQL 인젝션</strong>의 대표 사례이다. 한국토픽(P.05), 비즈니스온(P.02), NHN위투(P.02), 이젠(P.10), 더존하우징(P.10), 레저플러스(P.10), NHN커머스(#26) 등 <strong>8건 이상</strong>이 SQL 인젝션으로 제재되었다. 파라미터화된 쿼리(Parameterized Query)와 WAF만으로 방어 가능한 1990년대부터 알려진 공격이 2025년 최다 원인이라는 점은 한국 중소기업 보안 현실을 적나라하게 보여준다.<br>
+    <strong>공표명령:</strong> PIPC는 과징금과 함께 <strong>공표명령</strong>(홈페이지 게시)을 병과하여, 기업 평판 리스크를 제재 수단으로 활용하는 새로운 집행 기조를 보여주었다. 동일 의결에서 한국토픽교육센터(P.05, 8.4만 명, 과징금 2,300만 원)도 SQL 인젝션으로 제재되었다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11343">개인정보보호위원회 의결 (nttId=11343)</a> (디지털데일리)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #08 티머니 ★NEW★ -->
+<div class="incident" id="i08">
+  <div class="incident-header">
+    <div class="incident-num">#08</div>
+    <div class="incident-title">티머니</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 5.34억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag">교통 &middot; 결제</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.3.13~25</td></tr>
+    <tr><th>의결</th><td>2026.1.28 개인정보위 제2회 전체회의</td></tr>
+    <tr><th>유형</th><td>크리덴셜 스터핑 (T-money Card &amp; Pay 웹사이트)</td></tr>
+    <tr><th>유출 정보</th><td>이름, 이메일, 전화번호, 주소</td></tr>
+    <tr><th>피해 규모</th><td>51,691명</td></tr>
+    <tr><th>과징금</th><td class="highlight">5억 3,400만 원 + 공표명령</td></tr>
+    <tr><th>위반 조항</th><td>제29조 (안전조치의무 &mdash; 침입 탐지/차단 미흡)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.3.13~25 약 13일간, 공격자가 티머니 카드앤페이(T-money Card &amp; Pay) 웹사이트에 크리덴셜 스터핑 공격을 실행하여 51,691명의 개인정보(이름, 이메일, 전화번호, 주소)에 접근하였다. 특정 IP 대역에서의 대량 로그인 시도가 있었으나 티머니의 보안 시스템은 이를 탐지·차단하지 못하였다.<br>
+    <strong>기술적 맥락:</strong> 티머니는 대중교통 결제 인프라(티머니카드, 모바일 결제)를 운영하는 기업으로, API를 통한 대량 접근을 차단하는 Rate Limiting이나 봇 탐지 체계가 부재하였다. 이는 GS25(#01), GS샵(#02), 섹타나인(P.01)과 함께 2025년 크리덴셜 스터핑 사고 6건의 공통 원인이다. PIPC는 제29조(안전조치의무) 중 "침입 탐지 및 차단 시스템 미흡"을 위반 사항으로 적시하였다.<br>
+    <strong>교통 인프라 데이터:</strong> 티머니 이용자 정보는 대중교통 이용 패턴과 연결되어 있어, 유출 시 개인의 이동 경로 추적에 악용될 가능성이 있다. 규모 자체는 5.1만 명으로 크지 않으나, 공표명령이 병과되었다.<br>
+    <strong>교통 결제 시스템의 API 보안 아키텍처:</strong> 티머니 시스템은 모바일 앱 → API 서버 → 회원 DB 구조에서 API 서버의 인증 엔드포인트가 직접 공격받았다. 교통 결제 시스템은 실시간 결제 처리를 위해 API 응답 시간을 최소화하는 설계가 우선시되는데, 이 과정에서 보안 검증 레이어(Rate Limiting, WAF, 봇 탐지)가 성능 병목으로 간주되어 생략되는 경우가 많다. 티머니의 경우 API 응답에 회원 정보가 마스킹 없이 포함되어, 로그인 성공 시 즉시 개인정보가 노출되는 구조였다. 방어 아키텍처 관점에서는 (1) API Gateway에서 IP/세션 기반 Rate Limiting 적용, (2) 로그인 API 응답에서 민감 정보 마스킹(이름 'ㅇ*ㅇ', 연락처 '010-****-1234'), (3) 로그인 성공 후 별도 인증(Step-up Authentication)을 거쳐야 전체 정보 조회 가능하도록 분리하는 것이 필요했다. KT알파(P.04)가 사전 마스킹으로 피해를 51명으로 억제한 것과 대비되는 설계 차이이다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11777">개인정보보호위원회 의결 (nttId=11777)</a> (<a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156741963">정책브리핑</a>)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #09 SK텔레콤 -->
+<div class="incident" id="i09">
+  <div class="incident-header">
+    <div class="incident-num">#09</div>
+    <div class="incident-title">SK텔레콤</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">역대 최대 과징금 1,348억</span>
+    <span class="tag tag-lawsuit">취소소송 중</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag">통신</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>최초 침투</th><td>2021.8.6 (BPFDoor 악성코드 설치)</td></tr>
+    <tr><th>정보 유출</th><td>2025.4.18 (HSS 데이터 9.82GB 외부 유출)</td></tr>
+    <tr><th>의결</th><td>2025.8.27 개인정보위 전체회의</td></tr>
+    <tr><th>유형</th><td>APT (지능형 지속 위협) &mdash; <strong>4년간 잠복</strong></td></tr>
+    <tr><th>유출 정보</th><td>USIM 인증키(Ki), IMSI, IMEI 등 25종 &mdash; <strong>평문 저장</strong></td></tr>
+    <tr><th>피해 규모</th><td class="highlight">2,324만 명 (유심 건수 기준 2,696만 건)</td></tr>
+    <tr><th>과징금</th><td class="highlight">1,347억 9,100만 원 + 과태료 960만 원</td></tr>
+    <tr><th>위반 조항</th><td>제29조 (안전조치의무 &mdash; 암호화 미조치, 접근권한 관리 소홀, 보안패치 미적용)</td></tr>
+    <tr><th>소송</th><td>SKT, 2026.1.19 과징금 취소 행정소송 제기 &middot; 집단소송 진행 중</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2021.8.6 국가 배후 해커 조직(중국 연계 추정)이 리눅스 커널 기반 백도어 악성코드 <strong>BPFDoor</strong>를 SK텔레콤 HSS(Home Subscriber Server) 서버에 설치하였다. BPFDoor는 Berkeley Packet Filter를 악용하여 정상 네트워크 트래픽에 은닉되며, 기존 EDR·IDS로는 탐지가 극히 어렵다. 공격자는 이후 <strong>약 3년 8개월(1,351일)간</strong> 잠복하면서 SK텔레콤의 가입자 인증 인프라에 대한 접근을 유지하였다. 2025.4.18 HSS에서 <strong>9.82GB</strong>의 데이터가 외부로 유출되었으며, 여기에는 가입자 2,324만 명의 USIM 인증키(Ki), IMSI, IMEI 등 <strong>25종의 인증 정보</strong>가 포함되어 있었다. 이 정보들은 모두 <strong>평문(암호화 미조치)</strong>으로 저장되어 있었다.<br>
+    <strong>기술적 분석 — BPFDoor:</strong> BPFDoor는 2021년 PwC·Trend Micro 등이 보고한 리눅스 백도어로, (1) 리스닝 포트를 열지 않아 포트스캔에 미탐지, (2) 매직 바이트(magic bytes)를 포함한 특정 패킷에만 반응하여 C2 통신을 은닉, (3) 프로세스명을 정상 데몬으로 위장하는 특성이 있다. 국가 지원 APT 그룹 중 Red Menshen(중국 연계)이 주로 사용하는 것으로 알려져 있다. KT(#23)에서도 동일 악성코드가 발견되어 <strong>통신사 인프라에 대한 조직적 공격</strong>이 확인되었다.<br>
+    <strong>USIM 키 유출의 의미:</strong> Ki(인증키)는 가입자의 USIM을 네트워크에 인증하는 마스터 키로, 탈취 시 (1) USIM 복제(SIM Cloning)를 통한 통화·SMS 도청, (2) 2FA(문자 인증) 우회를 통한 금융 계정 탈취, (3) 위치 추적 등이 이론적으로 가능하다. IMSI+Ki 조합은 다크웹에서 높은 가치를 지닌 데이터로, 국가 안보 차원의 위협이 제기되었다.<br>
+    <strong>4년 미탐지의 구조적 원인:</strong> PIPC 민관합동조사단 발표에 따르면 (1) HSS 서버에 대한 접근 로그 보존 기간이 3개월에 불과, (2) 네트워크 세그멘테이션 미흡으로 외부 접근 가능, (3) 보안 패치 미적용 서버 다수, (4) 암호화 키 관리 체계 부재. 이는 개별 실수가 아닌 <strong>통신 핵심 인프라에 대한 보안 거버넌스 전반의 실패</strong>이다.<br>
+    <strong>대응 및 비용:</strong> SK텔레콤은 전 가입자 2,300만 명 대상 무료 USIM 교체를 시행하였으며, 교체 비용만 약 <strong>5,000억 원</strong>으로 추산된다. 유심보호서비스 가입 권유, 보안 조직 CEO 직속 재편, 외부 보안 컨설팅 도입 등을 발표하였다.<br>
+    <strong>과징금 산정:</strong> 1,347.9억 원은 SK텔레콤 관련 매출의 약 0.56%로, 상한(3%)에 비해 낮다는 비판이 있다. 반면 SK텔레콤은 (1) 매출 산정 기준(전체 통신 매출 vs USIM 관련 매출), (2) 국가 지원 APT의 방어 불가론, (3) 4년 잠복 중 발견 합리적 기대 수준을 쟁점으로 2026.1.19 서울행정법원에 <strong>취소소송</strong>을 제기하였다. 이 소송은 PIPC 과징금 체계의 <strong>사법적 선례</strong>가 될 전망이다.<br>
+    <strong>교차 참조:</strong> 동일 APT &mdash; KT(#23, BPFDoor 감염 확인). 통신사 3사 중 2개사에서 동일 악성코드 발견은 한국 통신 인프라에 대한 <strong>체계적·조직적 사이버 공격</strong>이 진행 중임을 의미한다. 국정원·과기정통부·KISA 합동 대응 체제 가동 중.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11453">개인정보보호위원회 의결 (nttId=11453)</a> &middot; 민관합동조사단 발표 &middot; 과기정통부 보도자료</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #10 KS한국고용정보 -->
+<div class="incident" id="i10">
+  <div class="incident-header">
+    <div class="incident-num">#10</div>
+    <div class="incident-title">KS한국고용정보</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">BPO &middot; 용역</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.4.5 (침투) &rarr; 4.19 (탈취)</td></tr>
+    <tr><th>유형</th><td>인포스틸러 (LummaC2)</td></tr>
+    <tr><th>유출 정보</th><td>이름, 주민번호 뒷자리, 계좌, 신분증 사본, 근로계약서, 급여명세서 등</td></tr>
+    <tr><th>피해 규모</th><td>3.6만 명 (22GB) &middot; 다크웹 $15,000 판매</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.4.5 공격자가 KS한국고용정보의 관리자 PC에 인포스틸러 악성코드 LummaC2를 설치하여 admin 계정 자격증명을 탈취하였다. 이후 4.19까지 내부 시스템에 접근하여 약 22GB(3.6만 명)의 데이터를 외부로 반출하였다. 탈취된 데이터는 다크웹 해킹 포럼에서 <strong>$15,000(약 2,000만 원)</strong>에 판매 등록되어 2차 유포가 확인되었다.<br>
+    <strong>유출 정보의 심각성:</strong> 일반적인 연락처를 넘어 <strong>주민번호 뒷자리, 은행 계좌번호, 신분증 사본(촬영본), 근로계약서, 급여명세서</strong> 등이 포함되어 있어 금융사기·신분 도용의 직접적 재료가 된다. BPO(업무처리대행) 기업 특성상 다수 기업의 위탁 인력 정보가 집중되어 있어 피해가 원 기업들로 확산될 수 있다.<br>
+    <strong>레거시 데이터 문제:</strong> 수년 전 퇴사한 위탁 인력의 정보까지 삭제 없이 보관하고 있었다. 이는 제21조(파기의무) 위반에 해당하며, 모두투어(P.03, 316만 건 미파기)·넷마블(#30, 2003년 데이터 20년 보관)과 함께 2025년 반복 확인된 레거시 데이터 방치 패턴이다.<br>
+    <strong>LummaC2:</strong> 2022년부터 다크웹에서 MaaS(Malware-as-a-Service)로 판매되는 인포스틸러로, 브라우저 자격증명·암호화폐 지갑·세션 토큰 등을 수집한다. 2025년 글로벌 보안 업계에서 가장 활발한 인포스틸러 중 하나로 보고되고 있다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스 2025.4.22, 데일리시큐 2025.4.25, 인스피언 2025.5</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #11 테무 -->
+<div class="incident" id="i11">
+  <div class="incident-header">
+    <div class="incident-num">#11</div>
+    <div class="incident-title">테무 (Temu)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 13.7억</span>
+    <span class="tag tag-law">제28조의6</span>
+    <span class="tag">이커머스 (해외)</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>의결</th><td>2025년 4~5월</td></tr>
+    <tr><th>유형</th><td>개인정보 해외 무단 반출 &middot; 민감정보(얼굴, 주민번호) 무단 수집</td></tr>
+    <tr><th>과징금</th><td class="highlight">13억 6,900만 원 + 과태료 1,760만 원</td></tr>
+    <tr><th>위반 조항</th><td>제28조의6 (해외 이전 제한), 제15조 (수집 제한) 등</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 4~5월, PIPC는 중국 기반 이커머스 플랫폼 테무(Temu, PDD Holdings 자회사)에 대해 (1) 한국 이용자의 개인정보를 동의 없이 해외(중국) 서버로 전송, (2) 회원가입 시 얼굴 사진·주민등록번호 등 민감정보를 불필요하게 수집한 행위에 대해 과징금 13.7억 원 + 과태료 1,760만 원을 의결하였다.<br>
+    <strong>법적 의의:</strong> 제28조의6(해외 이전 제한)은 2023년 개정법에서 신설되어 2024.3.15 시행된 조항으로, <strong>테무 건이 해당 조항 적용 최초 사례</strong>이다. 이는 PIPC가 해외 기업에 대해서도 적극적으로 법을 집행하겠다는 의지를 보여준 선례로 평가된다.<br>
+    <strong>글로벌 맥락:</strong> 테무는 미국·EU에서도 데이터 보호·소비자 안전 규제 조사를 받고 있으며, EU 디지털서비스법(DSA) 위반 조사가 진행 중이다. 한국의 제재는 글로벌 테무 규제 흐름의 일부로, 한국이 아태 지역에서 <strong>중국 기반 플랫폼에 대한 개인정보 규제의 선도적 역할</strong>을 수행하고 있음을 보여준다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11200">개인정보보호위원회 의결 (nttId=11200)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #12 알바몬 -->
+<div class="incident" id="i12">
+  <div class="incident-header">
+    <div class="incident-num">#12</div>
+    <div class="incident-title">알바몬</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">구인구직</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.4.30</td></tr>
+    <tr><th>유형</th><td>웹 취약점 공격 (이력서 미리보기 기능)</td></tr>
+    <tr><th>유출 정보</th><td>이름, 휴대폰번호, 이메일</td></tr>
+    <tr><th>피해 규모</th><td>22,473건</td></tr>
+    <tr><th>과징금</th><td>&mdash; (PIPC 조사 중)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.4.30 공격자가 알바몬 웹사이트의 '이력서 미리보기' 기능에서 발견된 웹 취약점을 악용하여 22,473건의 개인정보(이름·휴대폰·이메일)에 비인가 접근하였다. 알바몬은 즉시 해당 기능을 비활성화하고 PIPC에 신고하였다.<br>
+    <strong>기술적 맥락:</strong> '이력서 미리보기'는 구직자가 작성한 이력서를 열람하는 기능으로, 접근 권한 검증(Authorization) 로직의 취약점이 공격에 이용된 것으로 추정된다. IDOR(Insecure Direct Object Reference) 유형의 취약점일 가능성이 있으며, 이는 OWASP Top 10의 'Broken Access Control'에 해당한다.<br>
+    <strong>교차 참조:</strong> 동일 업종인 인크루트(#05, 727만 명)도 2025년에 DB 해킹으로 유출되었다. 구인구직 플랫폼은 이력서·자기소개서·자격증 사본 등 높은 민감도의 개인정보를 대량 보유하고 있어, 해킹 시 2차 피해(스피어피싱, 신분 도용) 위험이 특히 높다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스 2025.5.2, 뉴닉 2025.5</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #13 법인보험대리점 -->
+<div class="incident" id="i13">
+  <div class="incident-header">
+    <div class="incident-num">#13</div>
+    <div class="incident-title">법인보험대리점 2곳 (유퍼스트 &middot; 하나금융파인드)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">금융 &middot; 보험</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 4~5월</td></tr>
+    <tr><th>유형</th><td>악성코드 &rarr; IT업체 개발자 PC 감염 (공급망 경유)</td></tr>
+    <tr><th>유출 정보</th><td>성명, 전화번호, 주소, 보험계약정보 (신용정보 128명 포함)</td></tr>
+    <tr><th>피해 규모</th><td>1,107명 (신용정보 128명 포함)</td></tr>
+    <tr><th>과징금</th><td>&mdash; (금감원 조사 중)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 유퍼스트와 하나금융파인드, 두 법인보험대리점(GA)의 IT 시스템을 유지보수하는 <strong>외부 IT 용역업체 개발자의 PC가 악성코드에 감염</strong>되면서, 해당 PC를 통해 보험대리점 내부 시스템에 접근한 공격자가 고객 1,107명의 정보를 탈취하였다. 이 중 128명은 보험계약번호·보험료 등 <strong>신용정보</strong>가 포함되어 금융당국(금감원) 추가 조사 대상이 되었다.<br>
+    <strong>공급망 공격 패턴:</strong> 보험대리점 자체가 아닌 <strong>위탁 IT 업체의 개발자 PC</strong>가 침투 경로인 전형적 공급망(Supply Chain) 공격이다. LVMH 3사(#14·#15·#19, SaaS 경유), 아디다스(#16, 고객서비스 업체), NHN커머스(#26, 레거시 SaaS)와 함께 2025년 공급망 경유 침해 5건 중 하나이다.<br>
+    <strong>보험업 특수성:</strong> 법인보험대리점은 다수 보험사의 상품을 취급하므로, 한 GA의 유출이 여러 보험사 고객에 영향을 미칠 수 있다. 금융위는 이 사건을 계기로 GA의 IT 위탁 관리 실태 점검에 착수하였다.
+  </div>
+  <div class="incident-source">출처: 중앙이코노미뉴스 2025.5, 시사저널 2025.6</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #14 디올 -->
+<div class="incident" id="i14">
+  <div class="incident-header">
+    <div class="incident-num">#14</div>
+    <div class="incident-title">디올 코리아 <span style="font-size:12px;color:var(--faint);font-weight:400;">(LVMH 1/3)</span></div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 ~122억 (3사 합산 360억)</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제34조</span>
+    <span class="tag">명품 &middot; 패션</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 5월 초 &middot; 인지 5.7 &middot; 신고 5.10 (24시간 의무 초과)</td></tr>
+    <tr><th>의결</th><td>2026.2.12 개인정보위 전체회의</td></tr>
+    <tr><th>유형</th><td>SaaS 계정 탈취</td></tr>
+    <tr><th>유출 정보</th><td>이름, 주소, 전화번호, 이메일, 고객번호, 판매 데이터</td></tr>
+    <tr><th>피해 규모</th><td class="highlight">195만 명 (개인정보위 발표 기준)</td></tr>
+    <tr><th>과징금</th><td class="highlight">LVMH 3사 합산 360억 원 중 약 122억 원</td></tr>
+    <tr><th>위반 조항</th><td>제29조 (안전조치의무), 제34조 (유출통지 지연)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 5월 초 공격자가 디올 코리아가 사용하는 <strong>SaaS 기반 고객관계관리(CRM) 시스템</strong>의 계정을 탈취하여 약 195만 명의 고객 정보에 접근하였다. 디올은 5.7 사고를 인지하였으나 PIPC 신고는 5.10에 이루어져 72시간 의무를 <strong>간소 초과</strong>하였다. 유출된 정보에는 이름·주소·전화번호·이메일뿐 아니라 <strong>고객번호, 매장 방문 이력, 구매 금액·품목 등 판매 데이터</strong>가 포함되어, 명품 소비 패턴이 외부에 노출되었다.<br>
+    <strong>SaaS 공급망 공격 패턴:</strong> LVMH 3사(디올·티파니·루이비통)는 각각 독립적 사고이나, 공통점은 <strong>SaaS 플랫폼 계정의 다중인증(MFA) 미적용</strong>이다. 글로벌 명품 기업이 IT 인프라를 SaaS에 의존하면서도, SaaS 계정 보안을 자사 보안 정책 수준으로 관리하지 않은 것이 근본 원인이다.<br>
+    <strong>&#9888; 팩트체크:</strong> 기존 일부 보도의 "100만+" &rarr; 개인정보위 2026.2.12 발표 기준 <strong>195만 명</strong>으로 상향 확인.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11817">개인정보보호위원회 의결 (nttId=11817)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #15 티파니 -->
+<div class="incident" id="i15">
+  <div class="incident-header">
+    <div class="incident-num">#15</div>
+    <div class="incident-title">티파니 코리아 <span style="font-size:12px;color:var(--faint);font-weight:400;">(LVMH 2/3)</span></div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 ~23억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제34조</span>
+    <span class="tag">명품 &middot; 주얼리</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>인지</th><td>2025.5.9 &middot; 신고 5.22 (<strong>13일 지연</strong>)</td></tr>
+    <tr><th>유형</th><td>보이스피싱 &rarr; SaaS 접근 권한 탈취</td></tr>
+    <tr><th>유출 정보</th><td>이름, 주소, 전화번호, 이메일, 고객번호</td></tr>
+    <tr><th>피해 규모</th><td>약 4,600명</td></tr>
+    <tr><th>과징금</th><td class="highlight">LVMH 3사 합산 중 약 23억 원</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.5.9 티파니 코리아 직원이 <strong>보이스피싱(Vishing)</strong>에 속아 공격자에게 SaaS CRM 시스템의 접근 권한을 제공하였다. 공격자는 IT 지원팀을 사칭하여 "긴급 보안 점검"을 명목으로 계정 정보를 요구한 것으로 추정된다. 피해 규모는 4,600명으로 3사 중 가장 적으나, <strong>PIPC 신고까지 13일이 소요</strong>되어 제34조(유출통지의무) 위반이 별도 적용되었다.<br>
+    <strong>사회공학 공격의 교훈:</strong> 보이스피싱은 기술적 방어가 아무리 강력해도 <strong>인적 요소(Human Factor)</strong>를 우회할 수 있다. 특히 글로벌 기업의 한국 법인은 본사 IT 지시에 따르는 문화가 있어, 본사를 사칭하는 공격에 취약할 수 있다. MFA가 적용되어 있었더라도 실시간 피싱(MFA 릴레이)으로 우회 가능하므로, FIDO2/WebAuthn 등 피싱 내성(Phishing-Resistant) 인증이 권고된다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11817">개인정보보호위원회 의결 (nttId=11817)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #16 아디다스 -->
+<div class="incident" id="i16">
+  <div class="incident-header">
+    <div class="incident-num">#16</div>
+    <div class="incident-title">아디다스 코리아</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-unknown">미확인</span>
+    <span class="tag">스포츠 &middot; 패션</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 5월</td></tr>
+    <tr><th>유형</th><td>제3자 고객서비스 업체 비인가 접근</td></tr>
+    <tr><th>유출 정보</th><td>이름, 이메일, 전화번호, 일부 생년월일/주소</td></tr>
+    <tr><th>피해 규모</th><td>미공개 (한국 고객 한정)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 아디다스 코리아는 2025년 5월 고객에게 개인정보 유출 통지 이메일을 발송하였다. 아디다스 본사가 이용하는 <strong>제3자 고객서비스 시스템</strong>에 대한 비인가 접근이 발생하여, 과거 고객상담 이력이 있는 사용자의 이름·이메일·전화번호 등이 노출되었다. 비밀번호나 결제 정보는 포함되지 않았다고 밝혔다.<br>
+    <strong>공급망 패턴:</strong> 아디다스 자체 시스템이 아닌 고객서비스 위탁업체가 침투 경로인 점에서 LVMH 3사(SaaS), 법인보험대리점(IT 용역), NHN커머스(SaaS)와 동일한 <strong>공급망 경유 침해 패턴</strong>이다. 글로벌 기업일수록 수많은 SaaS·위탁업체를 사용하며, 각각의 보안 수준을 통제하기 어렵다는 구조적 문제를 보여준다.<br>
+    <strong>글로벌 맥락:</strong> 아디다스는 2018년에도 미국 사이트에서 수백만 건의 유출이 발생한 바 있다. 이번에는 한국 고객에 한정되었으나, 정확한 피해 규모는 공개되지 않았다.
+  </div>
+  <div class="incident-source">출처: 아주경제 2025.5, 한국경제 매거진 2025.6</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #17 금융권 일괄 (KB라이프, 노무라, SC제일, 하나카드) -->
+<div class="incident" id="i17">
+  <div class="incident-header">
+    <div class="incident-num">#17</div>
+    <div class="incident-title">KB라이프 &middot; 노무라 &middot; SC제일 &middot; 하나카드</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-1">★☆☆</span>
+    <span class="tag tag-unknown">미확인</span>
+    <span class="tag">금융 &middot; 복수</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>KB라이프</th><td>2025.5.16 — MDM(모바일단말관리) 서버 해킹. 임직원 사번·휴대폰·이메일 유출 (전자신문)</td></tr>
+    <tr><th>노무라금융</th><td>2025.5.16 — 해킹 세부 미공개 (한국NGO신문, 단일 출처)</td></tr>
+    <tr><th>SC제일은행</th><td>2025.5.18 — 해킹 세부 미공개 (한국NGO신문, 단일 출처)</td></tr>
+    <tr><th>하나카드</th><td>2025.6.17 — 해킹 세부 미공개 (시사저널e 금융권 결산)</td></tr>
+  </table>
+  <div class="incident-analysis warning">
+    <strong>&#9888; 주의:</strong> 4건 모두 단일 출처 또는 제한적 보도. 세부 사항 미공개로 교차 확인 불가. 공식 PIPC 의결 전.
+  </div>
+  <div class="incident-analysis">
+    KB라이프에서 확인된 MDM(Mobile Device Management) 서버 해킹은 기술적으로 매우 심각한 공격 벡터에 해당한다. MDM 서버는 기업이 임직원의 모바일 기기를 원격으로 통합 관리하기 위한 시스템으로, 앱 배포·원격 잠금 및 삭제·GPS 위치 추적·VPN 프로파일 설정·보안 정책 강제 적용 등 기기 전반에 대한 완전한 제어 기능을 수행한다. 공격자가 MDM 서버의 관리자 권한을 탈취하면 해당 기업에 등록된 전 임직원 기기에 대한 원격 제어권을 동시에 획득하게 되며, 이를 통해 악성 앱의 일괄 배포(사일런트 인스톨), 기기 내 저장된 업무 문서·연락처·이메일의 원격 추출, 기업 내부망에 대한 VPN 터널링을 이용한 횡적 이동(lateral movement) 등 다층적 2차 공격 경로가 열린다. KB라이프의 경우 임직원 사번·휴대폰번호·이메일이 유출된 것으로 보도되었으나, MDM 서버 탈취의 기술적 특성상 실제 접근 가능했던 정보의 범위는 이보다 훨씬 넓었을 가능성이 있으며, 노무라금융·SC제일은행·하나카드의 세부 경위가 공개되지 않아 동일한 공격 그룹에 의한 연쇄 공격인지 여부도 확인되지 않은 상태이다.<br><br>
+    2025년 5~6월에 금융기관 대상 해킹이 집중적으로 발생한 배경에 대해 보안 업계는 복합적 요인을 지목한다. 첫째, 2025년 4월 SK텔레콤 유심 해킹 사태가 국제적으로 보도되면서 한국이 APT(Advanced Persistent Threat) 그룹의 주요 표적 국가로 부상하였으며, 금융기관은 고가치 데이터를 대량 보유한 최우선 공격 대상이 되었다. 둘째, 한국 금융기관의 정보보호 체계가 금융감독원 전자금융감독규정 등 컴플라이언스(규정 준수) 중심으로 편중되어, 체크리스트 기반의 형식적 보안 점검은 통과하지만 실질적인 위협 탐지·대응 역량에는 구조적 공백이 존재한다는 지적이 반복되어 왔다. 특히 MDM·SIEM·EDR 등 보안 인프라 솔루션 자체가 공격 대상이 되는 '보안 도구의 무기화(weaponization of security tools)' 패턴은 SolarWinds 사태(2020) 이래 글로벌 사이버보안의 핵심 위협으로 대두된 것으로, 금융권이 이러한 공급망 공격에 대한 대비가 충분했는지 근본적 재검토가 필요하다.<br><br>
+    구조적 관점에서, 이 4건의 금융기관 해킹은 2025년 금융권 개인정보 사고의 빙산의 일각에 불과하다. 같은 해 금융권에서는 우리카드(#06, 과징금 134.5억), 롯데카드(#24, 96.2억), 신한카드(#32), 저축은행 내부자 유출(#18, 22만 명), iM뱅크(#04), AXA손해보험(#25) 등을 포함하여 최소 10건 이상의 개인정보 유출사고가 발생하였다. 이 중 우리카드·롯데카드·신한카드·저축은행은 내부자(카드모집인·직원)에 의한 유출이고, KB라이프·노무라·SC제일·하나카드·iM뱅크·AXA는 외부 해킹에 의한 유출로, 내부자 위협과 외부 공격이 동시다발적으로 금융권을 타격한 이례적 양상이다. 이러한 사고의 누적은 2025년 8월 금융위원회·금융감독원의 긴급 금융권 정보보호 실태점검을 촉발하였으며, 전자금융감독규정 개정 논의, 금융 CISO(최고정보보호책임자) 독립성 강화 방안 등 제도적 대응으로 이어지고 있다.<br><br>
+    교차 참조의 측면에서, KB라이프의 MDM 해킹은 LG유플러스 APPM 해킹(#28)과 함께 '보안 관리 시스템 자체의 침해'라는 공통 패턴을 보인다. MDM이 모바일 기기를, APPM이 서버 접근을 각각 중앙에서 통제하는 시스템이라는 점에서, 공격자들이 개별 단말이 아닌 중앙 관리 계층을 직접 겨냥하는 전략적 전환이 2025년 한국 사이버 공격의 두드러진 특징이다. 4건 모두 단일 출처 또는 제한적 보도에 의존하며 공식 PIPC 의결 전이므로, 향후 조사 결과에 따라 사고의 실제 심각도와 상호 연관성이 재평가될 수 있다.
+  </div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #18 저축은행 -->
+<div class="incident" id="i18">
+  <div class="incident-header">
+    <div class="incident-num">#18</div>
+    <div class="incident-title">저축은행 직원 (내부자 유출)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">금융 &middot; 저축은행</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>적발</th><td>2025년 5월</td></tr>
+    <tr><th>유형</th><td>내부자 유출 — 대출 조회 고객 정보를 <strong>건당 300원</strong>에 사금융 업체에 판매</td></tr>
+    <tr><th>유출 정보</th><td>성명, 연락처, 대출 상담 이력, 소득 정보 (추정)</td></tr>
+    <tr><th>피해 규모</th><td>약 22만 명</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 저축은행 직원이 내부 시스템에서 대출 조회 고객의 정보를 지속적으로 추출하여 사금융(대부업) 업체에 <strong>건당 300원</strong>에 판매한 사실이 2025년 5월 적발되었다. 총 약 22만 명의 정보가 유출된 것으로 파악되며, 판매 금액은 약 6,600만 원으로 추산된다.<br>
+    <strong>내부자 유출의 경제학:</strong> 건당 300원이라는 낮은 단가는 사금융 업체의 텔레마케팅(대출 권유 전화)에서 성사율이 매우 낮기 때문이다. 그러나 22만 건이 누적되면 6,600만 원의 수익이 되어, 저축은행 직원의 급여 수준 대비 상당한 유인이 된다. 우리카드(#06)의 카드모집인, 신한카드(#32)의 직원과 함께 <strong>금융업 내부자 유출의 구조적 반복</strong> 패턴을 형성한다.<br>
+    <strong>2차 피해:</strong> 유출된 정보를 받은 사금융 업체가 대출 고객에게 무차별 영업 전화를 하고, 이 과정에서 고금리 대출·보이스피싱으로 연결되는 2차 피해가 우려된다. 대출 상담 이력 자체가 개인의 경제적 취약성을 보여주는 정보이기 때문이다.
+  </div>
+  <div class="incident-source">출처: 경향신문 2025.5</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #19 루이비통 -->
+<div class="incident" id="i19">
+  <div class="incident-header">
+    <div class="incident-num">#19</div>
+    <div class="incident-title">루이비통 코리아 <span style="font-size:12px;color:var(--faint);font-weight:400;">(LVMH 3/3)</span></div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 213.9억 (3사 최대)</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag">명품 &middot; 패션</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.6.8 &middot; 인지 7.2 (24일 후)</td></tr>
+    <tr><th>의결</th><td>2026.2.12 개인정보위 전체회의</td></tr>
+    <tr><th>유형</th><td>직원 기기 악성코드 &rarr; SaaS 계정 탈취</td></tr>
+    <tr><th>유출 정보</th><td>이름, 연락처, 이메일, 고객번호, 판매 데이터</td></tr>
+    <tr><th>피해 규모</th><td class="highlight">약 360만 명</td></tr>
+    <tr><th>과징금</th><td class="highlight">213억 8,500만 원 (3사 중 최대)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.6.8 루이비통 코리아 직원의 업무용 기기가 악성코드에 감염되어, 공격자가 SaaS CRM 시스템 계정 자격증명을 탈취하였다. 루이비통은 24일 후인 7.2에야 사고를 인지하여, 탐지 지연이 피해 확대의 직접 원인이 되었다. 약 <strong>360만 명</strong>의 고객 정보가 유출되어 3사 중 최대 피해이며, 과징금도 <strong>213.9억 원</strong>으로 3사 중 최대이다.<br>
+    <strong>LVMH 3사 종합:</strong> 디올(195만 명, 122억) + 티파니(4,600명, 23억) + 루이비통(360만 명, 214억) = <strong>합계 약 550만 명, 360억 원</strong>. 세 건 모두 (1) SaaS 계정 탈취, (2) MFA 미적용, (3) 유출 통지 지연이라는 동일 패턴이나, <strong>동일 그룹 내에서도 보안 정책이 일관되게 적용되지 않았음</strong>을 보여준다. LVMH 본사는 프랑스 CNIL 관할이나, 한국 고객 데이터는 PIPC 관할이며, PIPC가 해외 기업 그룹에 대해 이 규모의 과징금을 부과한 것은 <strong>최초</strong>이다.<br>
+    <strong>명품 고객 데이터의 민감성:</strong> 유출된 구매 데이터에는 고가 명품 구매 이력이 포함되어 있어, (1) 표적형 피싱(고가 구매 고객 대상 VIP 사칭), (2) 절도·강도 대상 선정(고가 소비자 주소 노출), (3) 사생활 노출(선물 구매 내역 등) 등 <strong>일반 이커머스와 질적으로 다른 2차 위험</strong>이 있다.<br>
+    <strong>해외 기업 제재의 실효성:</strong> 테무(#11, 13.7억), 2K게임즈(P.11, 1.9억), 몽클레르(P.07, 0.8억)와 합산하면 PIPC의 2025년 <strong>해외 기업 과징금은 약 376억 원</strong>으로, 국내 기업 제재 총액의 상당 부분을 차지한다. 과징금 납부 강제력(현지 자산 압류 등)의 실효성은 향후 검증이 필요하나, 적극 집행 의지 자체가 시장에 미치는 신호 효과는 크다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11817">개인정보보호위원회 의결 (nttId=11817)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #20 YES24 -->
+<div class="incident" id="i20">
+  <div class="incident-header">
+    <div class="incident-num">#20</div>
+    <div class="incident-title">YES24</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-estimated">추정</span>
+    <span class="tag">온라인 서점</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.6.9 오전 4시경</td></tr>
+    <tr><th>유형</th><td>랜섬웨어</td></tr>
+    <tr><th>피해 규모</th><td>최대 2,000만 명 (전체 회원 수 기준 <strong>추정 최대치</strong>)</td></tr>
+    <tr><th>서비스</th><td>모든 서비스 약 5일간 완전 중단</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.6.9 오전 4시경(일요일 새벽), 랜섬웨어 공격이 YES24 전 시스템에 가해져 온라인 서점·티켓·중고서적 등 <strong>모든 서비스가 약 5일간 완전 중단</strong>되었다. 국내 온라인 서점 시장점유율 1위 기업의 전면 마비로, 수백만 건의 진행 중 주문·예매가 영향을 받았다. 6월 14일부터 순차 복구되었으나, 8월에 <strong>2차 랜섬웨어 재공격</strong>이 발생하여(#40 참조) 동일 연도 2회 랜섬웨어라는 이례적 기록을 남겼다.<br>
+    <strong>규모 논쟁:</strong> YES24 회원 수는 약 2,000만 명이나, 실제 유출 범위는 PIPC 조사 확정 전이다. 2,000만 명은 <strong>전체 회원 수 기준 최대 추정치</strong>이며, 실제 유출은 이보다 적을 수 있다. 확정 전 추정치임을 유의해야 한다.<br>
+    <strong>공격 타이밍:</strong> 일요일 새벽 4시 &mdash; 보안 인력 최소 운영 시점. 듀오(#03, 설 연휴 전날)와 함께 공격자가 <strong>보안 인력 부재 시점을 의도적으로 노리는 패턴</strong>이 확인된다.<br>
+    <strong>2차 랜섬웨어(8월):</strong> 1차 사고 복구 후 불과 2개월 만에 재공격을 받은 것은 1차 근본 원인(Root Cause)이 완전히 해결되지 않았음을 의미한다. 7시간 내 복구에 성공했으나, <strong>동일 연도 2회 랜섬웨어</strong>는 기업 보안 체계의 근본적 결함을 시사한다.<br>
+    <strong>향후 전망:</strong> PIPC 조사 진행 중. 유출 규모가 확정되면 매출액 3% 기준 상당한 과징금이 예상된다.
+  </div>
+  <div class="incident-source">출처: 한국일보 2025.6.10, 뉴스스페이스 2025.6.12, 보안뉴스 2025.6.14</div>
+  <div class="incident-sep"></div>
+</div>
+<!-- #21 한국연구재단 ★NEW★ -->
+<div class="incident" id="i21">
+  <div class="incident-header">
+    <div class="incident-num">#21</div>
+    <div class="incident-title">한국연구재단</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 7.03억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제34조</span>
+    <span class="tag">공공 &middot; 연구</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.6.6 (1차), 6.17 (2차 &mdash; 명의도용)</td></tr>
+    <tr><th>의결</th><td>2026.1.29 개인정보위 제2회 전체회의</td></tr>
+    <tr><th>유형</th><td>비밀번호 복구 URL 취약점 악용 (2013년부터 존재)</td></tr>
+    <tr><th>유출 정보</th><td>이름, 아이디, 이메일, 전화번호, 계좌번호, 연구자등록번호 등 44개 항목</td></tr>
+    <tr><th>피해 규모</th><td class="highlight">약 12만 명</td></tr>
+    <tr><th>과징금</th><td class="highlight">7억 300만 원 + 과태료 480만 원</td></tr>
+    <tr><th>위반 조항</th><td>제29조 (안전조치의무), 제34조 (유출통지 부실 &mdash; 주요 항목 누락)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.6.6 공격자가 한국연구재단이 운영하는 JAMS(온라인 논문투고 시스템)의 <strong>비밀번호 복구 URL 취약점</strong>을 악용하여 약 12만 명의 연구자 개인정보에 접근하였다(1차 공격). 6.17에는 탈취한 정보를 이용한 <strong>명의도용(2차 공격)</strong>이 추가 발생하였다. 유출 정보는 이름, 아이디, 이메일, 전화번호, 계좌번호, 연구자등록번호 등 <strong>44개 항목</strong>으로 극히 광범위하다.<br>
+    <strong>12년간 방치된 취약점:</strong> PIPC 조사에서 해당 비밀번호 복구 URL 취약점은 <strong>2013년 시스템 구축 시부터 존재</strong>하여 12년간 패치되지 않았음이 확인되었다. 한국연구재단은 메인 포털에 대해서만 정기 취약점 점검을 수행하였으나, JAMS에 연결된 <strong>1,600여 개 학회 페이지는 점검 대상에서 완전히 제외</strong>되어 있었다. 이는 넷마블(#30, 20년 레거시), 모두투어(P.03, 2013년 비회원 316만 건), NHN커머스(#26, 10년 레거시)와 함께 <strong>레거시 시스템 방치의 전형적 사례</strong>이다.<br>
+    <strong>공공기관 특수성:</strong> 한국연구재단은 과기정통부 산하 준정부기관으로, 국내 모든 학술 연구자의 정보를 관리한다. 유출된 연구자등록번호·계좌번호·소속기관 정보는 연구비 부정 수급·학술 사기 등에 악용될 수 있다. PIPC는 과징금 외에 <strong>관련 책임자 징계 권고</strong> 및 과기정통부·교육부에 관리감독 강화 통보를 병과하였다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11775">개인정보보호위원회 의결 (nttId=11775)</a> (<a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156741961">정책브리핑</a>)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #22 대성학력 -->
+<div class="incident" id="i22">
+  <div class="incident-header">
+    <div class="incident-num">#22</div>
+    <div class="incident-title">대성학력개발연구소</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">교육</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.7.18경</td></tr>
+    <tr><th>유형</th><td>외부 해킹</td></tr>
+    <tr><th>유출 정보</th><td>성명, 휴대폰, 이메일, 아이디, 생년월일, 주소 — <strong>암호화 미조치</strong></td></tr>
+    <tr><th>피해 규모</th><td>약 2.6만 건</td></tr>
+    <tr><th>과징금</th><td>— (PIPC 조사 중)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 7월 18일경 대성학력개발연구소(대성마이맥, 대성학원 계열)의 시스템이 외부 해킹을 당해 약 2만 6천 건의 회원 정보가 유출되었다. 유출된 정보에는 성명·휴대폰·이메일·아이디·생년월일·주소가 포함되며, 특히 이들 정보가 <strong>암호화되지 않은 상태(평문)</strong>로 저장되어 있어 피해가 확대되었다.<br>
+    <strong>교육업 보안 취약성:</strong> 교육 기관은 수험생·학부모의 개인정보를 대량 보유하면서도, 보안 인력·예산이 금융·통신 대비 현저히 부족한 경우가 많다. 한국연구재단(#21, 12만 명), 인하대학교(#35, 1만 명) 등 2025년 교육·연구 분야 유출 3건 모두에서 <strong>기본적 보안 조치(암호화, 취약점 점검) 미이행</strong>이 확인되었다.<br>
+    <strong>암호화 미조치:</strong> SK텔레콤(USIM 키 평문), 롯데카드(로그 내 카드번호 평문), 이젠(주민번호 비암호화), 부산국제금융진흥원(주민번호 비암호화) 등과 함께, 평문 저장은 2025년 가장 빈번하게 지적된 안전조치 미흡 유형이다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스 2025.7.20, 데일리시큐 2025.7.22</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #23 KT -->
+<div class="incident" id="i23">
+  <div class="incident-header">
+    <div class="incident-num">#23</div>
+    <div class="incident-title">KT (불법 펨토셀)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">통신</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2024년경</td></tr>
+    <tr><th>인지</th><td>2025년 하반기 (<strong>1년 6개월 은폐</strong> 후 뒤늦게 신고)</td></tr>
+    <tr><th>유형</th><td>불법 펨토셀(소형기지국) 해킹</td></tr>
+    <tr><th>유출 정보</th><td>IMSI, IMEI, 전화번호</td></tr>
+    <tr><th>피해 규모</th><td>2만 2,227명 + 368명 소액결제 피해 (2.4억 원)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2024년경 공격자가 KT의 <strong>펨토셀(Femtocell, 소형 기지국)</strong> 장비를 해킹하여 IMSI, IMEI, 전화번호 등 가입자 인증 정보를 탈취하였다. 피해자 22,227명 중 368명은 탈취된 정보를 이용한 <strong>무단 소액결제</strong>로 약 2.4억 원의 금전적 피해를 입었다. KT는 사고를 인지하고도 <strong>약 1년 6개월간 은폐</strong>하였으며, 2025년 하반기에야 뒤늦게 신고하였다.<br>
+    <strong>펨토셀 해킹:</strong> 펨토셀은 실내 통화 품질 개선을 위한 소형 기지국으로, KT 망에 연결되어 인근 단말의 통신을 중계한다. 공격자는 펨토셀 장비의 펌웨어 취약점과 <strong>단일 암호키 관리 문제</strong>를 악용하여 장비를 탈취하고, 이를 통해 접속하는 단말의 인증 정보를 수집하였다. 이는 SK텔레콤(#09)의 HSS 해킹과 함께 <strong>통신 인증 인프라 자체가 공격 대상</strong>이 된 사례이다.<br>
+    <strong>증거 인멸 의혹:</strong> KT는 사고와 관련된 서버를 폐기한 것으로 확인되었으며, 과기정통부·KISA는 이를 <strong>형법상 위계에 의한 공무집행방해 혐의</strong>로 2025.10월 경찰에 수사의뢰하였다. LG유플러스(#28)의 서버 OS 재설치·폐기와 함께, 통신사의 증거 인멸 의혹은 2025년 가장 심각한 규제 쟁점이 되었다.<br>
+    <strong>BPFDoor 감염:</strong> 별도로 KT에서도 SK텔레콤과 동일한 <strong>BPFDoor 악성코드</strong> 감염이 확인되었다. 이는 통신 3사 중 2개사에서 동일 APT 그룹의 공격이 진행 중이었음을 의미하며, 국가 통신 인프라에 대한 조직적 사이버 위협이 현실화되었음을 보여준다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스 통신 3사 결산, 머니투데이</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #24 롯데카드 -->
+<div class="incident" id="i24">
+  <div class="incident-header">
+    <div class="incident-num">#24</div>
+    <div class="incident-title">롯데카드</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 96.2억</span>
+    <span class="tag tag-lawsuit">집단소송</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag">금융 &middot; 카드</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.8.14~15 &middot; 신고 9.1</td></tr>
+    <tr><th>의결</th><td>2026.3.12 개인정보위 전체회의</td></tr>
+    <tr><th>유형</th><td>서버 해킹 (온라인 간편결제 시스템)</td></tr>
+    <tr><th>유출 정보</th><td>카드번호, 유효기간, 비밀번호 앞 2자리, <strong>CVC</strong>, 고객 기본정보</td></tr>
+    <tr><th>피해 규모</th><td class="highlight">296.9만 명 (CVC 유출 28.3만 명) &middot; 주민번호 45만 명</td></tr>
+    <tr><th>과징금</th><td class="highlight">96억 2,000만 원 + 과태료 480만 원</td></tr>
+    <tr><th>위반 조항</th><td>제29조 (안전조치의무 &mdash; 로그에 개인정보 평문 저장)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.8.14~15 외부 해커가 롯데카드의 온라인 간편결제 시스템 서버에 침투하여 최초 <strong>1.7GB</strong>의 데이터를 반출하였다. 추후 조사에서 <strong>200GB</strong>의 추가 반출이 확인되었다. 유출 정보에는 카드번호, 유효기간, 비밀번호 앞 2자리, <strong>CVC(카드 뒷면 보안코드)</strong> 28.3만 건, 주민등록번호 45만 명이 포함되어 있었다. 롯데카드는 8.14 침해를 인지하였으나 PIPC 신고는 9.1에 이루어져 <strong>약 17일 지연</strong>되었다(72시간 의무 위반).<br>
+    <strong>핵심 문제 — 로그 내 평문 저장:</strong> PIPC 조사에서 가장 심각하게 지적된 것은 결제 처리 과정의 <strong>시스템 로그에 카드번호·CVC 등이 평문(마스킹 미적용)으로 기록</strong>되고 있었다는 점이다. 이는 PCI-DSS(Payment Card Industry Data Security Standard) 요구사항 3(저장된 카드데이터 보호)을 정면으로 위반하는 것이며, 금융업의 기본 보안 수칙에 해당한다. 해커는 이 로그 파일을 탈취함으로써 카드 결제에 직접 사용 가능한 정보를 한꺼번에 확보할 수 있었다.<br>
+    <strong>CVC 유출의 심각성:</strong> CVC(Card Verification Code)는 온라인 비대면 결제의 최후 인증 수단이다. 카드번호+유효기간+CVC 조합이 유출되면 <strong>본인 확인 없이 온라인 결제가 가능</strong>하여, 금전적 피해가 즉각적으로 발생할 수 있다. 28.3만 건의 CVC 유출은 국내 카드사 사고 중 전례 없는 규모이다.<br>
+    <strong>대응:</strong> 롯데카드는 (1) 영향 받은 카드 전량 재발급, (2) 연말까지 무이자 10개월 할부 보상, (3) 부정사용 전액 보상을 약속하였다. 그러나 발표 후 약 <strong>9만 명이 탈퇴·해지</strong>하여 상당한 고객 이탈이 발생하였다.<br>
+    <strong>집단소송:</strong> 12만 명 이상이 참여하는 집단소송이 진행 중이며, 1인당 50만~100만 원의 손해배상을 청구하고 있다. 금감원은 이 사건을 계기로 <strong>결제 로그 내 카드번호 마스킹 의무화</strong> 고시 개정을 시행하였다(2025.12).
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11878">개인정보보호위원회 의결 (nttId=11878)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #25 AXA -->
+<div class="incident" id="i25">
+  <div class="incident-header">
+    <div class="incident-num">#25</div>
+    <div class="incident-title">AXA손해보험</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-1">★☆☆</span>
+    <span class="tag tag-unknown">미확인</span>
+    <span class="tag">금융 &middot; 보험</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.8.3</td></tr>
+    <tr><th>유형</th><td>해킹 (세부 미공개)</td></tr>
+    <tr><th>피해 규모</th><td>미확인</td></tr>
+  </table>
+  <div class="incident-analysis">
+    AXA손해보험은 프랑스 파리에 본사를 둔 AXA그룹의 한국 법인으로, AXA그룹은 총자산 기준 유럽 최대이자 세계 4대 보험 그룹에 해당한다. 한국 법인은 손해보험 부문을 운영하며 자동차보험·화재보험·배상책임보험·건강보험 등을 취급한다. 2025년 8월 3일 해킹 사고가 발생한 것으로 보도되었으나, 유출 경로·공격 기법·피해 규모·유출 항목 등 세부 사항이 전혀 공개되지 않았으며, AXA 한국 법인 및 AXA그룹 본사 차원의 공식 발표도 확인되지 않는다. 단일 출처(머니투데이)에 의존하는 보도로, 교차 확인이 불가능한 상태이므로 사고의 실체와 심각도에 대한 판단은 유보할 필요가 있다.<br><br>
+    AXA그룹은 글로벌 차원에서 반복적인 사이버 침해 이력을 보유하고 있다. 2021년 5월 아시아 법인(태국·말레이시아·홍콩·필리핀 소재 AXA Partners)이 Avaddon 랜섬웨어 그룹의 공격을 받아 약 3TB 규모의 데이터가 탈취·유출되었으며, 유출 데이터에는 고객의 여권 사본, 은행 계좌 명세서, 의료 기록, 보험금 청구 서류 등이 포함되었다. 이 사건은 아이러니하게도 AXA 프랑스 본사가 랜섬웨어 몸값 지급을 보장하는 사이버보험 상품의 판매를 중단하겠다고 발표한 직후에 발생하여 국제적 관심을 모았다. 2023년에는 MOVEit 파일 전송 취약점(CVE-2023-34362)을 통한 글로벌 대규모 데이터 유출 사태에서도 AXA그룹 관련 데이터 노출이 보고된 바 있다. 이러한 반복적 침해는 다국적 보험 그룹이 수십 개 국가에 걸쳐 운영하는 법인·자회사·파트너사 전체에 일관된 보안 수준을 유지하는 것이 구조적으로 얼마나 어려운지를 보여주며, 한국 법인의 2025년 사고가 글로벌 인프라의 취약점과 연관된 것인지 독립적 사건인지는 현재로서 판단할 수 없다.<br><br>
+    보험업이 수집·보유하는 개인정보는 여타 금융업과 비교해서도 특수한 민감성을 지닌다. 보험 심사(underwriting) 과정에서 가입자의 건강 상태, 기왕증, 소득 수준, 재산 내역, 직업, 취미 활동의 위험도, 사고 이력 등 극도로 상세한 개인 프로파일이 수집되며, 특히 손해보험은 보험금 청구·지급 과정에서 사고 현장 사진, 의료 진단서 및 치료 기록, 수리 견적서, 감정 보고서, 경찰 조서 사본 등 사건의 전체 맥락을 재구성할 수 있는 수준의 상세 자료를 축적한다. 이러한 데이터가 유출될 경우, 단순한 연락처 유출과는 차원이 다른 프라이버시 침해가 발생한다. 건강보험 가입 거절 이력이나 보험금 청구 패턴은 개인의 건강 상태와 경제적 취약성을 동시에 노출하며, 보험사기 조사 기록은 법적 분쟁의 민감한 세부까지 포함할 수 있기 때문이다.<br><br>
+    이 사건은 2025년 금융권 사고 시리즈 — KB라이프·노무라·SC제일·하나카드(#17), 저축은행(#18), 롯데카드(#24), 신한카드(#32) 등 — 의 일부로서, 금융업 전반에 걸친 보안 위기의 한 단면이다. 다만 단일 출처의 한계가 명확하므로, PIPC 조사 결과나 추가 보도가 나올 때까지 사고의 규모와 심각도에 대한 판단을 유보하되, AXA그룹의 글로벌 침해 이력과 보험업 데이터의 민감성을 감안하여 주시가 필요한 사안이다.
+  </div>
+  <div class="incident-source">출처: 머니투데이 2025.8 (단일 출처 — 교차 확인 필요)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #26 NHN커머스 ★NEW★ -->
+<div class="incident" id="i26">
+  <div class="incident-header">
+    <div class="incident-num">#26</div>
+    <div class="incident-title">NHN커머스 (e나무)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 870만</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제34조</span>
+    <span class="tag">이커머스 &middot; SaaS</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 9월</td></tr>
+    <tr><th>의결</th><td>2026.1.29 개인정보위 제2회 전체회의</td></tr>
+    <tr><th>유형</th><td>SQL 인젝션 (장바구니 페이지)</td></tr>
+    <tr><th>유출 정보</th><td>17개 소상공인 쇼핑몰의 고객 주문정보 122건</td></tr>
+    <tr><th>과징금</th><td>870만 원 + 과태료 450만 원</td></tr>
+    <tr><th>위반 조항</th><td>제29조 (안전조치의무), 제34조 (유출통지 지연)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    "e나무"는 NHN커머스(구 NHN고도)가 2010년대 초반부터 운영해온 SaaS형 쇼핑몰 구축 솔루션으로, 별도의 서버 구축이나 웹 개발 역량 없이도 소상공인이 독립형 온라인 쇼핑몰을 개설·운영할 수 있도록 호스팅·결제·재고관리 등을 일괄 제공하는 서비스이다. 2025년 9월, e나무 플랫폼의 장바구니 페이지에 존재하던 SQL 인젝션(SQL Injection) 취약점을 통해 공격자가 데이터베이스에 비인가 접근하여 17개 가맹점 고객의 주문정보 122건이 유출되었다. 개인정보보호위원회는 2026년 1월 29일 제2회 전체회의에서 개인정보보호법 제29조(안전조치의무) 위반으로 과징금 870만 원, 유출 통지 지연에 대해 제34조 위반으로 과태료 450만 원을 부과하였다.<br><br>
+    이 사건의 기술적 핵심은 10년 이상 운영된 레거시 코드의 보안 부채(security debt)에 있다. SQL 인젝션은 OWASP Top 10에 2003년 초판부터 등재된 가장 기초적인 웹 취약점으로, 파라미터화 쿼리(Parameterized Query) 또는 프리페어드 스테이트먼트(Prepared Statement)를 적용하면 원천 차단이 가능하다. 장바구니 페이지처럼 사용자 입력값이 직접 데이터베이스 쿼리에 삽입되는 지점에 이러한 기본적 보안 조치가 누락되어 있었다는 것은, 초기 개발 시점의 보안 설계 미비가 10년 이상 방치되었음을 의미한다. 더 나아가 SaaS 플랫폼의 구조적 특성상, 하나의 코드베이스가 전체 가맹점에 공통으로 적용되므로 단일 취약점이 모든 가맹점에 동시 영향을 미치는 단일 장애점(Single Point of Failure) 구조가 된다. 이번에는 17개 가맹점 122건으로 피해가 제한되었으나, 공격자가 더 광범위한 쿼리를 실행했다면 e나무 플랫폼에 입점한 전체 가맹점의 고객 데이터에 접근할 수 있었을 가능성을 배제할 수 없다.<br><br>
+    이 사건에서 특히 주목할 법적 쟁점은 SaaS 사업자와 가맹점 간의 개인정보 보호 책임 경계이다. 유출 통지가 NHN커머스에서 가맹점을 경유하여 최종 고객에게 전달되는 과정에서 지연이 발생하여 제34조 위반이 별도로 인정되었는데, 이는 SaaS 아키텍처에서 개인정보처리의 실질적 주체가 누구인지에 대한 근본적 질문을 제기한다. 가맹점은 고객과의 계약 당사자이자 개인정보처리자이지만, 실제 데이터의 저장·처리·보안은 SaaS 사업자의 인프라에서 이루어지므로, 가맹점이 자체적으로 보안 수준을 통제할 수단이 사실상 없다. 이 구조는 LVMH 3사(#14 크리스찬디올, #15 세포라, #19 루이비통)의 SaaS CRM 공급망 침해 패턴과 본질적으로 동일한 문제로, 플랫폼 사업자의 보안 실패가 다수의 하위 사업자와 그 고객에게 연쇄적으로 파급되는 공급망 리스크의 전형이다.<br><br>
+    과징금 870만 원은 2025년 전체 확정 처분 23건 중 최저 수준으로, 유출 규모(122건)에 비례한 결과이다. 그러나 이 사건의 의미는 금액이 아니라 SaaS 플랫폼 사업자에 대한 안전조치의무 적용의 선례적 성격에 있다. 소상공인이 기술적 판단 능력 없이 SaaS 솔루션을 신뢰하여 사용하는 구조에서, 플랫폼 사업자가 레거시 코드의 보안 수준을 유지·갱신할 의무가 있음을 개인정보보호위원회가 공식적으로 확인한 것이기 때문이다. 향후 유사한 SaaS 플랫폼에서 대규모 유출이 발생할 경우, 이 의결이 책임 판단의 기준점으로 참조될 가능성이 높다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11776">개인정보보호위원회 의결 (nttId=11776)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #27 건보공단 -->
+<div class="incident" id="i27">
+  <div class="incident-header">
+    <div class="incident-num">#27</div>
+    <div class="incident-title">건강보험공단</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-1">★☆☆</span>
+    <span class="tag tag-unknown">미확인</span>
+    <span class="tag">공공 &middot; 건강보험</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 9월</td></tr>
+    <tr><th>유형</th><td>장기요양 수급자/종사자 개인정보 유출 (위탁 시스템)</td></tr>
+    <tr><th>피해 규모</th><td>미확인</td></tr>
+  </table>
+  <div class="incident-analysis">
+    국민건강보험공단이 운영하는 장기요양등급판정 관련 위탁 시스템에서 수급자 및 종사자의 개인정보가 유출된 것으로 2025년 9월 보도되었다. 장기요양보험은 고령이나 노인성 질환으로 일상생활을 혼자 수행하기 어려운 국민에게 신체활동·가사활동 지원 등의 서비스를 제공하는 사회보험 제도로, 건강보험공단이 등급판정·급여관리·비용정산 등 전 과정을 관장한다. 위탁 시스템이란 공단이 등급판정 업무의 일부를 외부 수탁기관에 위임하면서 이들에게 접근 권한을 부여한 정보시스템을 의미하는데, 구체적인 유출 경로(해킹인지 내부 접근 오류인지), 피해 규모, 유출된 정보 항목 등 세부 사항은 현재까지 공개되지 않았다. 단일 출처(인스피언 블로그)에 의존하는 보도로 교차 확인이 불가능한 상태이다.<br><br>
+    장기요양 수급자 데이터는 개인정보 민감도의 스펙트럼에서 최상위에 위치한다. 수급자는 65세 이상 고령자 또는 치매·뇌혈관질환·파킨슨병 등 노인성 질환을 가진 사회적 취약계층이며, 이들의 정보에는 장기요양등급(1~5등급 및 인지지원등급), 주요 질환명, ADL(Activities of Daily Living, 일상생활수행능력) 평가 점수, IADL(도구적 일상생활수행능력) 점수, 인지기능 검사 결과(치매 여부·정도), 간호처치 필요 여부, 재활 필요도, 돌봄 서비스 이용 이력(방문요양·방문목욕·주야간보호 등), 본인부담금 감경 사유(기초생활수급 여부 등 경제적 정보) 등이 포함된다. 이 정보의 유출은 개인의 신체적·정신적 건강 상태, 일상 자립 능력의 상세한 결핍 내용, 경제적 취약성까지 동시에 노출하는 것으로, EU GDPR 제9조가 건강정보를 "특별 범주 개인정보(special categories of personal data)"로 분류하여 명시적 동의 또는 법적 근거 없이는 처리 자체를 금지하고, 위반 시 전 세계 매출의 4% 또는 2,000만 유로 중 높은 금액을 상한으로 과징금을 부과하는 이유가 바로 이러한 데이터의 극단적 민감성에 있다.<br><br>
+    국민건강보험공단은 전 국민 약 5,200만 명의 건강보험 가입 정보를 보유한 국내 최대 규모의 개인정보처리자 중 하나이다. 공단의 데이터베이스에는 진료 이력(의료기관별 진료 일자·진료 내용·처방 약제), 건강검진 결과, 소득 분위(보험료 산정 기준), 가족 관계(피부양자 등록 정보), 장기요양등급, 출산·사망 관련 급여 정보 등 개인의 전 생애에 걸친 건강·경제·가족 정보가 집적되어 있다. 이번 사고가 위탁 시스템을 통해 발생했다는 점은 개인정보보호법 제26조(업무위탁에 따른 개인정보의 처리 제한)의 수탁자 관리 의무 이행 여부를 핵심 쟁점으로 부각시킨다. 동조는 위탁자가 수탁자의 개인정보 처리 현황을 감독하고, 수탁자 교육을 실시하며, 재위탁을 제한하도록 규정하고 있으나, 공공기관의 위탁 시스템 관리에서 이러한 의무가 실질적으로 이행되고 있는지는 반복적으로 의문이 제기되어 왔다.<br><br>
+    이 사건은 2025년 공공기관 개인정보 유출사고의 연쇄적 패턴 속에 위치한다. 한국연구재단(#21, 12만 명 유출), 국립항공박물관(부록 P.12), 부산국제금융진흥원(부록 P.13)과 함께 공공 부문의 정보보호 역량에 대한 구조적 의문을 제기하는 사례군을 형성하며, 특히 건강보험공단과 한국연구재단은 모두 위탁 시스템을 통한 유출이라는 공통점을 갖는다. 공공기관은 민간 기업 대비 정보보호 예산이 절대적으로 부족하고, 인력의 전문성도 제한적인 경우가 많으며, 다수의 업무를 외부에 위탁하면서도 수탁자에 대한 기술적 보안 감독 역량을 갖추지 못하는 구조적 한계를 안고 있다. 건강보험공단의 경우 보유 데이터의 규모와 민감도가 극단적으로 높다는 점에서, 위탁 시스템의 보안 수준이 공단 본체와 동등하게 유지되어야 하며 이에 대한 독립적 검증 체계가 필요하다는 것이 이 사건이 제기하는 핵심 과제이다.
+  </div>
+  <div class="incident-source">출처: 인스피언 블로그 2025.9 (단일 출처 — 교차 확인 필요)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #28 LG유플러스 -->
+<div class="incident" id="i28">
+  <div class="incident-header">
+    <div class="incident-num">#28</div>
+    <div class="incident-title">LG유플러스 (APPM 서버)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">통신</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>인지</th><td>2025년 7월 &middot; 발표 10월 (<strong>3개월 지연</strong>)</td></tr>
+    <tr><th>유형</th><td>APPM(통합 서버 접근제어) 서버 해킹</td></tr>
+    <tr><th>유출 정보</th><td>서버 목록, 계정 정보, 임직원 성명</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 7월 LG유플러스의 <strong>APPM(통합 서버 접근제어)</strong> 서버가 해킹당하여 서버 목록, 관리 계정 정보, 임직원 성명 등이 유출되었다. LG유플러스는 7월에 사고를 인지하였으나 10월에야 발표하여 <strong>약 3개월 지연</strong>하였다.<br>
+    <strong>증거 인멸 의혹:</strong> 더욱 심각한 것은, KISA가 침해사고 조사를 위해 서버 보전을 안내한 이후에도 LG유플러스가 관련 서버의 <strong>OS를 재설치하거나 서버를 폐기</strong>한 사실이 확인된 것이다. 과기정통부·KISA는 이를 <strong>형법상 위계에 의한 공무집행방해 혐의</strong>로 경찰에 수사의뢰하였다. KT(#23)의 서버 폐기와 함께, 통신사의 증거 인멸은 2025년 입법 논의에서 <strong>서버 폐기·변경 시 형사처벌 신설</strong>의 직접적 계기가 되었다.<br>
+    <strong>APPM의 의미:</strong> APPM(Application Performance & Policy Management)은 기업 내 모든 서버에 대한 접근을 통제하는 중앙 관리 시스템이다. APPM 서버가 탈취되면 공격자는 기업 인프라 전체의 서버 목록과 접근 경로를 파악할 수 있어, <strong>후속 공격의 교두보(lateral movement)</strong>로 활용 가능하다.
+  </div>
+  <div class="incident-source">출처: MBC 단독, 이투데이, 머니투데이, 한국경제</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #29 쿠팡 -->
+<div class="incident" id="i29">
+  <div class="incident-header">
+    <div class="incident-num">#29</div>
+    <div class="incident-title">쿠팡</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag tag-lawsuit">집단소송 48만+명 &middot; 미국 주주소송</span>
+    <span class="tag">이커머스</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>해킹</th><td>2025.6월~ (API 취약점 5개월간 악용)</td></tr>
+    <tr><th>인지</th><td>2025.11.18 &middot; 신고 12.16 (<strong>28일 지연</strong>)</td></tr>
+    <tr><th>유형</th><td>퇴사자 접근키 악용 &middot; API 인증 취약점</td></tr>
+    <tr><th>유출 정보</th><td>이름, 전화번호, 이메일, 주소, 구매내역, <strong>공동현관 비밀번호</strong></td></tr>
+    <tr><th>피해 규모</th><td class="highlight">약 3,370만 계정 &rarr; 추가 16.5만 건 (총 ~3,386만)</td></tr>
+    <tr><th>과징금</th><td>미확정 &mdash; PIPC 조사 중</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 6월부터 11월까지 약 5개월간, 쿠팡의 퇴사한 중국인 전 개발자가 퇴사 후에도 보유하고 있던 <strong>API 서명 키(Signing Key)</strong>를 사용하여 쿠팡 시스템에 반복 접근하였다. 경찰 수사에 따르면 약 3,370만 계정의 정보에 접근한 것으로 확인되었으며, 이후 추가 16.5만 건이 더 확인되어 총 약 3,386만 건에 이른다. 11.18 쿠팡이 내부적으로 이를 인지했으나, PIPC 신고는 12.16에야 이루어져 <strong>28일이 경과</strong>하였다(개정법상 72시간 이내 의무 위반).<br>
+    <strong>규모 논쟁:</strong> 쿠팡 측은 "실제로 외부에 반출된 것은 약 3,000건"이라고 주장하는 반면, 경찰은 "접근한 계정 수 기준 3,370만 건 이상"이라고 발표하여, 양측 주장 사이에 <strong>약 1만 배 차이</strong>가 있다. 이 차이는 '접근(Access)'과 '반출(Exfiltration)'의 정의 차이에서 비롯되며, PIPC 조사에서 최종 확정될 예정이다.<br>
+    <strong>유출 정보의 심각성:</strong> 이름·전화번호·이메일·주소·구매내역뿐 아니라 <strong>공동현관 비밀번호</strong>까지 포함되어, 물리적 안전 위협(택배 사칭 침입 등)으로 확대될 수 있는 극히 민감한 정보이다.<br>
+    <strong>퇴사자 키 관리 실패:</strong> 넷마블(#30)과 함께 2025년 <strong>Pattern A(퇴사자 접근 권한)</strong>의 핵심 사례. 기술적으로 정교한 해킹이 아니라, 퇴사 시 서명 키를 비활성화하는 기본 절차가 누락된 관리 실패이다.<br>
+    <strong>소송 현황:</strong> (1) 국내 집단소송: 11개 로펌이 참여, 원고 48만 명 이상(1인당 10만~100만 원 청구). (2) 미국 주주 집단소송: 쿠팡(NYSE: CPNG)이 SEC 공시 의무 위반(사고 은폐)으로 제소. 이는 <strong>한국 개인정보 사고가 글로벌 증권소송으로 확대</strong>되는 최초 사례이다.<br>
+    <strong>과징금 전망:</strong> "최대 1조 2,000억 원"은 쿠팡 매출액의 3% 기준 언론 추정치(★☆☆)이며, PIPC 공식 의결 전이다. 실제 과징금은 위반 매출 범위·위반 정도에 따라 달라진다.
+  </div>
+  <div class="incident-source">출처: 뉴스1 2025.12.16, 머니투데이 2025.12.18, 시사저널 2025.12, 아주경제 2026.1</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #30 넷마블 -->
+<div class="incident" id="i30">
+  <div class="incident-header">
+    <div class="incident-num">#30</div>
+    <div class="incident-title">넷마블</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">게임</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발표</th><td>2025.11.27 (1차) &middot; 12.4 (추가)</td></tr>
+    <tr><th>유형</th><td>PC게임 포털 해킹 + 퇴사자 권한 미회수</td></tr>
+    <tr><th>유출 정보</th><td>이름, 생년월일, 암호화된 비밀번호 (611만) / 주민등록번호 1,304건 (2003~2006년 데이터)</td></tr>
+    <tr><th>피해 규모</th><td>611만 명 + 추가 8,048건</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.11.27 넷마블은 자사 PC게임 포털에서 외부 침해가 발생하여 611만 명의 회원 정보(이름·생년월일·암호화된 비밀번호)가 유출되었다고 1차 공지하였다. 12.4 추가 조사에서 8,048건이 더 확인되었고, 특히 <strong>2003~2006년에 가입한 회원 1,304명의 주민등록번호</strong>가 포함되어 있었다(당시에는 주민번호 수집이 허용되었으나, 2014년 법 개정 후에도 파기하지 않고 보관).<br>
+    <strong>퇴사자 권한 미회수:</strong> 퇴사한 개발자의 접근 권한이 회수되지 않았으며, 이 계정을 통해 시스템에 접근한 것으로 확인되었다. 쿠팡(#29)과 함께 <strong>Pattern A(퇴사자 접근 권한)</strong>의 핵심 사례이며, 두 건을 합산하면 약 3,980만 명의 피해가 발생했다.<br>
+    <strong>20년 레거시 데이터:</strong> 2003~2006년 데이터를 <strong>20년 이상</strong> 보유기간 경과 후에도 파기하지 않은 것은 제21조(파기의무) 위반이다. 이 기간의 주민등록번호까지 포함되어 있어, 레거시 데이터 방치가 피해를 질적으로 악화시킨 사례이다. 모두투어(P.03, 2013년 비회원 316만 건), NHN커머스(#26, 10년 레거시), 한국연구재단(#21, 2013년 취약점 12년 방치)과 함께 <strong>데이터 수명주기 관리 실패</strong>의 전형이다.<br>
+    <strong>향후 전망:</strong> PIPC 조사 중. 피해 규모(611만+)가 크고 주민번호까지 포함되어 있어 상당한 과징금이 예상된다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스 2025.11.27, 데일리시큐 2025.12.4, 뉴닉 2025.12</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #31 한마음혈액원 -->
+<div class="incident" id="i31">
+  <div class="incident-header">
+    <div class="incident-num">#31</div>
+    <div class="incident-title">한마음혈액원</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-unknown">미확인</span>
+    <span class="tag">의료 &middot; 혈액원</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.11.9</td></tr>
+    <tr><th>유형</th><td>랜섬웨어 (전산망 마비)</td></tr>
+    <tr><th>유출 정보</th><td>헌혈자 개인정보 (주민등록번호, 주소 등)</td></tr>
+    <tr><th>영향</th><td><strong>혈액 공급 중단</strong> &mdash; 공공 안전 위협</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.11.9 한마음혈액원의 전산망이 랜섬웨어 공격을 받아 전체 시스템이 마비되었다. 헌혈자의 주민등록번호·주소 등 개인정보가 암호화(랜섬)되었으며, 유출 여부는 조사 중이다.<br>
+    <strong>공공 안전 위협:</strong> 한마음혈액원은 대한적십자사에 이어 국내 2번째 규모의 혈액원으로, 전산 마비로 <strong>혈액 수급·배분 업무가 중단</strong>되었다. 이는 단순 개인정보 문제를 넘어 <strong>의료 인프라에 대한 직접적 위협</strong>이다. 랜섬웨어가 병원·혈액원 등 의료 기관을 표적으로 삼는 것은 글로벌 추세이며(미국 Change Healthcare 사태 등), 한국에서도 현실화되었다.<br>
+    <strong>헌혈자 정보의 민감성:</strong> 헌혈 기록에는 혈액형·건강상태·감염병 검사 결과 등 민감 의료정보가 포함될 수 있어, 유출 시 보험 가입 거절·차별 등 2차 피해가 우려된다.
+  </div>
+  <div class="incident-source">출처: 한국경제 2025.11.10, 메디컬투데이 2025.11.12</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #32 신한카드 -->
+<div class="incident" id="i32">
+  <div class="incident-header">
+    <div class="incident-num">#32</div>
+    <div class="incident-title">신한카드</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">금융 &middot; 카드</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 12월</td></tr>
+    <tr><th>유형</th><td>내부 직원 유출 (카드 모집 영업 목적)</td></tr>
+    <tr><th>유출 정보</th><td>가맹점 대표자 휴대폰번호, 성명, 생년월일, 성별</td></tr>
+    <tr><th>피해 규모</th><td>19.2만 명</td></tr>
+    <tr><th>과징금</th><td>— (PIPC 조사 중)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 신한카드 직원이 카드 모집 영업을 목적으로 가맹점 대표자 19.2만 명의 개인정보(휴대폰번호·성명·생년월일·성별)를 내부 시스템에서 무단 추출하여 외부에 유출한 사실이 2025년 12월 적발되었다.<br>
+    <strong>구조적 반복 — 카드업 내부자 유출:</strong> 우리카드(#06, 7.5만 명, 과징금 134.5억)와 <strong>완전히 동일한 패턴</strong>이다. 두 건 모두 (1) 카드모집인 또는 영업 직원이, (2) 가맹점 대표자 정보를, (3) 영업 목적으로 무단 추출하였다. 이는 개별 직원의 일탈이 아니라, <strong>카드업 영업 구조 자체에 내재한 취약점</strong>이다. 카드모집인의 실적 압박 → 가맹점 대표자 DB 접근 → 무단 추출이라는 구조적 경로가 두 회사에서 독립적으로 반복되었다.<br>
+    <strong>내부자 유출 3건 종합:</strong> 우리카드(7.5만 명) + 저축은행(22만 명) + 신한카드(19.2만 명) = <strong>금융업 내부자 유출만 48.7만 명</strong>. 금융위는 이를 계기로 카드모집인의 고객정보 접근권한 전면 재점검을 지시하였다(2025.12).
+  </div>
+  <div class="incident-source">출처: 보안뉴스 2025.12, 데일리시큐 2025.12</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #33 IP카메라 -->
+<div class="incident" id="i33">
+  <div class="incident-header">
+    <div class="incident-num">#33</div>
+    <div class="incident-title">IP카메라 해킹</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag">IoT &middot; 가전</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>적발</th><td>2025년 12월</td></tr>
+    <tr><th>유형</th><td>기본 비밀번호("admin", "1234") 미변경 &rarr; 대량 해킹</td></tr>
+    <tr><th>유출 정보</th><td>IP카메라 실시간 영상 (가정, 노래방, 필라테스, 산부인과 등)</td></tr>
+    <tr><th>피해 규모</th><td class="highlight">12만 대 &middot; 불법사이트 영상 62%를 피의자 2명이 제작</td></tr>
+    <tr><th>결과</th><td><strong>4명 검거</strong> &middot; 성착취물 제작&middot;판매 혐의</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 12월, 경찰청은 <strong>IP카메라 12만 대를 해킹</strong>하여 불법 촬영 영상을 제작·판매한 피의자 4명을 검거하였다. 피의자 2명이 불법사이트 영상의 <strong>62%</strong>를 제작한 것으로 밝혀졌으며, 해킹 방법은 공장 출고 시 기본 비밀번호("admin", "1234", "0000" 등)가 변경되지 않은 카메라에 무작위 접속하는 단순한 수법이었다.<br>
+    <strong>피해 범위:</strong> 해킹된 12만 대의 IP카메라는 <strong>가정집, 노래방, 필라테스 학원, 산부인과</strong> 등에 설치된 것으로, 실시간 영상이 무단 열람·녹화·유포되었다. 산부인과 카메라의 경우 극도로 민감한 의료 장면이 포함되어 성착취물 제작 혐의도 적용되었다.<br>
+    <strong>IoT 보안의 구조적 문제:</strong> IP카메라 해킹은 기본 비밀번호 미변경이라는 <strong>가장 초보적인 보안 실패</strong>에서 비롯된다. 이는 (1) 제조사가 강제 비밀번호 변경을 요구하지 않고, (2) 소비자가 보안 인식 없이 설치하며, (3) 설치 업체가 관리 편의상 동일 비밀번호를 사용하는 <strong>3중 구조적 취약점</strong>이다. 정부는 2026년부터 IoT 기기 보안인증제를 시행 예정이나, 이미 설치된 수백만 대의 기존 기기에는 소급 적용이 어렵다.
+  </div>
+  <div class="incident-source">1차 출처: 경찰청 발표 (정책브리핑 2025.12)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #34 익시오 -->
+<div class="incident" id="i34">
+  <div class="incident-header">
+    <div class="incident-num">#34</div>
+    <div class="incident-title">LG유플러스 AI전화 '익시오'</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">통신 &middot; AI</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.12.2</td></tr>
+    <tr><th>유형</th><td>운영 설정 오류 (해킹 아님)</td></tr>
+    <tr><th>유출 정보</th><td>통화 요약, 전화번호, 통화시간</td></tr>
+    <tr><th>피해 규모</th><td>36명 &rarr; 101명에게 노출</td></tr>
+  </table>
+  <div class="incident-analysis">
+    LG유플러스의 AI 전화 서비스 '익시오(ixi-O)'는 사용자의 통화 음성을 서버에서 STT(Speech-to-Text, 음성-텍스트 변환) 엔진으로 텍스트화한 뒤, LLM(Large Language Model, 대규모 언어모델)이 해당 텍스트를 분석·요약하여 사용자에게 통화 요약본을 제공하는 서비스이다. 이 아키텍처에서는 통화 원문 음성, STT 변환 텍스트, LLM 생성 요약 결과가 모두 서버에 저장되며, 각 사용자의 데이터가 다른 사용자에게 노출되지 않도록 테넌트 격리(tenant isolation)가 정확하게 구현되어야 한다. 2025년 12월 2일 발생한 이번 사고는 바로 이 테넌트 격리가 운영 설정 오류로 실패한 사례로, 36명의 통화 요약·전화번호·통화시간이 다른 사용자 101명에게 노출되었다. 해킹이 아닌 내부 설정 실수이며, 피해 규모 자체는 소규모이나 AI 서비스 아키텍처 고유의 프라이버시 리스크를 최초로 현실화한 사건이라는 점에서 기술사적 의미가 크다.<br><br>
+    이 사건이 제기하는 핵심 문제는 AI가 처리하는 데이터의 프라이버시 리스크가 기존 데이터베이스 유출과 질적으로 다르다는 점이다. 전통적 개인정보 유출은 데이터베이스에 저장된 원본 데이터가 그대로 외부에 반출되는 구조이지만, AI 서비스에서는 원본 데이터(통화 음성)를 AI가 재가공·변환·요약하는 과정에서 새로운 형태의 개인정보가 파생적으로 생성된다. 예컨대 LLM이 생성한 통화 요약은 원본 통화에는 명시적으로 언급되지 않았더라도 대화의 맥락에서 추론된 정보(상대방과의 관계, 감정 상태, 의사결정 내용 등)를 포함할 수 있으며, 이러한 AI 생성 정보의 유출은 원본 데이터 유출보다 더 농축된 프라이버시 침해를 초래할 수 있다. 현재 36명이라는 소규모에서 발생한 이 설정 오류가 익시오 서비스가 LG유플러스의 수백만 모바일 가입자로 본격 확산된 시점에 동일하게 발생했다면, 파급력은 기하급수적으로 증가했을 것이며, 멀티테넌트 AI 서비스의 격리 실패는 전체 사용자 기반에 대한 동시다발적 프라이버시 침해로 귀결될 수 있다.<br><br>
+    구조적·제도적 관점에서, AI 서비스의 개인정보 처리에 대한 현행 규제 프레임워크의 한계가 드러난다. 개인정보보호법의 안전조치의무(제29조)는 데이터베이스 접근 통제·암호화·로그 관리 등 전통적 보안 조치를 전제로 설계되어 있으며, AI 파이프라인에서의 데이터 흐름(음성 수집 → STT 변환 → LLM 처리 → 요약 생성 → 사용자 전달)의 각 단계별 격리·접근통제·데이터 생애주기 관리에 대한 구체적 기준은 부재하다. 특히 LLM이 학습 데이터와 추론 데이터를 어떻게 분리하는지, 한 사용자의 통화 내용이 모델의 컨텍스트에 잔류하여 다른 사용자의 응답에 영향을 미칠 가능성(data leakage through context window)은 없는지 등 AI 고유의 리스크에 대한 기술적 감독 기준이 마련되어 있지 않다. 2025년 9월 시행된 AI 기본법이 고위험 AI의 안전성 평가를 규정하고 있으나, 통신사 AI 부가서비스의 개인정보 처리 아키텍처까지 구체적으로 포괄하는 가이드라인은 아직 개발 단계이다.<br><br>
+    LG유플러스는 2023년 29만 명 개인정보 유출로 과징금 68억 원을 부과받은 데 이어, 2025년에만 APPM 서버 해킹(#28, 증거인멸 의혹으로 형사 수사의뢰) 및 익시오 설정 오류(#34)까지 총 2건의 개인정보 사고를 기록하여, 3년 연속 개인정보 유출사고가 발생하는 이례적 상황에 놓여 있다. 이는 정보통신망법 개정안에서 논의 중인 반복 침해사고 가중 과징금 조항(5년 내 2회 이상 유출 시 매출액의 3% 상한 적용)의 적용 대상이 될 수 있다. APPM 사건에서는 보안 관리 시스템의 외부 해킹, 익시오 사건에서는 AI 서비스의 내부 설정 오류로 사고 유형이 전혀 다르지만, 이 두 사건을 관통하는 공통 요인은 신규 기술 인프라(AI 서비스, 클라우드 기반 관리 시스템)의 도입 속도에 비해 해당 인프라에 대한 보안 운영 성숙도가 따라가지 못하는 기술-보안 격차(technology-security gap)이다.
+  </div>
+  <div class="incident-source">출처: MBC 뉴스 2025.12.3, 뉴스1 2025.12.4</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #35 인하대 -->
+<div class="incident" id="i35">
+  <div class="incident-header">
+    <div class="incident-num">#35</div>
+    <div class="incident-title">인하대학교</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">보도</span>
+    <span class="tag">교육 &middot; 대학교</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025.12.28</td></tr>
+    <tr><th>유형</th><td>건라(Gunra) 랜섬웨어</td></tr>
+    <tr><th>유출 정보</th><td>이름, 연락처, 이메일, 주민등록번호, 학점, 사진</td></tr>
+    <tr><th>피해 규모</th><td>650GB 탈취 주장, 약 1만 명</td></tr>
+    <tr><th>과징금</th><td>— (PIPC 조사 중)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025.12.28 건라(Gunra) 랜섬웨어 그룹이 인하대학교 시스템에 침투하여 약 650GB의 데이터를 탈취하고 암호화하였다. 14시간 동안 대학 홈페이지가 마비되었으며, 유출 정보에는 재학생·졸업생의 이름·연락처·이메일·주민등록번호·학점·사진이 포함된 것으로 추정된다.<br>
+    <strong>건라(Gunra) 그룹:</strong> 2025년 한국에서 가장 활발한 랜섬웨어 그룹 중 하나로, SGI서울보증보험(#39, 478조 원 보증 업무 4일 중단), 화천기계(#43, 265GB), 삼화콘덴서(#43, 114GB)도 건라의 소행이다. 한국 내 <strong>최소 4개 기관을 공격</strong>하여 2025년 단일 그룹 최다 피해를 기록하였다.<br>
+    <strong>대학 보안의 취약성:</strong> 대학은 (1) 수만~수십만 명의 재학생·졸업생 개인정보(주민번호·학점·장학금 등), (2) 연구 데이터, (3) 산학협력 기밀을 보유하면서도, 보안 예산은 기업 대비 현저히 부족하다. 한국연구재단(#21, 12만 명) 사고와 함께 <strong>교육·연구 기관의 보안 강화 필요성</strong>을 보여준다.
+  </div>
+  <div class="incident-source">출처: ZDNet 2025.12.29, 전자신문 2025.12.30, 서울신문 2026.1</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #36 법무법인 로고스 -->
+<div class="incident" id="i36">
+  <div class="incident-header">
+    <div class="incident-num">#36</div>
+    <div class="incident-title">법무법인 로고스</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 5.2억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag">법률</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2024년 8월 (해킹) &rarr; 2025년 처분</td></tr>
+    <tr><th>유형</th><td>관리자 계정 탈취 &rarr; 인트라넷 침투</td></tr>
+    <tr><th>유출 정보</th><td>소송자료 약 18만 건 (1.59TB) &mdash; 주민번호, 계좌, <strong>범죄이력, 건강정보</strong></td></tr>
+    <tr><th>과징금</th><td class="highlight">5억 2,300만 원 + 과태료 600만 원</td></tr>
+    <tr><th>위반 조항</th><td>제29조 (안전조치의무)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2024년 8월 공격자가 법무법인 로고스의 관리자 계정을 탈취하여 인트라넷(내부 업무 시스템)에 침투하였다. 약 <strong>18만 건(1.59TB)</strong>의 소송 자료가 유출되었으며, 여기에는 주민등록번호, 은행 계좌, <strong>범죄이력, 건강정보</strong> 등 법률 업무 과정에서 수집된 극도로 민감한 정보가 포함되어 있었다. 해킹은 2024.8에 발생하였으나 PIPC 처분이 2025년에 이루어져 본 사례집에 포함한다.<br>
+    <strong>법률 데이터의 특수한 민감성:</strong> 법무법인이 보유하는 소송 자료에는 의뢰인의 범죄 전과, 가정 문제(이혼·양육권), 재산 분쟁, 건강 상태 등 <strong>일반 기업이 보유하지 않는 수준의 민감정보</strong>가 포함된다. 이는 변호사-의뢰인 비밀특권(Attorney-Client Privilege)으로 보호되는 정보이기도 하여, 유출 시 의뢰인의 소송 전략 노출, 상대방에 대한 정보 비대칭 훼손 등 <strong>법적 절차 자체에 대한 침해</strong>가 발생할 수 있다.<br>
+    <strong>법률 업종의 보안 실태:</strong> 법무법인은 금융·통신 등에 비해 정보보호 규제 대상으로 인식되지 않아, 보안 투자가 상대적으로 미흡한 업종이다. 그러나 보유 데이터의 민감도는 오히려 금융권을 초과할 수 있다. 이 사건은 <strong>법률 서비스 업종의 개인정보 보호 의무에 대한 경각심</strong>을 환기시킨 사례로 평가된다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156734046">정책브리핑 (newsId=156734046)</a></div>
+  <div class="incident-sep"></div>
+</div>
+<!-- ═══════════════════════════════════════ -->
+<!-- ══  II. 2025년 PIPC 제재 (과거 사고) ══ -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="chapter" id="pipc-section">
+  <div class="chapter-label">SECTION II</div>
+  <div class="chapter-title">2025년 개인정보위 제재 처분 &mdash; 과거 발생 사고 (13건)</div>
+  <div class="chapter-bar"></div>
+  <p style="font-size:12px;color:var(--sec);margin-bottom:24px;">
+    사고 자체는 2024년 이전에 발생하였으나, 개인정보보호위원회 전체회의 의결이 2025~2026년 초에 이루어진 건.<br>
+    의결일 순 정렬. 모든 건 <span class="tag tag-source-3">★★★</span> 1차 출처 확인.
+  </p>
+</div>
+
+<!-- P.01 섹타나인 -->
+<div class="incident" id="p01">
+  <div class="incident-header">
+    <div class="incident-num">P.01</div>
+    <div class="incident-title">섹타나인 (해피포인트)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 14.77억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제34조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>사고</th><td>1차 2022.10 / 2차 2023.11 (크리덴셜 스터핑)</td></tr>
+    <tr><th>의결</th><td>2025.2.12 제3회 전체회의</td></tr>
+    <tr><th>피해</th><td>17,347명 (1차 7,585 + 2차 9,762)</td></tr>
+    <tr><th>과징금</th><td class="highlight">14억 7,700만 원 + 과태료 720만 원</td></tr>
+    <tr><th>위반</th><td>제29조 (무차별 로그인 시도 차단 미비, API 응답 암호화 미적용), 제34조 (유출통지 지연)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> SPC그룹 멤버십 서비스 '해피포인트'를 운영하는 섹타나인에서 크리덴셜 스터핑 공격이 <strong>2차례</strong> 발생하였다. 1차 공격(2022.10)에서 7,585명, 2차 공격(2023.11)에서 9,762명, 합계 17,347명의 개인정보가 유출되었다. 공격자는 해피포인트 앱의 API를 통해 이름·아이디·성별·생년·카드번호 등을 탈취하였다. 1차 사고 이후 <strong>API 응답 암호화, 무차별 로그인 차단</strong> 등 재발 방지 조치가 시행되지 않아 2차 사고가 발생하였으며, 이에 PIPC는 <strong>반복 위반 가중</strong> 처분을 적용하였다. 섹타나인 사례는 GS리테일(#01·#02, 4년간 동일 수법 반복)과 함께, 1차 사고 후 근본 원인이 해소되지 않으면 재발이 불가피하다는 점을 보여준다.<br>
+    <strong>반복 침해의 엔지니어링 근본원인:</strong> 2022년 10월 1차, 2023년 10월 2차 — 동일한 크리덴셜 스터핑이 1년 간격으로 반복된 것은 1차 사고 후 근본원인 수정(remediation)이 이루어지지 않았음을 의미한다. 해피포인트 시스템의 구조적 취약점은 API 응답 설계에 있었다. 로그인 API가 성공 시 회원의 포인트 잔액, 이름, 연락처 등을 JSON 응답으로 즉시 반환하였고, 이 응답에 대한 필드 레벨 암호화나 마스킹이 미적용되었다. 1차 사고 후 Rate Limiting을 부분적으로 도입했으나, 공격자는 주거용 프록시(residential proxy) 풀을 활용하여 IP 분산으로 이를 우회하였다. 이는 IP 기반 Rate Limiting만으로는 크리덴셜 스터핑을 완전히 차단할 수 없으며, 디바이스 핑거프린팅, 행동 분석(behavioral analytics), CAPTCHA 등 다층 방어가 필요함을 보여준다. PIPC가 반복 위반을 가중 사유로 적용한 것은 이러한 불완전한 remediation에 대한 제재이다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=10999">PIPC 의결 (nttId=10999)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.02 비즈니스온 + NHN위투 -->
+<div class="incident" id="p02">
+  <div class="incident-header">
+    <div class="incident-num">P.02</div>
+    <div class="incident-title">비즈니스온커뮤니케이션 + NHN위투</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">합산 1.98억</span>
+    <span class="tag tag-law">제29조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>의결</th><td>2025.2.26 제4회 전체회의</td></tr>
+    <tr><th>비즈니스온</th><td>스마트빌(전자세금계산서) SQL 인젝션. 179,386명. 과징금 1억 3,700만 원</td></tr>
+    <tr><th>NHN위투</th><td>가방팝(쇼핑몰) SQL 인젝션. 534,903건. WAF 비활성화. 과징금 6,110만 원</td></tr>
+    <tr><th>위반</th><td>제29조 (SQL 인젝션 방어 미흡, IP 접근제한 미적용), 제34조</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 비즈니스온커뮤니케이션이 운영하는 전자세금계산서 플랫폼 '스마트빌'에서 SQL 인젝션 공격이 발생하여 179,386명의 정보가 유출되었다. NHN위투가 운영하는 쇼핑몰 '가방팝'에서도 SQL 인젝션으로 534,903건이 유출되었는데, 특히 가방팝은 <strong>WAF(웹방화벽)가 설치되어 있었으나 비활성화 상태</strong>로 방치되어 있었다. 두 건 모두 외부 IP 접근 제한 미적용, SQL 인젝션 방어(파라미터화 쿼리) 미구현이 공통 원인이다. 2025년 SQL 인젝션 집중 제재(8건+) 시리즈의 초기 사례이다.
+  </div>
+  <div class="incident-source">1차 출처: PIPC 제4회 전체회의 의결 (보안뉴스, 서울경제)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.03 모두투어 -->
+<div class="incident" id="p03">
+  <div class="incident-header">
+    <div class="incident-num">P.03</div>
+    <div class="incident-title">모두투어네트워크</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 7.47억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제21조</span>
+    <span class="tag tag-law">제34조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>사고</th><td>2024.6월 (웹셸 공격)</td></tr>
+    <tr><th>의결</th><td>2025.3.12 제6회 전체회의</td></tr>
+    <tr><th>피해</th><td class="highlight">약 306만 명 (회원 + 비회원)</td></tr>
+    <tr><th>과징금</th><td class="highlight">7억 4,700만 원 + 과태료 1,020만 원</td></tr>
+    <tr><th>위반</th><td>제29조 (파일 업로드 취약점, 실행 권한 미제한), 제21조 (2013년부터 비회원 316만 건 미파기), 제34조 (유출통지 2개월 지연)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2024년 6월, 공격자가 모두투어 웹사이트의 파일 업로드 기능에서 <strong>확장자 검증 미흡</strong>을 악용하여 웹셸(Web Shell)을 업로드하고 서버 제어권을 탈취하였다. 이를 통해 전체 DB(회원 + 비회원 약 306만 명)가 유출되었다. 모두투어는 사고 발생 후 <strong>약 2개월이 지나서야 유출 통지</strong>를 시행하여 제34조(유출통지) 위반이 별도 적용되었다. 특히 심각한 것은 <strong>2013년부터 비회원 예약자 316만 건의 데이터</strong>를 보유기간 경과 후에도 파기하지 않고 보관하고 있었던 점으로, 제21조(파기의무) 위반이 피해 규모를 수배 확대시켰다. 넷마블(#30, 20년 레거시), 한국연구재단(#21, 12년 취약점 방치)과 함께 <strong>레거시 데이터 미파기가 피해를 키운 전형적 사례</strong>이다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156678669">정책브리핑 (newsId=156678669)</a> (ZDNet)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.04 클래스유 + KT알파 -->
+<div class="incident" id="p04">
+  <div class="incident-header">
+    <div class="incident-num">P.04</div>
+    <div class="incident-title">클래스유 + KT알파</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">합산 5,851만</span>
+    <span class="tag tag-law">제29조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>의결</th><td>2025.4.9 제8회 전체회의</td></tr>
+    <tr><th>클래스유</th><td>2023.8~2024.7 DB 관리자 계정 탈취. 약 160만 명. 주민번호&middot;계좌번호 비암호화. 과징금 5,360만 원</td></tr>
+    <tr><th>KT알파</th><td>크리덴셜 스터핑. 98,000건 시도 중 51명 노출. 사전 마스킹 효과. 과징금 491만 원</td></tr>
+    <tr><th>위반</th><td>제29조 (접근통제 미흡 &mdash; 단일 DB 관리자 계정 공유, IP 제한 미적용)</td></tr>
+  </table>
+  <div class="incident-source">1차 출처: PIPC 제8회 전체회의 의결 (ZDNet, 전자신문)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.05 한국토픽교육센터 -->
+<div class="incident" id="p05">
+  <div class="incident-header">
+    <div class="incident-num">P.05</div>
+    <div class="incident-title">한국토픽교육센터</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 2,300만</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제34조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>사고</th><td>2024.3.12 (SQL 인젝션 &rarr; 텔레그램 공개)</td></tr>
+    <tr><th>의결</th><td>2025.7.9 (블랙야크와 동일 의결)</td></tr>
+    <tr><th>피해</th><td>84,085명</td></tr>
+    <tr><th>과징금</th><td>2,300만 원 + 과태료 270만 원 + 공표명령</td></tr>
+  </table>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11343">PIPC 의결 (nttId=11343)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.06 쿠카게임즈 + 잡보스 -->
+<div class="incident" id="p06">
+  <div class="incident-header">
+    <div class="incident-num">P.06</div>
+    <div class="incident-title">쿠카게임즈 + 잡보스 (주민번호 수집 위반)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">쿠카 9,370만</span>
+    <span class="tag tag-law">제24조의2</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>의결</th><td>2025.7.23 제16회 전체회의</td></tr>
+    <tr><th>쿠카게임즈</th><td>삼국지 전략판 이벤트 당첨자 주민번호 41건 불법 수집. 과징금 9,370만 원</td></tr>
+    <tr><th>잡보스</th><td>고용주 간 직원 리뷰 사이트에서 주민번호 575건 수집 필수화. 파산 &rarr; 과태료 1,000만 원만 부과</td></tr>
+    <tr><th>위반</th><td>제24조의2 (주민등록번호 처리 제한)</td></tr>
+  </table>
+  <div class="incident-analysis warning">
+    <strong>&#9888; 참고:</strong> 해킹 사고가 아닌 <strong>주민번호 불법 수집</strong> 건. 개인정보 수집 단계의 위반 사례.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156699900">정책브리핑 (newsId=156699900)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.07 몽클레르 -->
+<div class="incident" id="p07">
+  <div class="incident-header">
+    <div class="incident-num">P.07</div>
+    <div class="incident-title">몽클레르 코리아</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 8,101만</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제34조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>사고</th><td>2021.12 (랜섬웨어)</td></tr>
+    <tr><th>의결</th><td>2025.9.10 제20회 전체회의</td></tr>
+    <tr><th>피해</th><td>약 23만 명 (이름, 생년월일, 이메일, 카드번호, 배송정보, 구매정보)</td></tr>
+    <tr><th>과징금</th><td>8,101만 원 + 과태료 720만 원</td></tr>
+    <tr><th>위반</th><td>제29조 (2019.6부터 ID/PW 외 추가 인증수단 미적용), 제34조 (유출통지 지연)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2021년 12월, 이탈리아 명품 브랜드 몽클레르의 한국 법인이 랜섬웨어 공격을 받아 약 23만 명의 고객 정보(이름, 생년월일, 이메일, 카드번호, 배송정보, 구매정보)가 유출되었다. PIPC는 2019년 6월부터 ID/PW 외 <strong>추가 인증수단(MFA)을 적용하지 않았던 점</strong>과 유출통지 지연을 위반 사항으로 적시하였다. 몽클레르 건은 사고 발생(2021.12)으로부터 PIPC 의결(2025.9)까지 <strong>약 3년 9개월</strong>이 소요되어, 해외 기업에 대한 조사·처분의 시간적 한계를 보여준다. 테무(#11), LVMH 3사(#14·#15·#19), 2K게임즈(P.11)와 함께 PIPC의 <strong>해외 기업 적극 제재</strong> 기조를 보여주는 사례이다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11489">PIPC 의결 (nttId=11489)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.08 테라스타 + 아이스트로 -->
+<div class="incident" id="p08">
+  <div class="incident-header">
+    <div class="incident-num">P.08</div>
+    <div class="incident-title">테라스타 + 아이스트로</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">테라 500만</span>
+    <span class="tag tag-law">제29조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>의결</th><td>2025.9.24 제21회 전체회의</td></tr>
+    <tr><th>테라스타</th><td>2023.11 쇼핑몰 랜섬웨어. 지원 종료 Windows OS, 방화벽&middot;백신 미설치, 비밀번호 비암호화. ~900명. 과징금 500만 원</td></tr>
+    <tr><th>아이스트로</th><td>2024.6 관리시스템 해킹. 1,991명. 백업 복원 신속 대응 &rarr; <strong>과징금 면제</strong>, 과태료 480만 원만 부과</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 테라스타(쇼핑몰)는 2023년 11월 랜섬웨어 공격을 받아 약 900명의 정보가 유출되었다. 조사에서 <strong>지원 종료된 Windows OS 사용, 방화벽·백신 미설치, 비밀번호 비암호화 저장</strong>이라는 보안의 기본 중 기본이 미이행 상태였음이 확인되었다. 아이스트로는 2024년 6월 관리 시스템이 해킹당해 1,991명이 피해를 입었으나, <strong>백업 데이터에서 신속 복원 대응</strong>한 점이 인정되어 과징금이 면제되고 과태료 480만 원만 부과되었다. 아이스트로 사례는 신속하고 성실한 대응이 제재 감경에 실질적으로 반영됨을 보여주는 중요한 선례이다.
+  </div>
+  <div class="incident-source">1차 출처: PIPC 제21회 전체회의 의결 (디지털데일리, 이투데이)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.09 한양CC + 서울CC -->
+<div class="incident" id="p09">
+  <div class="incident-header">
+    <div class="incident-num">P.09</div>
+    <div class="incident-title">한양CC + 서울CC</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">합산 2.01억</span>
+    <span class="tag tag-law">제29조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>의결</th><td>2025.10.22 제22회 전체회의</td></tr>
+    <tr><th>피해</th><td>87,923명 (골프장 회원) &mdash; 해킹 후 스팸 발송</td></tr>
+    <tr><th>한양CC</th><td>공유 관리자/DB 계정, 접근 분리 미흡. 과징금 1억 4,800만 원</td></tr>
+    <tr><th>서울CC</th><td>위수탁 관리 소홀 (위탁계약서 보호조치 미기재, 개인정보처리방침에 잘못된 업체명). 과징금 5,310만 원</td></tr>
+    <tr><th>위반</th><td>제29조 (접근통제), 제26조 (위탁 관리감독)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 한양CC와 서울CC 두 골프장에서 합계 87,923명의 회원 정보가 유출되어 해킹 후 <strong>대량 스팸 발송</strong>에 악용되었다. 한양CC는 관리자 계정과 DB 계정을 공유하고 접근 분리가 미흡하였다. 서울CC는 위수탁 관계에서 <strong>위탁계약서에 보호조치를 기재하지 않고, 개인정보처리방침에 잘못된 업체명을 기재</strong>하는 등 제26조(위탁 관리감독) 의무를 형식적으로만 이행하였다. 골프장 회원 정보에는 고소득자의 연락처·주소가 포함되어 있어, 스팸·보이스피싱의 고가치 표적이 된다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156734025">정책브리핑 (newsId=156734025)</a> (뉴스1, 데일리시큐)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.10 이젠 + 더존 + 레저플러스 -->
+<div class="incident" id="p10">
+  <div class="incident-header">
+    <div class="incident-num">P.10</div>
+    <div class="incident-title">이젠 + 더존하우징 + 레저플러스</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">합산 1.78억</span>
+    <span class="tag tag-law">제29조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>의결</th><td>2025.11.20 제23회 전체회의</td></tr>
+    <tr><th>이젠</th><td>온라인 교육. SQL 인젝션 &rarr; 텔레그램 공개. 69,930명 (주민번호 35,454명 <strong>비암호화</strong>). 과징금 6,060만 원</td></tr>
+    <tr><th>더존하우징</th><td>건축 컨설팅. 2023.12 SQL 인젝션 &rarr; 텔레그램. 33,879명. 과징금 5,580만 원</td></tr>
+    <tr><th>레저플러스</th><td>골프 예약. SQL 인젝션 2회. 160,807명. 과징금 6,120만 원</td></tr>
+    <tr><th>공통 위반</th><td>제29조 (SQL 인젝션 대응 미흡, 침입 탐지 부재, 비밀번호 암호화 미흡)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 3개 중소기업이 동일 의결에서 SQL 인젝션 피해로 제재를 받았다. 이젠(온라인 교육)은 69,930명의 정보가 유출되었으며, 이 중 <strong>35,454명의 주민등록번호가 비암호화 상태</strong>로 저장되어 있었다. 유출된 데이터는 텔레그램 채널에 공개되었다. 더존하우징(건축 컨설팅, 33,879명)과 레저플러스(골프 예약, 160,807명)도 SQL 인젝션 피해이며, 레저플러스는 <strong>2차례 별도 공격</strong>을 받았다. 3사 모두 침입 탐지 시스템 미운용, 파라미터화 쿼리 미구현, 비밀번호 암호화 미흡이 공통 원인이다. 블랙야크(#07), 비즈니스온·NHN위투(P.02), 한국토픽(P.05), NHN커머스(#26)와 함께 <strong>2025년 SQL 인젝션이 PIPC 제재 최다 유형(8건+)</strong>으로 기록된 시리즈의 일부이다.
+  </div>
+  <div class="incident-source">1차 출처: PIPC 제23회 전체회의 의결 (서울경제)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.11 2K게임즈 -->
+<div class="incident" id="p11">
+  <div class="incident-header">
+    <div class="incident-num">P.11</div>
+    <div class="incident-title">2K게임즈 (2K Games, Inc.)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 1.95억</span>
+    <span class="tag tag-law">제29조</span>
+    <span class="tag tag-law">제34조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>사고</th><td>2022.9 (헬프데스크 계정 해킹)</td></tr>
+    <tr><th>의결</th><td>2025.12.10 제26회 전체회의</td></tr>
+    <tr><th>피해</th><td>국내 12,906명 (전 세계 ~400만 명)</td></tr>
+    <tr><th>과징금</th><td class="highlight">1억 9,451만 원 + 과태료 720만 원</td></tr>
+    <tr><th>위반</th><td>제29조 (2011년부터 ID/PW 외 OTP 등 미적용), 제34조 (유출 인지 9/28 &rarr; 통지 10/6, 신고 10/8)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2022년 9월, 미국 게임사 2K Games(Take-Two Interactive 자회사)의 헬프데스크(고객지원) 시스템 계정이 해킹당하여, 지원 요청을 한 이용자에게 악성코드가 포함된 링크가 전송되었다. 전 세계적으로 약 400만 명이 영향을 받았으며, 한국 이용자는 12,906명이다. PIPC는 2011년부터 <strong>ID/PW 외 OTP 등 추가 인증수단을 적용하지 않은 점</strong>(14년간), 유출 인지(9/28) 후 통지(10/6) 및 신고(10/8)까지의 지연을 위반 사항으로 적시하였다. 해외 게임사에 대한 PIPC 제재 사례로, 쿠카게임즈(P.06)와 함께 게임 업종의 개인정보 관리 문제를 보여준다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11672">PIPC 의결 (nttId=11672)</a> (ZDNet)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.12 국립항공박물관 -->
+<div class="incident" id="p12">
+  <div class="incident-header">
+    <div class="incident-num">P.12</div>
+    <div class="incident-title">국립항공박물관</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 9,800만</span>
+    <span class="tag tag-law">제29조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>의결</th><td>2025.12.10 제26회 전체회의</td></tr>
+    <tr><th>피해</th><td>11,029명 (이름, 아이디, 성별, 생년월일, 주소, 연락처)</td></tr>
+    <tr><th>과징금</th><td>9,800만 원 + 공표명령 1년</td></tr>
+    <tr><th>위반</th><td>제29조 (관리자 계정 3개를 20명이 공유, 외부 IP 제한 없음, 인증수단 미적용, 접속기록 미점검)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 국립항공박물관(국토교통부 산하)의 웹사이트에서 관리자 계정 3개를 <strong>직원 20명이 공유</strong>하여 사용하고 있었으며, 외부 IP 접근 제한, 추가 인증수단(MFA), 접속기록 점검이 모두 미시행 상태였다. 이를 통해 11,029명의 방문 예약자 정보(이름, 아이디, 성별, 생년월일, 주소, 연락처)가 유출되었다. 유출된 정보를 이용한 <strong>악성앱 설치 유도 스미싱</strong>이 실제 발송되어 2차 피해가 확인되었다. PIPC는 공표명령 1년을 병과하였다. 공공기관의 기본적 접근통제 부재를 보여주는 사례이다.
+  </div>
+  <div class="incident-source">1차 출처: <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11671">PIPC 의결 (nttId=11671)</a></div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- P.13 부산국제금융진흥원 -->
+<div class="incident" id="p13">
+  <div class="incident-header">
+    <div class="incident-num">P.13</div>
+    <div class="incident-title">부산국제금융진흥원</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-3">★★★</span>
+    <span class="tag tag-confirmed">확정</span>
+    <span class="tag tag-fine">과징금 9,540만</span>
+    <span class="tag tag-law">제29조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>사고</th><td>2024.6.22~24 (랜섬웨어, 분당 433회 로그인 시도)</td></tr>
+    <tr><th>의결</th><td>2025.12.10 제26회 전체회의</td></tr>
+    <tr><th>피해</th><td>177명 (직원 등, 주민등록번호 포함)</td></tr>
+    <tr><th>과징금</th><td>9,540만 원 + 과태료 360만 원</td></tr>
+    <tr><th>위반</th><td>제29조 (2020.4부터 방화벽 미설치, Windows 미업데이트, 주민번호 비암호화)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2024.6.22~24 부산국제금융진흥원의 시스템이 랜섬웨어 공격을 받았다. 공격자는 <strong>분당 433회의 로그인 시도</strong>를 수행하였으나 차단되지 않았다. 조사에서 <strong>2020년 4월부터 방화벽이 미설치</strong> 상태였고, Windows 보안 업데이트 미적용, 주민등록번호 비암호화 저장 등 기본 보안 조치가 전무한 것이 확인되었다. 피해자 177명(직원 등)으로 규모는 소규모이나, 분당 433회의 무차별 로그인이 차단되지 않았다는 점은 보안 시스템의 <strong>완전한 부재</strong>를 의미한다. 공공기관(지방공기업)의 보안 관리 실태를 보여주는 사례이다.
+  </div>
+  <div class="incident-source">1차 출처: PIPC 제26회 전체회의 의결 (이데일리, 아주경제)</div>
+  <div class="incident-sep"></div>
+</div>
+
+
+<!-- #37 업비트 -->
+<div class="incident" id="i37">
+  <div class="incident-header">
+    <div class="incident-num">#37</div>
+    <div class="incident-title">업비트 &mdash; 암호화폐 해킹</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">수사 중</span>
+    <span class="tag">금융</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 5월</td></tr>
+    <tr><th>유형</th><td>암호화폐 지갑 해킹 &mdash; 핫월렛 침투</td></tr>
+    <tr><th>피해 규모</th><td>약 3억 달러(~4,000억 원) 상당 비트코인&middot;이더리움 탈취</td></tr>
+    <tr><th>조사</th><td>FIU(금융정보분석원)&middot;경찰청 사이버수사대 합동 수사 중</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 5월 국내 최대 암호화폐 거래소 업비트의 핫월렛이 해킹되어 약 <strong>3억 달러(~4,000억 원)</strong> 상당의 비트코인과 이더리움이 탈취되었다. 이는 금전 피해 규모로는 2025년 전체 사이버 보안 사고 중 <strong>최대</strong>이다. 암호화폐 거래소 해킹은 전통적인 개인정보 유출과 성격이 다르나, 거래소 이용자의 KYC(본인확인) 정보, 거래 내역, 자산 정보 등이 공격 과정에서 노출되었을 가능성을 배제할 수 없다. FIU와 경찰청 사이버수사대가 합동 수사 중이며, 탈취 자산의 자금세탁 경로 추적이 진행되고 있다. 2019년 업비트 해킹(580억 원, 북한 라자루스 소행 확인) 이후 두 번째 대형 사고로, 가상자산 업권의 보안 수준에 대한 근본적 의문이 제기되었다.
+  </div>
+  <div class="incident-source">출처: 다수 언론 보도 (연합뉴스, 조선비즈, ZDNet)</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #38 GPKI -->
+<div class="incident" id="i38">
+  <div class="incident-header">
+    <div class="incident-num">#38</div>
+    <div class="incident-title">행정전자서명(GPKI) 해킹 &mdash; 국가 인증 인프라 침해</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">수사 중</span>
+    <span class="tag">국가안보</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>잠복 기간</th><td>2022.9 ~ 2025.7 (약 <strong>3년</strong>)</td></tr>
+    <tr><th>유형</th><td>APT(지능형 지속 위협) &mdash; 북한 킴수키(Kimsuky) 추정</td></tr>
+    <tr><th>피해</th><td>공무원 650명 GPKI 인증서 탈취, 외교부 이메일&middot;소스코드 유출, 1,400여 기관 DBMS 취약점 노출</td></tr>
+    <tr><th>대응</th><td>G-VPN 2차 인증 의무화, GPKI &rarr; 생체인증 전환 계획</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2022년 9월부터 약 <strong>3년간</strong> 북한 킴수키(Kimsuky) 추정 APT 그룹이 대한민국 행정전자서명(GPKI) 인프라에 잠복하였다. <strong>공무원 650명의 GPKI 인증서</strong>가 탈취되었으며, 이는 전자정부 시스템 접근, 공문서 전자서명, 행정망 VPN 인증에 사용되는 국가 핵심 인증 수단이다. 외교부 이메일과 소스코드까지 유출되었고, 1,400여 정부 기관의 DBMS 취약점이 노출되었다.<br>
+    <strong>개인정보 관점:</strong> GPKI 인증서에는 공무원의 성명, 소속기관, 직위가 포함되어 있어 <strong>개인식별정보</strong>에 해당한다. 또한 탈취된 인증서로 접근 가능한 행정 시스템에는 국민의 주민등록, 부동산, 세금, 건강보험 등 방대한 개인정보가 존재하여, 인증서 탈취는 곧 개인정보 대량 접근 가능성을 의미한다. SK텔레콤(4년)에 이어 잠복 기간 2위(3년)로, 국가 인프라 수준에서의 Dwell Time 문제를 보여준다.<br>
+    <strong>대응:</strong> 행정안전부는 G-VPN 2차 인증을 의무화하고, GPKI에서 생체인증 기반 체계로의 전환을 발표하였다.
+  </div>
+  <div class="incident-source">출처: 연합뉴스, 전자신문, 보안뉴스 등 다수 보도</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #39 SGI서울보증 -->
+<div class="incident" id="i39">
+  <div class="incident-header">
+    <div class="incident-num">#39</div>
+    <div class="incident-title">SGI서울보증보험 &mdash; 랜섬웨어</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">조사 중</span>
+    <span class="tag">금융</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 7월</td></tr>
+    <tr><th>유형</th><td>랜섬웨어 &mdash; 건라(Gunra) 그룹</td></tr>
+    <tr><th>피해</th><td>478조 원 규모 보증 업무 <strong>4일 중단</strong></td></tr>
+    <tr><th>복구</th><td>금융보안원 복호화 성공 (몸값 미지급)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 7월 국내 유일의 보증보험사인 SGI서울보증보험이 건라(Gunra) 랜섬웨어 그룹의 공격을 받아, <strong>478조 원 규모의 보증 업무가 4일간 전면 중단</strong>되었다. 보증보험은 건설·입찰·이행 등 경제 전반의 기초 인프라로, 업무 중단은 건설 현장 착공 지연, 공공입찰 불가 등 <strong>광범위한 경제적 파급</strong>을 초래하였다. 금융보안원이 복호화에 성공하여 몸값은 지급하지 않았다.<br>
+    <strong>개인정보 관점:</strong> 보증보험은 보증 심사를 위해 기업 대표자의 신용정보, 주민등록번호, 재무제표, 거래처 정보 등을 보유한다. 랜섬웨어 공격 시 데이터 암호화뿐 아니라 <strong>사전 유출(이중 협박)</strong>이 일반적이므로, 개인정보 유출 가능성을 배제할 수 없다. 건라 그룹은 이중 협박 전술을 사용하는 것으로 알려져 있으며, 동일 그룹이 화천기계&middot;삼화콘덴서(#43)도 공격했다.
+  </div>
+  <div class="incident-source">출처: 연합뉴스, 매일경제, ZDNet</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #40 YES24 2차 -->
+<div class="incident" id="i40">
+  <div class="incident-header">
+    <div class="incident-num">#40</div>
+    <div class="incident-title">YES24 &mdash; 2차 랜섬웨어 (동일 연도 재공격)</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">조사 중</span>
+    <span class="tag">반복 침해</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 8월 (1차: 2025년 6월, #20)</td></tr>
+    <tr><th>유형</th><td>랜섬웨어 &mdash; 2개월 내 재공격</td></tr>
+    <tr><th>복구</th><td>7시간 내 복구</td></tr>
+    <tr><th>관련</th><td><a href="#i20">#20 YES24 1차 사고</a> (최대 2,000만 명 유출)</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 6월 1차 랜섬웨어 공격(#20, 최대 2,000만 명 피해)으로부터 불과 <strong>2개월 만에 동일 기업이 다시 랜섬웨어 공격</strong>을 받았다. 이는 <strong>동일 연도 동일 기업 2회 랜섬웨어</strong>라는 극히 이례적인 사례이며, 1차 사고의 근본 원인(root cause)이 해결되지 않은 상태에서 서비스를 재개했음을 강하게 시사한다. 2차 공격은 7시간 내에 복구되어 피해 규모는 1차보다 제한적이었으나, <strong>근본 원인 미해결 상태의 서비스 재개</strong>라는 판단이 정당했는지에 대한 비판이 제기되었다.<br>
+    <strong>개인정보 관점:</strong> 1차 사고에서 이미 최대 2,000만 명의 개인정보가 유출(조사 중)되었으며, 2차 공격 시에도 동일 데이터베이스가 위험에 노출되었다. 2026년 정보통신망법 개정의 <strong>반복 침해사고 과징금</strong>(5년 내 2회 이상, 매출 3%) 조항이 적용되었다면 직접적 제재 대상이 되었을 사례이다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스, ZDNet, 전자신문</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #41 SFA엔지니어링 -->
+<div class="incident" id="i41">
+  <div class="incident-header">
+    <div class="incident-num">#41</div>
+    <div class="incident-title">SFA엔지니어링 &mdash; 랜섬웨어 2.3TB</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">수사 중</span>
+    <span class="tag">제조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 8월</td></tr>
+    <tr><th>유형</th><td>랜섬웨어 &mdash; 언더그라운드(Underground) 그룹</td></tr>
+    <tr><th>유출 규모</th><td><strong>2.3TB</strong> &mdash; 여권, 재무정보, NDA, 특허, R&D 자료</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 반도체 장비 제조사 SFA엔지니어링이 언더그라운드(Underground) 랜섬웨어 그룹에 의해 <strong>2.3TB</strong>의 데이터를 탈취당했다. 유출 데이터에는 임직원 <strong>여권 사본, 재무정보</strong>, NDA(비밀유지계약), 특허 문서, R&D 자료가 포함되었다.<br>
+    <strong>개인정보 관점:</strong> 여권 사본은 성명, 생년월일, 여권번호, 사진 등을 포함하는 <strong>고유식별정보</strong>로, 개인정보 보호법상 암호화 저장 의무가 있는 민감 정보이다. 재무정보에는 급여 명세, 계좌정보 등 임직원 개인정보가 포함되어 있어, 단순 '기업 기밀 유출'이 아닌 <strong>개인정보 유출 사고</strong>에 해당한다. 제조업에서 랜섬웨어 대응 시 생산라인 복구에 집중하면서 개인정보 유출 측면의 신고·통지 의무가 간과되는 패턴이 반복되고 있다.
+  </div>
+  <div class="incident-source">출처: ZDNet, 엔겟뉴스</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #42 웰릭스 -->
+<div class="incident" id="i42">
+  <div class="incident-header">
+    <div class="incident-num">#42</div>
+    <div class="incident-title">웰릭스에프앤아이대부 &mdash; 랜섬웨어 139만 파일</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">수사 중</span>
+    <span class="tag">금융</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 8월</td></tr>
+    <tr><th>유형</th><td>랜섬웨어 &mdash; 킬린(Qilin) 그룹</td></tr>
+    <tr><th>유출 규모</th><td><strong>1TB, 139만 파일</strong> 탈취 주장</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 대부업체 웰릭스에프앤아이대부가 킬린(Qilin) 랜섬웨어 그룹에 의해 <strong>1TB, 139만 개 파일</strong>을 탈취당했다고 공격자가 주장했다.<br>
+    <strong>개인정보 관점:</strong> 대부업(소비자금융)은 업무 특성상 차주(借主)의 <strong>성명, 주민등록번호, 소득 증빙, 신용정보, 계좌정보, 채무 현황</strong> 등 극도로 민감한 개인 금융정보를 대량 보유한다. 139만 파일이 사실이라면 차주 개인정보가 대규모로 포함되어 있을 가능성이 매우 높다. 대부업은 제1금융권에 비해 정보보호 인프라가 취약한 경우가 많아, 금융 업종 내에서도 특히 공격 대상이 되기 쉬운 구조적 문제가 있다.
+  </div>
+  <div class="incident-source">출처: ZDNet, 서울신문</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #43 화천기계·삼화콘덴서 -->
+<div class="incident" id="i43">
+  <div class="incident-header">
+    <div class="incident-num">#43</div>
+    <div class="incident-title">화천기계 &middot; 삼화콘덴서공업 &mdash; 랜섬웨어</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">수사 중</span>
+    <span class="tag">제조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 9월</td></tr>
+    <tr><th>유형</th><td>랜섬웨어 &mdash; 건라(Gunra) 그룹</td></tr>
+    <tr><th>유출 규모</th><td>화천기계 <strong>265GB</strong> (법인카드 CVV 포함) / 삼화콘덴서 <strong>114GB</strong></td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 2025년 9월 건라(Gunra) 랜섬웨어 그룹이 CNC 공작기계 제조사 화천기계에서 <strong>265GB</strong>, 전자부품 제조사 삼화콘덴서공업에서 <strong>114GB</strong>의 데이터를 탈취하였다. 동일 그룹이 같은 시기에 SGI서울보증보험(#39)도 공격하여, 단일 랜섬웨어 그룹의 <strong>한국 기업 집중 타깃팅</strong> 패턴이 드러났다.<br>
+    <strong>개인정보 관점:</strong> 화천기계 유출 데이터에 <strong>법인카드 CVV(카드검증값)</strong>가 포함된 점이 특히 문제이다. CVV는 카드 부정 사용에 직접 활용될 수 있는 정보로, 롯데카드(#24) 사고와 마찬가지로 <strong>PCI-DSS에서 저장 자체를 금지</strong>하는 정보이다. 법인카드라 하더라도 카드 명의자(임직원) 개인정보와 결합되어 있으며, 부정 사용 피해의 1차 대상은 해당 임직원이다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스, ZDNet, 전자신문</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #44 SK쉴더스 -->
+<div class="incident" id="i44">
+  <div class="incident-header">
+    <div class="incident-num">#44</div>
+    <div class="incident-title">SK쉴더스 &mdash; 허니팟 해킹 &middot; 고객사 120곳 2차 피해 우려</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">조사 중</span>
+    <span class="tag">보안업체</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 10월</td></tr>
+    <tr><th>유형</th><td>서버 해킹 &mdash; 블랙 슈란탁(Black Shuranthak) 그룹</td></tr>
+    <tr><th>유출 규모</th><td><strong>24GB</strong> 탈취, 고객사 <strong>120곳</strong> 2차 피해 우려</td></tr>
+    <tr><th>원인</th><td>허니팟 서버에 직원 지메일 자동 로그인 방치</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 국내 대표 보안 전문 기업 SK쉴더스의 허니팟(honeypot) 서버가 블랙 슈란탁(Black Shuranthak) 그룹에 의해 해킹되어 <strong>24GB</strong>의 데이터가 탈취되었다. 허니팟은 원래 공격자를 유인·분석하기 위한 미끼 시스템이나, 이 허니팟에 <strong>직원의 지메일 자동 로그인이 방치</strong>되어 있어 실제 업무 데이터에 접근할 수 있는 경로가 열려 있었다. <strong>보안 전문 기업이 보안의 가장 기본적인 수칙</strong>(업무 계정과 미끼 시스템의 분리)을 지키지 않은 것이다.<br>
+    <strong>개인정보 관점:</strong> SK쉴더스는 <strong>120여 고객사</strong>의 보안 관제를 담당하며, 보안 관제 과정에서 고객사 네트워크 구성, 취약점, 인시던트 로그 등에 접근한다. 탈취된 24GB에 고객사 관련 정보가 포함되었다면, <strong>120곳의 보안 체계가 일거에 노출</strong>되는 2차 피해가 발생할 수 있다. 또한 지메일 계정을 통한 임직원 개인정보(이메일 내용, 연락처, 첨부파일) 유출도 우려된다. 보안 관제 기업의 침해는 그 자체로 <strong>공급망 공격의 기점</strong>이 될 수 있어 파급력이 일반 기업의 사고와 질적으로 다르다.
+  </div>
+  <div class="incident-source">출처: 보안뉴스, ZDNet, 전자신문</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #45 LG에너지솔루션 -->
+<div class="incident" id="i45">
+  <div class="incident-header">
+    <div class="incident-num">#45</div>
+    <div class="incident-title">LG에너지솔루션 &mdash; 랜섬웨어 1.67TB</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-2">★★☆</span>
+    <span class="tag tag-reported">수사 중</span>
+    <span class="tag">제조</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 11월</td></tr>
+    <tr><th>유형</th><td>랜섬웨어 &mdash; 아키라(Akira) 그룹</td></tr>
+    <tr><th>유출 규모</th><td><strong>1.67TB</strong> &mdash; 여권, 의료기록, 신분증, 프로젝트 기밀</td></tr>
+    <tr><th>대상</th><td>미국 공장 대상이나 한국 직원 정보 포함</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 글로벌 배터리 제조사 LG에너지솔루션의 미국 공장 시스템이 아키라(Akira) 랜섬웨어 그룹에 의해 <strong>1.67TB</strong>의 데이터를 탈취당했다. 유출 데이터에는 임직원 <strong>여권 사본, 의료기록, 신분증</strong>, 프로젝트 기밀이 포함되었으며, 미국 현지 직원뿐 아니라 <strong>한국에서 파견된 직원들의 정보</strong>도 포함되어 있다.<br>
+    <strong>개인정보 관점:</strong> 여권, 의료기록, 신분증은 개인정보 보호법상 <strong>민감정보 또는 고유식별정보</strong>에 해당하며, 특히 의료기록은 건강정보로서 가장 높은 수준의 보호가 요구된다. 미국 HIPAA(건강보험정보 이동성 및 책임에 관한 법), 한국 개인정보 보호법이 동시에 적용될 수 있는 <strong>국제적 관할권 문제</strong>가 발생한다. 글로벌 제조기업의 해외 법인 침해가 한국 국적 직원의 개인정보 유출로 이어지는 구조는, 기업의 보안 경계가 국경을 넘어야 한다는 점을 보여준다.
+  </div>
+  <div class="incident-source">출처: 데일리시큐, 전자신문</div>
+  <div class="incident-sep"></div>
+</div>
+
+<!-- #46 대한항공 협력사 -->
+<div class="incident" id="i46">
+  <div class="incident-header">
+    <div class="incident-num">#46</div>
+    <div class="incident-title">대한항공 협력사 (KC&amp;D Service) &mdash; 공급망 해킹</div>
+  </div>
+  <div class="incident-meta">
+    <span class="tag tag-source-1">★☆☆</span>
+    <span class="tag tag-reported">조사 중</span>
+    <span class="tag">항공·물류</span>
+  </div>
+  <table class="incident-table">
+    <tr><th>발생</th><td>2025년 하반기</td></tr>
+    <tr><th>유형</th><td>서버 해킹 &mdash; 협력사 Oracle EBS 서버 침투 (공급망 공격)</td></tr>
+    <tr><th>유출 정보</th><td>직원 <strong>성명&middot;계좌번호</strong> 유출 확인. 고객(승객) 데이터는 미유출</td></tr>
+  </table>
+  <div class="incident-analysis">
+    <strong>경위:</strong> 대한항공의 협력사 KC&amp;D Service의 Oracle EBS(Enterprise Business Suite) 서버가 해킹되어 대한항공 직원의 <strong>성명과 급여 계좌번호</strong>가 유출되었다. 승객(고객) 데이터는 유출되지 않은 것으로 확인되었다. Oracle EBS는 HR, 급여, 재무 등 기업 핵심 업무를 처리하는 시스템으로, 침투 시 전 직원의 인사·급여 정보에 접근이 가능하다.<br>
+    <strong>개인정보 관점:</strong> 성명과 계좌번호의 조합은 급여 사칭 입금, 피싱 공격 등에 직접 악용될 수 있는 개인정보이다. 이 사고는 디올(#14)·티파니(#15)·루이비통(#19)의 LVMH SaaS 공급망 침해, 법인보험대리점(#13)의 공급망 사고와 함께, <strong>2025년 공급망 공격의 빈발</strong>을 보여주는 사례이다. 위탁자(대한항공)가 수탁자(KC&amp;D)의 보안을 관리·감독해야 하는 개인정보 보호법 제26조(업무위탁) 의무가 제대로 이행되었는지가 쟁점이 된다.
+  </div>
+  <div class="incident-source">출처: 단일 보도</div>
+  <div class="incident-sep"></div>
+</div>
+<!-- ═══════════════════════════════════════ -->
+<!-- ══  III. 종합 분석                   ══ -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- 확정 과징금 -->
+<div class="chapter" id="fines">
+  <div class="chapter-label">SECTION III</div>
+  <div class="chapter-title">확정 과징금 전체 목록</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<table class="fines-table">
+  <thead>
+    <tr><th>#</th><th>기업</th><th>의결일</th><th>위반 조항</th><th>비고</th><th style="text-align:right;">과징금</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><strong>SK텔레콤</strong></td><td>2025.8.27</td><td>제29조</td><td>역대 최대 &middot; 취소소송 중</td><td class="amount">1,347.9억</td></tr>
+    <tr><td>2</td><td><strong>LVMH 3사</strong><br><small>루이비통 214억 + 디올 122억 + 티파니 23억</small></td><td>2026.2.12</td><td>제29조, 제34조</td><td>SaaS 공급망 연쇄</td><td class="amount">360.0억</td></tr>
+    <tr><td>3</td><td><strong>우리카드</strong></td><td>2025.3.26</td><td>제29조</td><td>내부자 무단 활용</td><td class="amount">134.5억</td></tr>
+    <tr><td>4</td><td><strong>롯데카드</strong></td><td>2026.3.12</td><td>제29조</td><td>CVC 유출 &middot; 집단소송</td><td class="amount">96.2억</td></tr>
+    <tr><td>5</td><td><strong>섹타나인</strong></td><td>2025.2.12</td><td>제29조, 제34조</td><td>해피포인트 &middot; 반복 위반</td><td class="amount">14.8억</td></tr>
+    <tr><td>6</td><td><strong>블랙야크</strong> + 한국토픽</td><td>2025.7.9</td><td>제29조, 제34조</td><td>SQL 인젝션</td><td class="amount">14.1억</td></tr>
+    <tr><td>7</td><td><strong>테무</strong></td><td>2025.4~5월</td><td>제28조의6 등</td><td>해외 무단 반출</td><td class="amount">13.7억</td></tr>
+    <tr><td>8</td><td><strong>모두투어</strong></td><td>2025.3.12</td><td>제29조, 제21조, 제34조</td><td>웹셸 &middot; 미파기 306만</td><td class="amount">7.5억</td></tr>
+    <tr><td>9</td><td><strong>한국연구재단</strong></td><td>2026.1.29</td><td>제29조, 제34조</td><td>12년간 취약점 방치</td><td class="amount">7.0억</td></tr>
+    <tr><td>10</td><td><strong>티머니</strong></td><td>2026.1.28</td><td>제29조</td><td>크리덴셜 스터핑</td><td class="amount">5.3억</td></tr>
+    <tr><td>11</td><td><strong>법무법인 로고스</strong></td><td>2025년</td><td>제29조</td><td>소송자료 18만 건</td><td class="amount">5.2억</td></tr>
+    <tr><td>12</td><td><strong>인크루트</strong></td><td>2025.10.22</td><td>제29조</td><td>반복 위반 &middot; 727만 명</td><td class="amount">4.6억</td></tr>
+    <tr><td>13</td><td><strong>한양CC + 서울CC</strong></td><td>2025.10.22</td><td>제29조, 제26조</td><td>위수탁 관리 소홀</td><td class="amount">2.0억</td></tr>
+    <tr><td>14</td><td><strong>비즈니스온 + NHN위투</strong></td><td>2025.2.26</td><td>제29조</td><td>SQL 인젝션</td><td class="amount">2.0억</td></tr>
+    <tr><td>15</td><td><strong>2K게임즈</strong></td><td>2025.12.10</td><td>제29조, 제34조</td><td>해외 게임사</td><td class="amount">1.9억</td></tr>
+    <tr><td>16</td><td><strong>이젠+더존+레저플러스</strong></td><td>2025.11.20</td><td>제29조</td><td>SQL 인젝션 3사</td><td class="amount">1.8억</td></tr>
+    <tr><td>17</td><td><strong>국립항공박물관</strong></td><td>2025.12.10</td><td>제29조</td><td>관리자 계정 공유</td><td class="amount">1.0억</td></tr>
+    <tr><td>18</td><td><strong>부산국제금융진흥원</strong></td><td>2025.12.10</td><td>제29조</td><td>랜섬웨어 &middot; 방화벽 미설치</td><td class="amount">1.0억</td></tr>
+    <tr><td>19</td><td><strong>쿠카게임즈</strong></td><td>2025.7.23</td><td>제24조의2</td><td>주민번호 불법 수집</td><td class="amount">0.9억</td></tr>
+    <tr><td>20</td><td><strong>몽클레르</strong></td><td>2025.9.10</td><td>제29조, 제34조</td><td>랜섬웨어 (2021)</td><td class="amount">0.8억</td></tr>
+    <tr><td>21</td><td><strong>클래스유 + KT알파</strong></td><td>2025.4.9</td><td>제29조</td><td>접근통제 미흡</td><td class="amount">0.6억</td></tr>
+    <tr><td>22</td><td><strong>테라스타</strong></td><td>2025.9.24</td><td>제29조</td><td>지원종료 OS 사용</td><td class="amount">0.05억</td></tr>
+    <tr><td>23</td><td><strong>NHN커머스</strong></td><td>2026.1.29</td><td>제29조, 제34조</td><td>레거시 SaaS</td><td class="amount">0.09억</td></tr>
+    <tr style="background:var(--accent-bg);font-weight:700;"><td></td><td>합계 (31개 기업)</td><td></td><td></td><td></td><td class="amount" style="font-size:14px;">약 2,023억</td></tr>
+  </tbody>
+</table>
+
+<div class="method-box" style="margin-bottom:32px;">
+  <h3>과징금 분포 분석</h3>
+  <p style="font-size:12px;color:var(--sec);line-height:1.7;">
+    &bull; <strong>상위 4건</strong>(SK텔레콤, LVMH 3사, 우리카드, 롯데카드)이 전체 과징금의 <strong>96%</strong> 차지<br>
+    &bull; <strong>제29조</strong>(안전조치의무) 위반이 23건 중 <strong>22건(96%)</strong>으로 사실상 모든 과징금의 근거<br>
+    &bull; <strong>제34조</strong>(유출통지의무) 위반 병과: 11건(48%)<br>
+    &bull; <strong>제21조</strong>(파기의무) 위반: 1건(모두투어) &mdash; 미파기된 316만 건이 피해 규모 확대의 직접 원인<br>
+    &bull; 해외 기업 제재: 테무(중국), 2K게임즈(미국), 몽클레르(이탈리아), LVMH(프랑스) &mdash; 해외 기업에 대한 적극적 법 집행
+  </p>
+</div>
+
+<!-- ══ 정량 분석 ══ -->
+<div class="chapter" id="quant">
+  <div class="chapter-label">정량 분석</div>
+  <div class="chapter-title">업종별·공격유형별·규모별 교차 분석</div>
+  <div class="chapter-bar"></div>
+  <p style="font-size:12px;color:var(--sec);margin-bottom:20px;">Section I(49건) + Section II(13건) 총 62건 기준.</p>
+</div>
+
+<div class="method-box">
+  <h3>업종별 사고 분포 및 과징금</h3>
+  <table class="fines-table" style="margin-top:8px;margin-bottom:0;">
+    <thead><tr><th>업종</th><th style="text-align:center;">사고 건수</th><th style="text-align:center;">피해 기업 수</th><th style="text-align:right;">과징금 합계</th><th>비율</th></tr></thead>
+    <tbody>
+      <tr><td><strong>통신</strong></td><td style="text-align:center;">4</td><td style="text-align:center;">3</td><td style="text-align:right;font-weight:700;">1,348억</td><td>66.7%</td></tr>
+      <tr><td><strong>명품·패션</strong></td><td style="text-align:center;">5</td><td style="text-align:center;">5</td><td style="text-align:right;font-weight:700;">375억</td><td>18.5%</td></tr>
+      <tr><td><strong>금융·카드</strong></td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:right;font-weight:700;">232억</td><td>11.5%</td></tr>
+      <tr><td><strong>이커머스·플랫폼</strong></td><td style="text-align:center;">6</td><td style="text-align:center;">6</td><td style="text-align:right;">19억</td><td>0.9%</td></tr>
+      <tr><td><strong>게임</strong></td><td style="text-align:center;">3</td><td style="text-align:center;">3</td><td style="text-align:right;">3억</td><td>0.1%</td></tr>
+      <tr><td><strong>공공·교육·의료</strong></td><td style="text-align:center;">7</td><td style="text-align:center;">7</td><td style="text-align:right;">18억</td><td>0.9%</td></tr>
+      <tr><td><strong>기타 (법률·여행·골프 등)</strong></td><td style="text-align:center;">19</td><td style="text-align:center;">19</td><td style="text-align:right;">28억</td><td>1.4%</td></tr>
+      <tr style="background:var(--bg-alt);font-weight:700;border-top:2px solid var(--rule-heavy);"><td>합계</td><td style="text-align:center;">52</td><td style="text-align:center;">51</td><td style="text-align:right;">2,023억</td><td>100%</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:var(--sec);margin-top:8px;">통신·명품·금융 3개 업종이 전체 과징금의 <strong>96.7%</strong>를 차지. 이는 대규모 고객 데이터를 보유한 업종에서 매출액 비례 과징금의 효과가 극대화됨을 보여준다.</p>
+</div>
+
+<div class="method-box">
+  <h3>공격 유형별 분류</h3>
+  <table class="fines-table" style="margin-top:8px;margin-bottom:0;">
+    <thead><tr><th>공격 유형</th><th style="text-align:center;">건수</th><th style="text-align:center;">비율</th><th>과징금 부과 건</th><th>대표 사례</th></tr></thead>
+    <tbody>
+      <tr><td><strong>외부 해킹 (APT·랜섬웨어·웹셸)</strong></td><td style="text-align:center;">18</td><td style="text-align:center;">35%</td><td>8건</td><td>SKT, 롯데카드, 인크루트, YES24</td></tr>
+      <tr><td><strong>SQL 인젝션</strong></td><td style="text-align:center;">8</td><td style="text-align:center;">15%</td><td><strong>8건 (100%)</strong></td><td>블랙야크, 비즈니스온, 이젠, 더존</td></tr>
+      <tr><td><strong>크리덴셜 스터핑</strong></td><td style="text-align:center;">6</td><td style="text-align:center;">12%</td><td>3건</td><td>GS리테일, 티머니, 섹타나인</td></tr>
+      <tr><td><strong>SaaS·공급망 경유</strong></td><td style="text-align:center;">5</td><td style="text-align:center;">10%</td><td>4건</td><td>LVMH 3사, NHN커머스</td></tr>
+      <tr><td><strong>내부자 유출</strong></td><td style="text-align:center;">3</td><td style="text-align:center;">6%</td><td>1건</td><td>우리카드, 신한카드, 저축은행</td></tr>
+      <tr><td><strong>퇴사자 권한 미회수</strong></td><td style="text-align:center;">2</td><td style="text-align:center;">4%</td><td>0건 (조사 중)</td><td>쿠팡, 넷마블</td></tr>
+      <tr><td><strong>기타 (설정오류·불법수집·해외이전)</strong></td><td style="text-align:center;">10</td><td style="text-align:center;">19%</td><td>3건</td><td>테무, IP카메라, 쿠카게임즈</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:var(--sec);margin-top:8px;"><strong>SQL 인젝션은 제재율 100%</strong> &mdash; 8건 모두 과징금이 부과되었다. 이는 PIPC가 SQL 인젝션을 "기본적 안전조치 미이행"의 대표적 사례로 판단하고 있음을 시사한다.</p>
+</div>
+
+<div class="method-box">
+  <h3>과징금 규모 분포 (Pareto 분석)</h3>
+  <table class="fines-table" style="margin-top:8px;margin-bottom:0;">
+    <thead><tr><th>구간</th><th style="text-align:center;">건수</th><th style="text-align:right;">합계</th><th style="text-align:right;">누적 비율</th></tr></thead>
+    <tbody>
+      <tr><td><strong>100억 원 이상</strong></td><td style="text-align:center;">4건</td><td style="text-align:right;">1,939억</td><td style="text-align:right;font-weight:700;">95.8%</td></tr>
+      <tr><td><strong>10억~100억 원</strong></td><td style="text-align:center;">4건</td><td style="text-align:right;">41억</td><td style="text-align:right;">97.9%</td></tr>
+      <tr><td><strong>1억~10억 원</strong></td><td style="text-align:center;">10건</td><td style="text-align:right;">39억</td><td style="text-align:right;">99.8%</td></tr>
+      <tr><td><strong>1억 원 미만</strong></td><td style="text-align:center;">5건</td><td style="text-align:right;">3.6억</td><td style="text-align:right;">100%</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:var(--sec);margin-top:8px;">전형적인 <strong>파레토 분포</strong>: 상위 4건(17%)이 전체의 96%를 차지. 개정법의 매출액 비례 과징금 체계가 대기업에 집중적으로 작동하고 있음을 보여준다. 반면 중소기업은 수천만~수억 원대로 억제력이 상대적으로 약하다.</p>
+</div>
+
+<div class="method-box">
+  <h3>피해 규모와 과징금의 상관관계</h3>
+  <table class="fines-table" style="margin-top:8px;margin-bottom:0;">
+    <thead><tr><th>기업</th><th style="text-align:right;">피해 규모</th><th style="text-align:right;">과징금</th><th style="text-align:right;">1인당 과징금</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>SK텔레콤</td><td style="text-align:right;">2,324만 명</td><td style="text-align:right;">1,348억</td><td style="text-align:right;font-weight:700;">~5,800원</td><td>매출액 3% 기준</td></tr>
+      <tr><td>우리카드</td><td style="text-align:right;">7.5만 명</td><td style="text-align:right;">134.5억</td><td style="text-align:right;font-weight:700;">~179,000원</td><td>내부자 소행</td></tr>
+      <tr><td>루이비통</td><td style="text-align:right;">360만 명</td><td style="text-align:right;">214억</td><td style="text-align:right;">~5,900원</td><td></td></tr>
+      <tr><td>롯데카드</td><td style="text-align:right;">297만 명</td><td style="text-align:right;">96.2억</td><td style="text-align:right;">~3,200원</td><td></td></tr>
+      <tr><td>인크루트</td><td style="text-align:right;">727만 명</td><td style="text-align:right;">4.6억</td><td style="text-align:right;color:var(--ink);">~63원</td><td>중소기업</td></tr>
+      <tr><td>모두투어</td><td style="text-align:right;">306만 명</td><td style="text-align:right;">7.5억</td><td style="text-align:right;color:var(--ink);">~245원</td><td>중소기업</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:var(--sec);margin-top:8px;">과징금은 피해 규모보다 <strong>매출액</strong>에 비례한다. 우리카드는 피해자 7.5만 명인데 과징금 135억(1인당 약 18만 원), 인크루트는 727만 명인데 4.6억(1인당 63원) &mdash; 동일한 위반에 대한 제재 강도가 기업 규모에 따라 <strong>2,800배</strong> 차이난다. 이는 매출액 비례 과징금의 설계 의도이기도 하나, 중소기업의 억제력 부족 문제를 제기한다.</p>
+</div>
+
+<!-- ══ 국제 비교 ══ -->
+<div class="chapter" id="intl">
+  <div class="chapter-label">국제 비교</div>
+  <div class="chapter-title">EU GDPR 집행 사례와의 비교</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<div class="method-box">
+  <h3>한국 PIPC vs EU GDPR 주요 제재 비교 (2025년 기준)</h3>
+  <table class="fines-table" style="margin-top:8px;margin-bottom:0;">
+    <thead><tr><th>기준</th><th>한국 (개인정보 보호법)</th><th>EU (GDPR)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>과징금 상한</strong></td><td>위반 매출액의 3% (2024.3~) &rarr; <strong>10%</strong> (2026.9.11~ 4차 개정)</td><td>전 세계 매출의 4% 또는 2,000만 유로</td></tr>
+      <tr><td><strong>2025년 최대 단일 과징금</strong></td><td>SK텔레콤 1,348억 원 (~9,400만 유로)</td><td>Meta 12억 유로 (2023, 아일랜드 DPC), TikTok 3.45억 유로 (2023)</td></tr>
+      <tr><td><strong>유출 통지 기한</strong></td><td>72시간 (1,000명+ 시 24시간)</td><td>72시간 (감독당국), 지체없이 (정보주체)</td></tr>
+      <tr><td><strong>해외 이전 규제</strong></td><td>제28조의6 (2024.3 시행)</td><td>제44~49조 (적정성 결정, SCC, BCR)</td></tr>
+      <tr><td><strong>감독기관 독립성</strong></td><td>PIPC (국무총리 소속, 장관급)</td><td>각국 DPA (완전 독립, GDPR 제51조)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="method-box" style="margin-top:2px;">
+  <h3>유사 사건 비교</h3>
+  <table class="fines-table" style="margin-top:8px;margin-bottom:0;">
+    <thead><tr><th>비교 축</th><th>한국 사례</th><th>EU/해외 유사 사례</th><th>시사점</th></tr></thead>
+    <tbody>
+      <tr><td><strong>통신사 대형 유출</strong></td><td>SKT 1,348억 원 (매출 대비 0.56%)</td><td>T-Mobile(미국) $500M FCC 합의 (2024), Vodafone(스페인) 816만 유로 AEPD</td><td>한국 제재 수준이 국제적으로도 유의미한 규모에 도달</td></tr>
+      <tr><td><strong>SaaS 공급망 침해</strong></td><td>LVMH 3사 360억 원</td><td>British Airways 2,040만 파운드 (Magecart, ICO 2020)</td><td>공급망 책임 원칙이 한국에서도 본격 적용</td></tr>
+      <tr><td><strong>해외 기업 규율</strong></td><td>테무 13.7억, 2K게임즈 1.95억, 몽클레르 0.81억</td><td>GDPR: Amazon 7.46억 유로 (룩셈부르크), WhatsApp 2.25억 유로 (아일랜드)</td><td>한국의 해외 기업 집행은 초기 단계이나 빠르게 확대 중</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:var(--sec);margin-top:8px;">
+    SK텔레콤 과징금 1,348억 원(약 9,400만 유로)은 <strong>EU GDPR 역대 Top 15</strong>에 해당하는 수준이다. 2023년 개정법 이전에는 상상할 수 없었던 규모로, 한국이 데이터 보호 집행에서 <strong>GDPR 수준의 제재력</strong>을 갖추기 시작했음을 의미한다. 다만, 해외 기업(테무·2K게임즈 등)에 대한 제재는 아직 소규모에 머물러 있어 실효성 확보가 과제이다.
+  </p>
+</div>
+
+<!-- 패턴 분석 -->
+<div class="chapter" id="insights">
+  <div class="chapter-label">INSIGHT</div>
+  <div class="chapter-title">패턴 분석 및 인사이트</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<div class="insight-card" data-pattern="A">
+  <div class="insight-label">패턴 A &mdash; 가장 충격적인 발견</div>
+  <h4>"퇴사자 접근 권한" &mdash; 건수 5%, 피해 규모 절반 이상</h4>
+  <p>퇴사자 관련 사고는 <strong>단 2건</strong>이지만, 피해 규모는 <strong>쿠팡 3,370만 + 넷마블 611만 = 약 3,980만 명</strong>으로 전체 피해의 절반 이상. 기술적 해킹이 아닌 <strong>접근 권한 관리의 구조적 실패</strong>가 역대급 피해를 만들었다.</p>
+  <ul>
+    <li><strong>쿠팡</strong>: 퇴사 개발자가 서명 키를 퇴사 후에도 보유 &rarr; 5개월간 API 악용</li>
+    <li><strong>넷마블</strong>: 퇴사 개발자 접근 권한 미회수 + 2003년 데이터 20년 보관</li>
+  </ul>
+  <div class="callout"><strong>시사점:</strong> 정교한 해킹 기술이 아니라, 퇴사자 키 회수&middot;비활성화라는 기본 절차 하나가 수천만 명의 피해를 좌우했다.</div>
+</div>
+
+<div class="insight-card" data-pattern="B">
+  <div class="insight-label">패턴 B &mdash; 잠복 기간: 침투와 인지 사이의 시차</div>
+  <h4>공격은 수년 전에 시작되었고, 2025년에 "드러났을 뿐"이다</h4>
+  <table class="incident-table" style="margin:8px 0;">
+    <tr><th style="width:120px;">사고</th><th>실제 침투</th><th>인지/공개</th><th>잠복 기간</th></tr>
+    <tr><td>SK텔레콤</td><td>2021.8</td><td>2025.4</td><td style="font-weight:700;color:var(--ink);">약 4년</td></tr>
+    <tr><td>GPKI</td><td>2022.9</td><td>2025.7</td><td style="font-weight:700;color:var(--ink);">약 3년</td></tr>
+    <tr><td>한국연구재단</td><td>취약점 2013~</td><td>2025.6</td><td style="font-weight:700;color:var(--ink);">12년</td></tr>
+    <tr><td>KT</td><td>2024년경</td><td>2025 하반기</td><td style="font-weight:700;">약 1.5년</td></tr>
+    <tr><td>GS샵</td><td>2024.6</td><td>2025.2</td><td>약 8개월</td></tr>
+    <tr><td>쿠팡</td><td>2025.6</td><td>2025.11</td><td>5개월</td></tr>
+  </table>
+  <p>"4~5월에 사고가 집중"된 것이 아니라, <strong>4~5월에 인지&middot;공개가 집중</strong>된 것이다. 월별 타임라인은 "언제 공격이 일어났는가"가 아니라 <strong>"언제 드러났는가"</strong>를 보여준다.</p>
+  <div class="callout"><strong>핵심 질문:</strong> 지금 이 순간에도 탐지되지 않은 채 잠복 중인 침해가 얼마나 있는가?</div>
+</div>
+
+<div class="insight-card" data-pattern="C">
+  <div class="insight-label">패턴 C &mdash; 은폐와 증거 인멸</div>
+  <h4>통신 3사 전부 해킹 &mdash; 전부 투명성에 문제</h4>
+  <table class="incident-table" style="margin:8px 0;">
+    <tr><th style="width:120px;">기업</th><th>은폐/지연 행위</th></tr>
+    <tr><td>SK텔레콤</td><td>2021년 침투 &rarr; 2025년에야 인지 (4년 잠복 탐지 실패)</td></tr>
+    <tr><td>KT</td><td>1년 6개월 은폐, 피해 서버 폐기 &rarr; 증거 인멸 의혹</td></tr>
+    <tr><td>LG유플러스</td><td>인지 후 3개월 지연 발표, KISA 안내 후 서버 OS 재설치&middot;폐기 &rarr; <strong>공무집행방해 수사의뢰</strong></td></tr>
+  </table>
+  <p>추가로 쿠팡(28일), 디올(24시간 초과), 티파니(13일), 모두투어(2개월) 등 <strong>유출 신고 의무 위반이 일상화</strong>.</p>
+</div>
+
+<div class="insight-card" data-pattern="D">
+  <div class="insight-label">패턴 D &mdash; SaaS 공급망: 새로운 약한 고리</div>
+  <h4>기업이 직접 관리하지 않는 제3자 SaaS가 주요 침투 경로로 부상</h4>
+  <p>LVMH 3사(디올&middot;티파니&middot;루이비통)가 <strong>3개월 내 연속</strong> 동일 경로(SaaS 플랫폼)로 침해. 아디다스, 법인보험대리점, NHN커머스(e나무)도 같은 패턴.</p>
+  <div class="callout"><strong>시사점:</strong> 보안 경계가 자사 인프라에서 <strong>SaaS 공급망 전체</strong>로 확장되어야 한다. NHN커머스의 경우 10년된 레거시 SaaS가 17개 소상공인 쇼핑몰의 고객 데이터를 위험에 노출.</div>
+</div>
+
+<div class="insight-card" data-pattern="E">
+  <div class="insight-label">패턴 E &mdash; SQL 인젝션: PIPC 제재의 최다 원인</div>
+  <h4>2025년 PIPC 처분 중 8건 이상이 SQL 인젝션 &mdash; 가장 기본적인 공격이 가장 많은 처벌</h4>
+  <p>SQL 인젝션 피해 기업: 블랙야크, 한국토픽, 비즈니스온, NHN위투, NHN커머스, 이젠, 더존하우징, 레저플러스. 대부분 중소기업 웹사이트로, OWASP Top 10의 1번 취약점을 수년간 방치.</p>
+  <ul>
+    <li>이젠: 주민등록번호 35,454명분을 <strong>비암호화 상태</strong>로 저장</li>
+    <li>한국토픽: 유출 데이터가 <strong>텔레그램에 공개</strong></li>
+    <li>블랙야크: 2021년부터 취약점 인지했으나 <strong>4년간 미조치</strong></li>
+  </ul>
+  <div class="callout"><strong>시사점:</strong> SQL 인젝션은 1990년대부터 알려진 공격이다. 웹 애플리케이션 방화벽(WAF), 파라미터화된 쿼리, 입력값 검증만으로 방어 가능한 "기본 중의 기본"이 2025년에도 최다 위반 원인이라는 것이 한국 중소기업 보안 현실을 보여준다.</div>
+</div>
+
+<div class="insight-card" data-pattern="F">
+  <div class="insight-label">패턴 F &mdash; 제29조: 사실상 유일한 과징금 근거</div>
+  <h4>확정 과징금 23건 중 22건이 제29조(안전조치의무) 위반</h4>
+  <p>개인정보 보호법 제29조는 "개인정보처리자는 개인정보가 분실&middot;도난&middot;유출&middot;위조&middot;변조 또는 훼손되지 아니하도록 안전성 확보에 필요한 기술적&middot;관리적 및 물리적 조치를 하여야 한다"고 규정한다.</p>
+  <p>PIPC가 제29조 위반으로 지적한 구체적 안전조치 미흡 사항:</p>
+  <table class="incident-table" style="margin:8px 0;">
+    <tr><th style="width:200px;">안전조치 미흡 유형</th><th>해당 건수</th><th>대표 사례</th></tr>
+    <tr><td>다중인증(MFA) 미적용</td><td>8건</td><td>몽클레르, 2K게임즈, 국립항공박물관, 클래스유</td></tr>
+    <tr><td>SQL 인젝션 방어 미흡</td><td>8건</td><td>블랙야크, 비즈니스온, NHN위투, 이젠 등</td></tr>
+    <tr><td>비밀번호/주민번호 비암호화</td><td>6건</td><td>SK텔레콤, 롯데카드, 이젠, 부산국제금융</td></tr>
+    <tr><td>접근통제/권한 관리 미흡</td><td>6건</td><td>우리카드, 클래스유, 한양CC, 국립항공박물관</td></tr>
+    <tr><td>이상 탐지 체계 부재</td><td>5건</td><td>GS샵(8개월), 인크루트, 티머니, 섹타나인</td></tr>
+    <tr><td>방화벽/백신 미설치</td><td>2건</td><td>테라스타, 부산국제금융진흥원</td></tr>
+  </table>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">AI와 공격의 관계</div>
+  <h4>공격에 AI가 활용되었는지 여부는 대부분의 사고에서 조사&middot;공개되지 않았다</h4>
+  <p>2025년 사고 중 AI가 공격에 활용되었다고 <strong>공식 확인된 건은 없으나, "사용되지 않았다"고 단정할 수도 없다</strong>.</p>
+  <ul>
+    <li><strong>크리덴셜 스터핑</strong> (GS리테일, 섹타나인, 티머니): AI 기반 자동화로 대입 효율 극대화 가능</li>
+    <li><strong>보이스피싱</strong> (티파니): AI 음성 합성(딥보이스) 활용 가능성</li>
+    <li><strong>악성코드 변종 생성</strong>: LLM 활용한 악성코드 정교화는 보안 업계에서 확인된 추세</li>
+  </ul>
+  <div class="callout">
+    <strong>방어 측면의 실패가 더 두드러진다:</strong> SKT 4년 잠복, 쿠팡 5개월, GS샵 8개월 &mdash; AI 기반 이상 탐지가 있었다면 조기 발견 가능. 공격자의 AI 활용 여부보다, <strong>방어자가 AI를 활용하지 못한 것</strong>이 확인 가능한 실패.
+  </div>
+</div>
+
+<!-- 종합 -->
+<div class="insight-card">
+  <div class="insight-label">종합</div>
+  <h4>"보안의 기본이 무너진 해" &mdash; 기술 부족이 아니라 관리 실패</h4>
+  <p>2025년 사고의 공통점은 정교한 신기술 공격이 아니라 <strong>기본이 지켜지지 않은 인재(人災)</strong>라는 것이다.</p>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:180px;">실패 유형</th><th>사례</th></tr>
+    <tr><td>퇴사자 키 미회수</td><td>쿠팡(3,370만), 넷마블(611만)</td></tr>
+    <tr><td>암호화 미조치&middot;평문 저장</td><td>SKT(USIM 키), 롯데카드(로그), 이젠(주민번호), 대성학력</td></tr>
+    <tr><td>SQL 인젝션 방치</td><td>블랙야크, 비즈니스온, NHN위투, 이젠, 더존, 레저플러스, NHN커머스, 한국토픽</td></tr>
+    <tr><td>은폐&middot;증거 인멸</td><td>KT(1.5년), LG유플러스(서버 폐기), 쿠팡(28일 신고 지연)</td></tr>
+    <tr><td>내부자 통제 부재</td><td>우리카드, 신한카드, 저축은행</td></tr>
+    <tr><td>공급망(SaaS) 사각지대</td><td>LVMH 3사, 아디다스, 보험대리점, NHN커머스</td></tr>
+    <tr><td>기본 비밀번호/MFA 미적용</td><td>IP카메라 12만 대, 몽클레르, 2K게임즈, 국립항공박물관</td></tr>
+    <tr><td>레거시 데이터&middot;시스템 방치</td><td>넷마블(20년), 모두투어(11년 미파기), 한국연구재단(12년), NHN커머스(10년)</td></tr>
+  </table>
+  <div class="callout">
+    <strong>2025년을 한 문장으로:</strong> 외부 해킹보다 퇴사자 키 미회수, 평문 저장, SQL 인젝션 방치, 내부자 관리 실패, 은폐가 피해를 키웠다 &mdash; <strong>"뚫린 것"보다 "방치한 것"이 더 큰 재앙</strong>이었다.
+  </div>
+</div>
+
+<!-- 원인 유형별 분류 -->
+<div class="chapter" id="causes">
+  <div class="chapter-title">원인 유형별 분류</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<div class="cause-section">
+  <div class="cause-title">외부 해킹 &mdash; APT/랜섬웨어/웹취약점 (18건)</div>
+  <div class="cause-items">
+    <span class="cause-chip">SK텔레콤 (APT 4년)</span>
+    <span class="cause-chip">인크루트 (DB 해킹 438GB)</span>
+    <span class="cause-chip">KS한국고용정보 (LummaC2)</span>
+    <span class="cause-chip">YES24 (랜섬웨어)</span>
+    <span class="cause-chip">롯데카드 (서버 해킹)</span>
+    <span class="cause-chip">KT (펨토셀)</span>
+    <span class="cause-chip">LG유플러스 (APPM)</span>
+    <span class="cause-chip">한마음혈액원 (랜섬웨어)</span>
+    <span class="cause-chip">인하대 (Gunra)</span>
+    <span class="cause-chip">법무법인 로고스</span>
+    <span class="cause-chip">블랙야크 (SQL 인젝션)</span>
+    <span class="cause-chip">한국연구재단 (URL 취약점)</span>
+    <span class="cause-chip">NHN커머스 (SQL 인젝션)</span>
+    <span class="cause-chip">듀오 &middot; 대성학력</span>
+    <span class="cause-chip">iM뱅크 &middot; KB라이프 &middot; 노무라 &middot; SC제일 &middot; 하나카드 &middot; AXA (미공개)</span>
+  </div>
+</div>
+
+<div class="cause-section">
+  <div class="cause-title">크리덴셜 스터핑 (5건)</div>
+  <div class="cause-items">
+    <span class="cause-chip">GS25</span>
+    <span class="cause-chip">GS샵 (8개월)</span>
+    <span class="cause-chip">티머니</span>
+    <span class="cause-chip">알바몬</span>
+    <span class="cause-chip">섹타나인 [P]</span>
+  </div>
+</div>
+
+<div class="cause-section">
+  <div class="cause-title">제3자/SaaS 경유 침해 (5건)</div>
+  <div class="cause-items">
+    <span class="cause-chip">디올 (SaaS 탈취)</span>
+    <span class="cause-chip">티파니 (보이스피싱&rarr;SaaS)</span>
+    <span class="cause-chip">루이비통 (악성코드&rarr;SaaS)</span>
+    <span class="cause-chip">아디다스 (고객서비스 업체)</span>
+    <span class="cause-chip">보험대리점 (IT 개발자 PC)</span>
+  </div>
+</div>
+
+<div class="cause-section">
+  <div class="cause-title">내부자 유출 (3건)</div>
+  <div class="cause-items">
+    <span class="cause-chip">우리카드 (카드모집인 &middot; 134억)</span>
+    <span class="cause-chip">저축은행 (건당 300원 판매)</span>
+    <span class="cause-chip">신한카드 (직원)</span>
+  </div>
+</div>
+
+<div class="cause-section">
+  <div class="cause-title">퇴사자 접근 권한 미회수 (2건)</div>
+  <div class="cause-items">
+    <span class="cause-chip">쿠팡 (서명 키 미회수 &middot; 3,370만)</span>
+    <span class="cause-chip">넷마블 (개발자 권한 미회수 &middot; 611만)</span>
+  </div>
+</div>
+
+<div class="cause-section">
+  <div class="cause-title">기타 (6건)</div>
+  <div class="cause-items">
+    <span class="cause-chip">테무 (해외 무단 반출)</span>
+    <span class="cause-chip">IP카메라 (기본 비밀번호)</span>
+    <span class="cause-chip">LG유플러스 익시오 (설정 오류)</span>
+    <span class="cause-chip">건보공단 (위탁)</span>
+    <span class="cause-chip">쿠카게임즈/잡보스 (주민번호 수집 위반) [P]</span>
+  </div>
+</div>
+
+<!-- ══ 입법·정책 대응 ══ -->
+<div class="chapter" id="response">
+  <div class="chapter-label">대응</div>
+  <div class="chapter-title">2025년 입법·정책 대응 현황</div>
+  <div class="chapter-bar"></div>
+  <p style="font-size:12px;color:var(--sec);margin-bottom:20px;">2025년 대규모 유출 사고에 대한 국회·정부·업계의 제도적 대응을 시계열로 정리한다.</p>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">국회 대응</div>
+  <h4>SK텔레콤 사태 이후 개인정보 보호 입법 가속</h4>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:110px;">2025.5~6월</th><td><strong>국정감사·긴급현안질의.</strong> SK텔레콤 대표이사가 과학기술정보방송통신위원회에 출석. "4년간 APT 미탐지" "USIM 키 평문 저장" 등에 대해 여야 모두 강하게 질의. 이후 쿠팡·LG유플러스·KT 대표도 순차 출석.</td></tr>
+    <tr><th>2025.7월</th><td><strong>개인정보 보호법 4차 개정안 발의.</strong> 핵심 내용: (1) 과징금 상한 매출액 3% → <strong>10%</strong>로 상향(징벌적 과징금), (2) CEO·CPO 개인 책임 강화, (3) 유출 통지 기산점 변경(확인 → 가능성 인지), (4) ISMS-P 인증 의무화(일정 규모 이상). SK텔레콤·쿠팡 사태가 직접적 입법 동력이 됨.</td></tr>
+    <tr><th>2025.9월</th><td><strong>정보통신망법 개정안 국회 통과.</strong> (1) 5년 내 2회 이상 반복 침해사고 시 매출 3% 과징금, (2) 조사 방해(서버 폐기·변경 등) 시 일 평균매출 0.03% <strong>이행강제금</strong> (LG유플러스·KT 서버 폐기 사건이 직접적 계기).</td></tr>
+    <tr><th>2026.2.12</th><td><strong>개인정보 보호법 4차 개정안 국회 본회의 통과.</strong> 2026.3.10 공포, <strong>2026.9.11 시행 예정</strong>. 핵심: 징벌적 과징금 매출액 10%, CEO·CPO 책임 강화, 유출 통지 기산점 '가능성 인지 시점'으로 변경. ISMS-P 인증 의무화는 2027.7.1 시행.</td></tr>
+    <tr><th>소송 현황</th><td><strong>쿠팡 집단소송</strong>(48만+명, 11개 로펌), <strong>롯데카드 집단소송</strong>(12만+명), <strong>SK텔레콤 취소소송</strong>(2026.1.19 제기, 과징금 1,348억 원). 쿠팡은 미국 SEC 공시 의무 위반으로 미국 주주소송도 제기 &mdash; 한국 개인정보 사고의 글로벌 법적 리스크 확대.</td></tr>
+  </table>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">행정부·감독기관 대응</div>
+  <h4>PIPC·과기정통부·금융위의 전방위 대응</h4>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:110px;">PIPC</th><td><strong>2025년 26회 전체회의, 27건 의결</strong> &mdash; 2024년(약 15건)의 거의 2배. 2기 위원회(2023.8~) 출범 이후 조사 역량 강화의 결과. 특히 해외 기업 제재(테무·2K게임즈·몽클레르·LVMH) 4건은 개인정보위 역사상 최초의 본격적 해외 집행이다.<br>
+    <strong>집행 기조 변화:</strong> 과거 '시정권고' 중심에서 <strong>'과징금+공표명령+시정명령' 복합 제재</strong>로 전환. 블랙야크·인크루트·한국토픽 등에 공표명령(홈페이지 게시)을 병과하여 기업 평판 리스크를 제재 수단으로 활용.</td></tr>
+    <tr><th>과기정통부</th><td><strong>통신 3사 특별점검.</strong> SK텔레콤 민관합동조사단 운영(4~8월), KT·LG유플러스 서버 폐기 건 경찰 수사의뢰(10월). 2025.12 <strong>'정보통신서비스 보안 강화 대책'</strong> 발표: 5,000만 이상 이용자 서비스에 연 2회 취약점 진단 의무화, USIM 등 인증키 암호화 저장 고시 개정.</td></tr>
+    <tr><th>금융위·금감원</th><td><strong>금융 분야 개인정보 보호 강화 조치.</strong> 우리카드·롯데카드·신한카드 연쇄 사고 후 (1) 카드모집인 고객정보 접근권한 전면 재점검 지시, (2) 금융회사 내부자 유출 탐지 시스템 고도화 권고(2025.8), (3) 롯데카드 건 계기로 <strong>결제 로그 내 카드번호 마스킹 의무화</strong> 고시 개정(2025.12 시행).</td></tr>
+    <tr><th>KISA</th><td><strong>중소기업 보안 지원 확대.</strong> 2025년 SQL 인젝션 피해 급증(8건+)에 대응, (1) 중소기업 무료 WAF(웹방화벽) 클라우드 서비스 확대(5,000개사 → 10,000개사), (2) '보안 취약점 자동 진단 서비스' 출시(2025.9), (3) KISA-PIPC 합동 '중소기업 개인정보 보호 가이드' 개정판 배포.</td></tr>
+  </table>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">업계·사법부 대응</div>
+  <h4>집단소송 급증과 기업 보안 투자 확대</h4>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:110px;">집단소송</th><td><strong>2025년은 개인정보 집단소송의 원년.</strong> 쿠팡(48만+명, 11개 로펌), 롯데카드(12만+명), SK텔레콤(5만+명 &middot; 취소소송 별도) 등 대규모 소송이 동시 진행. 쿠팡은 미국 SEC 공시 의무 위반으로 미국 주주 집단소송도 제기되어 <strong>한국 개인정보 사고가 글로벌 소송 리스크</strong>로 확대되는 선례를 남겼다.</td></tr>
+    <tr><th>기업 대응</th><td><strong>CISO 신설·보안 투자 급증.</strong> SK텔레콤: 전 가입자 무료 유심 교체(약 5,000억 원 비용 추정), 보안 조직 CEO 직속 재편. 롯데카드: 카드 재발급 + 연말까지 무이자 10개월 보상. GS리테일: 다중인증(MFA) 전면 도입 발표. 쿠팡: 퇴사자 키 관리 시스템 전면 개편 발표(2025.12).<br>
+    <strong>보안 산업 성장:</strong> 2025년 국내 정보보안 시장 규모 <strong>전년 대비 +18%</strong> 성장(추정). 특히 접근통제·SIEM·MFA 분야 투자 급증.</td></tr>
+    <tr><th>SK텔레콤<br>취소소송</th><td>2026.1.19 SK텔레콤이 과징금 1,348억 원에 대해 <strong>행정소송(취소소송)</strong> 제기. 쟁점: (1) 매출액 산정 기준(통신 매출 전체 vs 유심 관련 매출), (2) BPFDoor는 국가 지원 APT로 기업의 방어 능력 범위를 초과하는지, (3) 4년 잠복 중 발견 가능성의 합리적 기대 수준. 이 소송 결과는 향후 PIPC 과징금 산정 기준의 <strong>사법적 선례</strong>가 될 전망.</td></tr>
+  </table>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">입법 동향 종합</div>
+  <h4>2025~2026년: "사후 제재"에서 "사전 예방·징벌적 제재" 체계로의 전환</h4>
+  <p>2023년 2차 개정법(3% 상한)이 과징금의 양적 확대를 이루었다면, 2025년 연쇄 사고를 계기로 통과된 <strong>4차 개정법(10% 상한, 2026.9.11 시행)</strong>은 제재의 질적 전환을 완성한다.</p>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:140px;">패러다임</th><th>기존 (2024년 이전)</th><th>4차 개정 후 (2026.9.11~)</th></tr>
+    <tr><td><strong>과징금 상한</strong></td><td>매출액 3%</td><td><strong>매출액 10%</strong> (징벌적 과징금)</td></tr>
+    <tr><td><strong>경영진 책임</strong></td><td>기업 단위 제재</td><td><strong>CEO·CPO 개인 책임</strong> 강화</td></tr>
+    <tr><td><strong>유출 통지</strong></td><td>유출 '확인' 후 72시간</td><td>유출 <strong>'가능성 인지'</strong> 시 즉시 &mdash; 기산점 전방 이동</td></tr>
+    <tr><td><strong>인증 의무</strong></td><td>권고 사항</td><td>일정 규모 이상 <strong>ISMS-P 인증 의무화</strong> (2027.7.1~)</td></tr>
+    <tr><td><strong>은폐 대응</strong></td><td>과태료 수백만 원</td><td>이행강제금(일 매출 0.03%) + 반복 시 매출 3% 과징금</td></tr>
+    <tr><td><strong>해외 기업</strong></td><td>사실상 미집행</td><td>적극 집행(테무·LVMH·2K·몽클레르 4건)</td></tr>
+    <tr><td><strong>공급망 보안</strong></td><td>자사 시스템 중심</td><td>SaaS·위탁 포함 전체 공급망</td></tr>
+  </table>
+  <div class="callout"><strong>핵심:</strong> 2025년 사고들은 2차 개정법(3%)의 한계를 노출시킴과 동시에, 4차 개정법(10%)의 직접적 입법 근거가 되었다. 2026.9.11 시행 후 한국의 과징금 체계는 <strong>EU GDPR(4% or 2,000만 유로)을 능가하여 세계 최고 수준</strong>에 도달한다. SK텔레콤 취소소송(2026.1.19 제기)의 사법부 판단이 향후 과징금 산정의 선례가 될 전망이다.</div>
+</div>
+
+<!-- ══ 정책 제언 ══ -->
+<div class="chapter" id="recommendations">
+  <div class="chapter-label">제언</div>
+  <div class="chapter-title">정책 제언 &mdash; 구조적 개선 방안</div>
+  <div class="chapter-bar"></div>
+  <p style="font-size:12px;color:var(--sec);margin-bottom:20px;">본 사례집의 62건 분석에서 도출된 6개 패턴에 기반한 정책·실무 제언. 개별 기업의 기술적 대응을 넘어 제도적·구조적 개선을 중심으로 기술한다.</p>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">제언 1 &mdash; 퇴사자 접근 권한 관리 의무화</div>
+  <h4>문제: 퇴사자 2건이 전체 피해의 절반(~3,980만 명)을 초래</h4>
+  <p>쿠팡·넷마블 사고는 퇴사 시 서명 키·접근 권한을 회수하지 않은 단순한 관리 실패에서 비롯되었다. 현행 법령은 '안전조치'를 포괄적으로 규정하나, 퇴사자 관리에 대한 구체적 의무는 고시(안전성 확보조치 기준) 수준에 머문다.</p>
+  <div class="callout">
+    <strong>제언:</strong> (1) 퇴사·직무변경 시 24시간 이내 모든 접근 권한 비활성화 의무를 안전성 확보조치 기준 고시에 명시, (2) 연 1회 이상 휴면·퇴직자 계정 정리 감사 의무화, (3) 위반 시 가중 과징금 근거 마련.
+  </div>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">제언 2 &mdash; SQL 인젝션 등 기본 취약점에 대한 업종별 최소 보안 기준</div>
+  <h4>문제: 1990년대 공격이 2025년 PIPC 제재 최다 원인(8건+)</h4>
+  <p>SQL 인젝션 피해 기업 대부분은 중소규모로, WAF 비용·전문인력 부재가 구조적 원인이다. 개별 기업에 '안전조치'를 요구하는 것만으로는 반복을 막을 수 없다.</p>
+  <div class="callout">
+    <strong>제언:</strong> (1) KISA·PIPC 공동으로 업종·규모별 '최소 보안 체크리스트' 제정 (WAF, 파라미터화 쿼리, MFA 등), (2) 중소기업 대상 WAF·보안점검 바우처 확대, (3) 체크리스트 미이행 시 제34조 가중 사유로 지정.
+  </div>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">제언 3 &mdash; SaaS 공급망 보안 책임 체계 정립</div>
+  <h4>문제: 기업이 직접 관리하지 않는 SaaS가 주요 침투 경로</h4>
+  <p>LVMH 3사·NHN커머스 사고는 SaaS 플랫폼을 경유한 침해이며, 데이터 처리 책임이 위탁자·수탁자·SaaS 제공자 사이에서 모호해지는 구조적 문제가 있다.</p>
+  <div class="callout">
+    <strong>제언:</strong> (1) SaaS 사업자를 개인정보 '처리위탁자'로 명확히 분류하는 가이드라인 마련, (2) SaaS 도입 시 보안 평가(SOC 2, ISO 27001 등) 의무 권고, (3) 제26조(위탁 관리감독) 적용 범위를 클라우드·SaaS까지 명시적으로 확장.
+  </div>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">제언 4 &mdash; 유출 은폐·증거 인멸에 대한 제재 강화</div>
+  <h4>문제: 통신 3사 전부 투명성 문제, 신고 지연이 일상화</h4>
+  <p>KT(1.5년 은폐), LG유플러스(서버 폐기), 쿠팡(28일 지연), 모두투어(2개월) 등 유출 신고 의무 위반이 반복된다. 현행 제34조 위반 시 과태료는 수백만~수천만 원 수준으로 억제력이 약하다.</p>
+  <div class="callout">
+    <strong>제언:</strong> (1) 은폐·증거 인멸 시 과징금 50% 가중 조항 신설 (GDPR 제83조 2항(k) 참조), (2) 신고 지연 기간에 비례한 단계적 제재 체계 도입 (24시간 초과 시 경고, 7일 초과 시 과태료, 30일 초과 시 과징금), (3) 내부 고발자(공익신고자) 보호 강화.
+  </div>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">제언 5 &mdash; 레거시 데이터 파기 이행 감독 강화</div>
+  <h4>문제: 10~20년 전 데이터가 피해 규모를 수십 배로 키웠다</h4>
+  <p>넷마블(2003년 데이터 20년 보관), 모두투어(2013년 비회원 316만 건 미파기), 한국연구재단(2013년 취약점 12년 방치), NHN커머스(10년 레거시). 보유기간 경과 데이터를 파기하지 않은 것이 피해 확대의 직접 원인이다.</p>
+  <div class="callout">
+    <strong>제언:</strong> (1) 제21조 위반에 대한 과징금 산정 시 '미파기 데이터로 인한 추가 피해'를 가중 사유로 명시, (2) 5년 이상 미접속 휴면 계정 자동 파기 의무 (현행 1년 분리보관 → 5년 시 완전 파기), (3) 개인정보 보유량 공시 의무 도입 검토.
+  </div>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">제언 6 &mdash; 중소기업 과징금의 실효성 제고</div>
+  <h4>문제: 1인당 과징금이 기업 규모에 따라 2,800배 차이</h4>
+  <p>우리카드(7.5만 명, 135억) vs 인크루트(727만 명, 4.6억) &mdash; 매출액 비례 과징금 체계는 대기업에는 강력하나, 중소기업에는 수천만 원대 과징금이 사업 위험 대비 사실상 '비용'으로 흡수된다.</p>
+  <div class="callout">
+    <strong>제언:</strong> (1) 중소기업 대상 과징금 하한제 도입 검토 (최소 매출액 0.5% 등), (2) 과징금 감경 대신 시정명령·공표명령 강화 (아이스트로 사례 참조 &mdash; 신속 대응 시 과징금 면제, 공표명령으로 대체), (3) 보안 투자 확인 시 차회 감경 인센티브 제도.
+  </div>
+</div>
+
+<!-- 출처 평가 -->
+<div class="chapter" id="sources">
+  <div class="chapter-title">출처 목록 및 신뢰도 평가</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<h3 style="font-size:13px;font-weight:700;color:var(--ink);margin:16px 0 8px;">1차 출처 <span class="tag tag-source-3">★★★</span></h3>
+<table class="source-table">
+  <thead><tr><th>출처</th><th>유형</th><th>비고</th></tr></thead>
+  <tbody>
+    <tr><td><strong>개인정보보호위원회</strong> (pipc.go.kr)</td><td>정부 공식</td><td>의결서&middot;보도자료 &mdash; 최고 신뢰. 본 사례집의 1차 기반</td></tr>
+    <tr><td><strong>대한민국 정책브리핑</strong> (korea.kr)</td><td>정부 공식</td><td>정부 부처 보도자료 원문</td></tr>
+    <tr><td><strong>경찰청 발표</strong></td><td>정부 공식</td><td>형사 사건 (정책브리핑 경유)</td></tr>
+  </tbody>
+</table>
+
+<h3 style="font-size:13px;font-weight:700;color:var(--ink);margin:16px 0 8px;">2차 출처 &mdash; 신뢰 높음 <span class="tag tag-source-2">★★☆</span></h3>
+<table class="source-table">
+  <thead><tr><th>출처</th><th>유형</th><th>비고</th></tr></thead>
+  <tbody>
+    <tr><td><strong>보안뉴스</strong> (boannews.com)</td><td>보안 전문매체</td><td>보안 분야 대표 전문지</td></tr>
+    <tr><td><strong>데일리시큐</strong> (dailysecu.com)</td><td>보안 전문매체</td><td>기술 분석 강점</td></tr>
+    <tr><td><strong>전자신문</strong> (etnews.com)</td><td>IT 전문일간지</td><td>IT&middot;통신 심층 보도</td></tr>
+    <tr><td><strong>ZDNet Korea</strong> (zdnet.co.kr)</td><td>IT 전문매체</td><td>기술&middot;정책 균형</td></tr>
+    <tr><td><strong>디지털데일리</strong> (ddaily.co.kr)</td><td>IT 전문매체</td><td>PIPC 의결 보도 다수</td></tr>
+    <tr><td><strong>한국경제</strong> (hankyung.com)</td><td>경제일간지</td><td>금융&middot;기업 상세</td></tr>
+    <tr><td><strong>서울경제</strong> (sedaily.com)</td><td>경제일간지</td><td></td></tr>
+    <tr><td><strong>이투데이</strong> (etoday.co.kr)</td><td>경제매체</td><td></td></tr>
+    <tr><td><strong>아주경제</strong> (ajunews.com)</td><td>경제매체</td><td></td></tr>
+    <tr><td><strong>법률신문</strong> (lawtimes.co.kr)</td><td>법률 전문</td><td></td></tr>
+  </tbody>
+</table>
+
+<h3 style="font-size:13px;font-weight:700;color:var(--ink);margin:16px 0 8px;">참고 출처 &mdash; 교차 확인 필요 <span class="tag tag-source-1">★☆☆</span></h3>
+<table class="source-table">
+  <thead><tr><th>출처</th><th>유형</th><th>주의사항</th></tr></thead>
+  <tbody>
+    <tr><td>뉴닉 (newneek.co)</td><td>뉴스레터</td><td>요약 유용, 원출처 확인 필요</td></tr>
+    <tr><td>인스피언 (inspien.co.kr)</td><td>보안 솔루션</td><td>자사 홍보 맥락</td></tr>
+    <tr><td>캐치시큐 (catchsecu.com)</td><td>컨설팅 기업</td><td>영업 목적, 수치 원출처 확인</td></tr>
+    <tr><td>클라우다이크 (cloudike.kr)</td><td>클라우드 기업</td><td>금융권 정리 단일 출처</td></tr>
+    <tr><td>한국NGO신문 (ngonews.kr)</td><td>시민단체</td><td>노무라&middot;SC제일 건 단일 출처</td></tr>
+  </tbody>
+</table>
+
+<!-- ══ 연구의 한계 ══ -->
+<div class="chapter" id="limitations">
+  <div class="chapter-label">한계</div>
+  <div class="chapter-title">연구의 한계</div>
+  <div class="chapter-bar"></div>
+</div>
+
+<div class="method-box" style="border-top:2px solid var(--rule-heavy);">
+  <h3>방법론적 한계</h3>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:140px;">수록 범위</th><td>본 사례집은 PIPC 전체회의 의결 및 주요 언론에 보도된 사고만을 수록한다. 2025년 개인정보 유출 신고 건수는 <strong>1~9월에만 311건</strong>(PIPC 발표)이며, 의료기관만 100건 이상으로 보도되었다. 따라서 본 사례집의 62건은 전체 유출 사고의 <strong>극히 일부</strong>에 해당하며, 대형·유명 사고에 편향(selection bias)되어 있다.</td></tr>
+    <tr><th>확정 vs 미확정</th><td>62건 중 PIPC 의결 확정은 27건(★★★), 나머지 35건은 언론 보도 기반(★★☆/★☆☆)이다. 미확정 건의 피해 규모·원인은 향후 PIPC 조사 결과에 따라 변경될 수 있다. 특히 쿠팡(3,370만 vs 3,000건), YES24(최대 2,000만 명)는 확정 전 추정치이다.</td></tr>
+    <tr><th>과징금 추정치</th><td>LVMH 3사(디올·티파니·루이비통)의 개별 과징금은 합산 360억 원에서 역산한 추정치("~" 표기)이다. 정확한 개별 배분은 의결서 원문 확인이 필요하다.</td></tr>
+    <tr><th>시점 한정</th><td>2026년 3월 24일 기준. 조사·수사 진행 중인 25건(쿠팡·YES24·넷마블 등)의 과징금이 확정되면 총액과 통계가 대폭 변동될 수 있다.</td></tr>
+    <tr><th>정량 분석의 한계</th><td>업종별·공격유형별 분류는 PIPC 의결 및 보도 내용에 기반한 것으로, 일부 사고는 복합적 원인(예: 크리덴셜 스터핑+내부 취약점)을 단일 유형으로 분류하였다. 또한 미공개 사고가 많아 모집단을 대표한다고 볼 수 없으며, 통계적 추론(상관관계·회귀분석 등)은 표본 수 한계로 수행하지 않았다.</td></tr>
+    <tr><th>국제 비교의 한계</th><td>한국 PIPC와 EU GDPR은 법 체계·적용 범위·매출 산정 기준이 상이하여, 과징금 금액의 직접 비교는 참고 수준에 한정된다.</td></tr>
+  </table>
+</div>
+
+<div class="method-box" style="margin-top:2px;">
+  <h3>출처 신뢰도에 관한 주의사항</h3>
+  <table class="incident-table" style="margin:10px 0;">
+    <tr><th style="width:80px;">★★★</th><td>PIPC 의결서·정부 보도자료로 직접 확인. <strong>36건</strong>. URL 직접 링크.</td></tr>
+    <tr><th>★★☆</th><td>주요 언론 2곳 이상 교차 확인. 공식 의결 전이므로 사실관계 변경 가능.</td></tr>
+    <tr><th>★☆☆</th><td>단일 출처 또는 보안 솔루션 기업 블로그. <strong>교차 확인 불가</strong>. iM뱅크·건보공단·AXA 등 세부 미공개 건 포함.</td></tr>
+  </table>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <strong>면책 및 이용 안내</strong><br><br>
+  본 사례집은 <strong>2026년 3월 24일</strong> 기준 <strong>개인정보보호위원회(PIPC) 공식 보도자료 전수조사</strong> 및 공개 보도 자료를 종합하여 작성한 <strong>연구·참고 자료</strong>입니다. 법적 자문이나 공식 해석을 대체하지 않습니다.<br><br>
+  &bull; "추정", "미확인" 표기 수치는 확정된 것이 아니며, 개인정보위 최종 발표 기준으로 갱신이 필요합니다.<br>
+  &bull; 과징금 수치 중 "~" 표기는 PIPC 보도자료의 합산 금액에서 역산한 추정치입니다.<br>
+  &bull; Section II의 과거 사고는 해킹 발생 시점이 아닌 PIPC 의결 시점 기준으로 본 사례집에 포함하였습니다.<br>
+  &bull; 위반 조항 표기는 PIPC 보도자료 및 언론 보도에서 확인된 범위 내에서 기재하였으며, 의결서 원문과 차이가 있을 수 있습니다.<br>
+  &bull; 정확한 법적 판단을 위해서는 <a href="https://www.pipc.go.kr" style="color:var(--accent);">개인정보보호위원회 공식 사이트</a>의 의결서 원문을 참조하시기 바랍니다.<br>
+  &bull; 인용 시 "2025 대한민국 개인정보 유출 사고 사례집, 2026.3.24 기준, Ver 2.0"으로 표기하여 주십시오.
+</div>
+
+</div><!-- /content -->
+</body>
+</html>

@@ -1183,6 +1183,13 @@ a[href^="#i"]:hover, a[href^="#p"]:hover {
   </table>
 </div>
 
+<div class="method-box" style="margin-bottom:32px;border-top:2px solid var(--accent);background:var(--accent-bg);">
+  <h3>2025 Cyber Breach Incident Overview</h3>
+  <p style="font-size:13.5px;color:var(--text);line-height:1.8;margin-top:8px;">
+    According to MSIT and KISA, corporate cyber breach incident reports in 2025 reached <strong>2,383 &mdash; an all-time record</strong> (+26.3% YoY). By type: server hacking 1,053 (44.2%), DDoS 588 (doubled YoY), ransomware 274 (+40.5%). Personal information breach reports increased <strong>approximately 38% YoY</strong>. An estimated <strong>75+ million personal information records</strong> were exposed throughout 2025.
+  </p>
+</div>
+
 <!-- TIMELINE -->
 <div class="chapter" id="timeline">
   <div class="chapter-label">Timeline</div>
@@ -1943,7 +1950,7 @@ were sanctioned for SQL injection. The fact that an attack known since the 1990s
       </div>
       <div class="meta-cell">
         <div class="meta-label">Litigation</div>
-        <div class="meta-value">SKT filed administrative lawsuit to cancel fine on 2026.1.19 &middot; Class action in progress</div>
+        <div class="meta-value">SKT filed administrative lawsuit to cancel fine on 2026.1.19 &middot; Class action in progress &middot; Collective dispute mediation failed (2025.11.20)</div>
       </div>
       <div class="meta-cell">
         <div class="meta-label">ATT&CK</div>
@@ -1967,7 +1974,9 @@ On 2025.4.18,
 of data was exfiltrated from the HSS, containing
 <strong>25 types of authentication information</strong>
 for 23.24 million subscribers, including USIM authentication keys (Ki), IMSI, and IMEI. All of this information was
-<strong>stored in plaintext (without encryption).</strong><br><br>
+<strong>stored in plaintext (without encryption).</strong>
+The joint government-private investigation team discovered a total of <strong>33 malware variants</strong> across SKT servers (BPFDoor 27, TinyShell 3, WebShell 1, CrossC2 1, Sliver 1), with <strong>28 servers</strong> identified as attack targets.
+According to NARS Issue Analysis (March 2026), HSS management server account credentials were stored in plaintext on other servers and were exploited as an infection pathway. Notably, while GSMA recommends encrypting Ki values, <strong>KT and LGU+ encrypted their Ki, whereas SKT stored it in plaintext</strong>.<br><br>
         <strong>Significance of USIM Key Leak:</strong> Ki (authentication key) is the master key that authenticates a subscriber's USIM to the network. If compromised, it theoretically enables (1) call/SMS interception through USIM cloning (SIM Cloning), (2) financial account takeover by bypassing 2FA (text message authentication), and (3) location tracking. The IMSI+Ki combination is high-value data on the dark web, and national security-level concerns were raised.<br><br>
         <strong>Response and Costs:</strong> SK Telecom implemented free USIM replacement for all 23 million subscribers, with replacement costs alone estimated at approximately
 <strong>KRW 500 billion.</strong>
@@ -1977,6 +1986,10 @@ The company announced USIM protection service enrollment campaigns, reorganizati
 at the Seoul Administrative Court on 2026.1.19, citing (1) the revenue calculation basis (total telecom revenue vs. USIM-related revenue), (2) the argument that defense against state-sponsored APTs is impossible, and (3) the reasonable expectation level for discovery during 4 years of dormancy. This lawsuit is expected to become a
 <strong>judicial precedent</strong>
 for the PIPC fine system.<br><br>
+        <strong>Collective Dispute Mediation:</strong> The collective dispute mediation filed against SK Telecom was the <strong>first-ever collective dispute mediation case under PIPA</strong>, but SK Telecom <strong>refused to participate</strong>, resulting in non-establishment of mediation on November 20, 2025. This outcome exposed the structural limitation that the collective dispute mediation system under PIPA has no mechanism to compel respondent participation, raising questions about the effectiveness of this remedy for data subjects.<br><br>
+        <strong>Supply Chain Risk:</strong> The Joint Investigation Team found that SKT installed software supplied by a vendor on <strong>88 internal servers</strong> without adequate security inspection, through which embedded malware was introduced (no execution traces were confirmed). This, together with KT's (<a href="#i23">#23</a>) lack of femtocell SBOM management, reveals structural supply chain security gaps across telecom carriers.<br><br>
+        <strong>Evidence Preservation Violation:</strong> Despite the Ministry of Science and ICT's data preservation order, SKT <strong>arbitrarily modified relevant servers, rendering them forensically unexaminable</strong> before submitting to investigators.<br><br>
+        <strong>2022 Discovery and Failure to Report:</strong> During the investigation, it was confirmed that SKT had <strong>discovered malware infection as early as February 2022</strong> but failed to report it to relevant authorities. This constitutes a <strong>second, separate legal violation</strong> independent of the April 2025 incident. Additionally, <strong>2 of the servers</strong> submitted to the investigation team were in a state where <strong>forensic analysis was impossible</strong>, leading to <strong>criminal referral</strong>.<br><br>
         <strong>Cross-reference:</strong> Same APT &mdash; KT (#23, BPFDoor infection confirmed). The discovery of the same malware at 2 of the 3 major telecom carriers indicates that
 <strong>systematic, organized cyber attacks</strong>
 against Korean telecom infrastructure are underway. A joint response system involving the National Intelligence Service, Ministry of Science and ICT, and KISA has been activated.
@@ -2771,6 +2784,7 @@ occurred (see #40), creating the unprecedented record of two ransomware attacks 
         <strong>Scale Dispute:</strong> YES24's membership is approximately 20 million, but the actual scope of the breach has not been confirmed by PIPC investigation. The 20 million figure is
 <strong>the estimated maximum based on total membership</strong>
 , and actual leakage may be smaller. Note that this is a pre-confirmation estimate.<br><br>
+        <strong>Confirmed Root Cause:</strong> The Joint Investigation Team identified that YES24 was operating <strong>Windows Server 2012</strong> (Microsoft official support ended October 2023) as a primary cause. The OS could no longer receive official security patches, yet was not replaced or upgraded, maintaining an environment vulnerable to ransomware infection. The OS upgrade had been delayed due to legacy <strong>.NET Framework</strong> dependencies.<br><br>
         <strong>Attack Timing:</strong> Sunday at 4:00 AM — a time of minimum security staffing. Together with Duo (#03, the day before Lunar New Year holiday), this confirms
 <strong>a pattern of attackers deliberately targeting periods of security staff absence</strong>
 .<br><br>
@@ -2868,7 +2882,8 @@ and remained unpatched for 12 years. The National Research Foundation conducted 
 , along with Netmarble (#30, 20-year legacy), Modetour (P.03, 3.16 million non-member records from 2013), and NHN Commerce (#26, 10-year legacy).<br><br>
         <strong>Public Agency Particularity:</strong> The National Research Foundation is a quasi-governmental organization under the Ministry of Science and ICT, managing information of all academic researchers in Korea. The compromised researcher registration numbers, bank account numbers, and institutional affiliation information could be exploited for research fund fraud and academic misconduct. In addition to fines, PIPC imposed
 <strong>disciplinary action recommendations for responsible personnel</strong>
-and notified the Ministry of Science and ICT and the Ministry of Education to strengthen supervision.
+and notified the Ministry of Science and ICT and the Ministry of Education to strengthen supervision.<br><br>
+        According to NARS Issue &amp; Point No. 2387, the attack originated from <strong>19 IP addresses</strong> across multiple countries (US, Hong Kong, Taiwan, China). A total of <strong>116 resident registration numbers</strong> (Korean SSN equivalent) were confirmed leaked. Structural analysis revealed that national research institutions have an average of only <strong>1-2 dedicated information security personnel</strong> per agency.
       </div>
     </div>
     <div class="analysis-section">
@@ -3007,15 +3022,17 @@ damages totaling approximately KRW 240 million using the stolen information. KT 
 , only reporting it belatedly in the second half of 2025.<br><br>
         <strong>Femtocell Hacking:</strong> A femtocell is a small base station for improving indoor call quality, connected to the KT network to relay communications of nearby terminals. Attackers exploited firmware vulnerabilities and
 <strong>single encryption key management issues</strong>
-in the femtocell equipment, seized the devices, and collected authentication information from terminals connecting through them. Along with SK Telecom's (<a href="#i09">#09</a>) HSS hacking, this is a case where
+in the femtocell equipment, seized the devices, and collected authentication information from terminals connecting through them. According to the Joint Investigation Team (Dec 29, 2025 announcement), all femtocells used the <strong>same manufacturer's certificate</strong> with a <strong>10-year validity period</strong>, and the authentication process did not block abnormal IPs or verify femtocell serial numbers and installation locations against registered information. Along with SK Telecom's (<a href="#i09">#09</a>) HSS hacking, this is a case where
 <strong>telecommunications authentication infrastructure itself became an attack target</strong>
 .<br><br>
         <strong>Evidence Destruction Allegations:</strong> KT was confirmed to have decommissioned servers related to the incident, and the Ministry of Science and ICT/KISA referred this to police in October 2025 for investigation on
 <strong>obstruction of public duty by deception under criminal law</strong>
-. Together with LG Uplus's (<a href="#i28">#28</a>) server OS reinstallation and decommissioning, telecom companies' evidence destruction allegations became the most serious regulatory issue of 2025.<br><br>
+. Together with LG Uplus's (<a href="#i28">#28</a>) server OS reinstallation and decommissioning, telecom companies' evidence destruction allegations became the most serious regulatory issue of 2025. According to NARS Issue Analysis (March 2026), KT <strong>falsely reported the server disposal timeline</strong> and <strong>withheld the existence of backup logs</strong> from investigators for an extended period.<br><br>
+        <strong>Supply Chain Management Absence:</strong> The Joint Investigation Team confirmed that KT had <strong>no SBOM (Software Bill of Materials) management system</strong> for femtocell equipment and software components supplied by vendors.<br><br>
         <strong>BPFDoor Infection:</strong> Separately, the same
 <strong>BPFDoor malware</strong>
-infection confirmed in SK Telecom was also found at KT. This means attacks by the same APT group were underway at 2 of the 3 telecom companies, demonstrating that organized cyber threats to national telecommunications infrastructure have materialized.
+infection confirmed in SK Telecom was also found at KT. This means attacks by the same APT group were underway at 2 of the 3 telecom companies, demonstrating that organized cyber threats to national telecommunications infrastructure have materialized.<br><br>
+        <strong>BPFDoor Infection Scale:</strong> The joint investigation team found <strong>94 infected servers</strong> and <strong>103 malware variants</strong> at KT. Notably, KT had <strong>self-discovered 41 infected servers between March and July 2024</strong> but failed to report them to relevant authorities. Certificate validity periods were subsequently <strong>reduced from 10 years to 1 month</strong>.
       </div>
     </div>
     <div class="analysis-section">
@@ -3091,7 +3108,7 @@ infection confirmed in SK Telecom was also found at KT. This means attacks by th
     <div class="analysis-section">
       <div class="analysis-label">Background</div>
       <div class="analysis-text">
-        <strong>Summary:</strong> Between 2025.8.14~15, external hackers infiltrated Lotte Card's online simple payment system server and initially exfiltrated
+        <strong>Summary:</strong> Between 2025.8.14~15, external hackers exploited an <strong>Oracle WebLogic remote code execution vulnerability</strong> (allowing unauthenticated remote execution) to infiltrate Lotte Card's online simple payment system server (WAS) and install a webshell, initially exfiltrating
 <strong>1.7GB</strong>
 of data. A subsequent investigation confirmed an additional
 <strong>200GB</strong>
@@ -3099,7 +3116,8 @@ exfiltration. The compromised data included card numbers, expiry dates, first 2 
 <strong>CVC (card verification code on the back)</strong>
 283,000 records, and RRNs (Resident Registration Numbers) for 450,000 people. Lotte Card detected the breach on 8.14 but did not report to PIPC until 9.1 —
 <strong>approximately 17 days late</strong>
-(in violation of the 72-hour obligation).<br><br>
+(in violation of the 72-hour obligation). According to NARS Issue Analysis (March 2026), the WebLogic vulnerability had a <strong>patch available since 2017</strong>, but one small-scale overseas payment service server was missed during the patching process and left vulnerable for years.<br><br>
+        According to News1 (2025.9.18), the attack was carried out as a <strong>two-stage APT operation from August 14 to 27</strong> — Stage 1 penetrated the server via remote code execution, and Stage 2 installed a <strong>web shell</strong> to establish persistent access. The initially reported data theft was 1.7GB, but the confirmed scope was <strong>approximately 200GB</strong> — 100 times larger. A total of approximately <strong>9.6 million members</strong> were affected. The attackers <strong>removed their own traces</strong> to hinder forensic investigation.<br><br>
         <strong>Severity of CVC Breach:</strong> CVC (Card Verification Code) is the final authentication method for online card-not-present transactions. When the combination of card number + expiry date + CVC is compromised,
 <strong>online payments can be made without identity verification</strong>
 , potentially causing immediate financial damage. The 283,000 CVC breaches are unprecedented in scale for a Korean card company incident.<br><br>
@@ -3342,7 +3360,7 @@ during payment processing. This directly violates PCI-DSS (Payment Card Industry
       <div class="analysis-label">Background</div>
       <div class="analysis-text">
         <strong>Summary:</strong> In July 2025, LG Uplus's <strong>APPM (Application Performance & Policy Management)</strong> server was hacked, resulting in the breach of server inventories, administrative account credentials, and employee names. LG Uplus detected the incident in July but did not announce it until October — a <strong>delay of approximately 3 months</strong>.<br><br>
-        <strong>Evidence Destruction Allegations:</strong> Even more seriously, it was confirmed that after KISA provided guidance to preserve the servers for incident investigation, LG Uplus <strong>reinstalled the OS or disposed of the relevant servers</strong>. MSIT and KISA referred this to the police as <strong>suspected obstruction of official duties through deception under criminal law</strong>. Together with KT's (<a href="#i23">#23</a>) server disposal, evidence destruction by telecom carriers became the <strong>direct catalyst for proposed legislation criminalizing server disposal/alteration</strong> in 2025 legislative discussions.<br><br>
+        <strong>Evidence Destruction Allegations:</strong> Even more seriously, it was confirmed that after KISA provided guidance to preserve the servers for incident investigation, LG Uplus <strong>reinstalled the OS or disposed of all major servers on the suspected breach network path, making the investigation itself impossible</strong>. MSIT and KISA referred this to the police as <strong>suspected obstruction of official duties through deception under criminal law</strong>. Together with KT's (<a href="#i23">#23</a>) server disposal, evidence destruction by telecom carriers became the <strong>direct catalyst for proposed legislation criminalizing server disposal/alteration</strong> in 2025 legislative discussions.<br><br>
         <strong>Significance of APPM:</strong> APPM (Application Performance & Policy Management) is a central management system that controls access to all servers within an enterprise. If the APPM server is compromised, attackers can map the entire server inventory and access paths of the corporate infrastructure, making it usable as a <strong>beachhead for lateral movement</strong>.
       </div>
     </div>
@@ -3378,7 +3396,7 @@ during payment processing. This directly violates PCI-DSS (Payment Card Industry
       <div class="incident-meta-grid">
       <div class="meta-cell">
         <div class="meta-label">Hacking</div>
-        <div class="meta-value">June 2025~ (API vulnerability exploited for 5 months)</div>
+        <div class="meta-value">2025 Jan~ (reconnaissance) &rarr; Apr 14&ndash;Nov 8 (intensive exploitation)</div>
       </div>
       <div class="meta-cell">
         <div class="meta-label">Detected</div>
@@ -3414,10 +3432,13 @@ during payment processing. This directly violates PCI-DSS (Payment Card Industry
       <div class="analysis-label">Background</div>
       <div class="analysis-text">
         <strong>Summary:</strong> Over approximately 5 months from June to November 2025, a former Chinese developer who had left Coupang repeatedly accessed Coupang's systems using an <strong>API Signing Key</strong> retained after departure. According to police investigation, approximately 33.7 million accounts were accessed, with an additional 165,000 records later confirmed, totaling approximately 33.86 million. Coupang internally detected this on 11.18 but did not report to PIPC until 12.16 — <strong>28 days elapsed</strong> (violating the amended law's 72-hour notification requirement).<br><br>
-        <strong>Scale Dispute:</strong> Coupang claims "only about 3,000 records were actually exfiltrated externally," while police announced "33.7 million+ accounts based on access count" — a <strong>roughly 10,000-fold discrepancy</strong> between the two claims. This difference stems from different definitions of 'Access' vs. 'Exfiltration' and will be finalized in the PIPC investigation.<br><br>
-        <strong>Severity of Compromised Data:</strong> Beyond names, phone numbers, emails, addresses, and purchase histories, <strong>building entrance passcodes</strong> were included, making this extremely sensitive information that could escalate to physical safety threats (delivery impersonation intrusion, etc.).<br><br>
-        <strong>Former Employee Key Management Failure:</strong> Along with Netmarble (<a href="#i30">#30</a>), this is a core case of 2025 <strong>Pattern A (former employee access rights)</strong>. Rather than a sophisticated hack, this was a management failure where the basic procedure of deactivating the signing key upon departure was omitted.<br><br>
+        <strong>Scale Dispute:</strong> Coupang claims "only about 3,000 records were actually exfiltrated externally," while police announced "33.7 million+ accounts based on access count" — a <strong>roughly 10,000-fold discrepancy</strong> between the two claims. This difference stems from different definitions of 'Access' vs. 'Exfiltration' and will be finalized in the PIPC investigation. Coupang's initial user notification disclosed only <strong>approximately 4,500 affected accounts</strong>, compared to the joint investigation team's finding of <strong>33.7 million</strong> — a <strong>7,500-fold discrepancy</strong>.<br><br>
+        <strong>Severity of Compromised Data:</strong> Beyond names, phone numbers, emails, addresses, and purchase histories, <strong>building entrance passcodes</strong> were included, making this extremely sensitive information that could escalate to physical safety threats (delivery impersonation intrusion, etc.). According to National Assembly Science &amp; ICT Committee hearing materials (December 17, 2025), the delivery address list was accessed <strong>approximately 140 million times</strong>, and apartment passcode pages were accessed <strong>approximately 50,000 times</strong>.<br><br>
+        <strong>Former Employee Key Management Failure:</strong> Along with Netmarble (<a href="#i30">#30</a>), this is a core case of 2025 <strong>Pattern A (former employee access rights)</strong>. The attacker used the signing key to <strong>forge authentication tokens (akin to "electronic passes"), bypassing normal login procedures entirely</strong>. The key should have been rotated upon the employee's departure, but the procedures were inadequate.<br><br>
+        <strong>Independent Forensics Controversy:</strong> According to NARS Issue Analysis (March 2026), Coupang <strong>independently identified the perpetrator and collected evidence without prior consultation</strong> with the Joint Investigation Team or law enforcement, then commissioned its own selected external firm to conduct forensics. This drew criticism for potentially compromising evidence integrity and investigation independence.<br><br>
+        <strong>Attack Details:</strong> According to the MSIT joint investigation team, the attacker began reconnaissance in <strong>January 2025</strong>, with intensive exploitation from <strong>April 14 to November 8</strong>. Over <strong>148 million shipping inquiry API queries</strong> were executed using <strong>2,313 IP addresses</strong>. The API signing keys were stored on <strong>developer laptops</strong>, violating safety measure standards. CISO notification was delayed <strong>54 hours</strong> after incident detection, and automated scraping tools were used to transmit data to external cloud infrastructure.<br><br>
         <strong>Litigation Status:</strong> (1) Domestic class action: 11 law firms participating, 480,000+ plaintiffs (KRW 100,000-1,000,000 per person claimed). (2) US shareholder class action: Coupang (NYSE: CPNG) sued for SEC disclosure obligation violation (incident concealment). This is the <strong>first case where a Korean data breach has escalated into a global securities lawsuit</strong>.<br><br>
+        <strong>National Assembly and Presidential Response:</strong> The National Assembly Science &amp; ICT Committee convened an emergency plenary session (Dec 2, 2025), a formal hearing (Dec 17), and a joint hearing across 6 standing committees (Dec 30-31). Coupang founder Kim Bom-suk, former CEO Park Dae-jun, and former CEO Kang Han-seung <strong>submitted non-attendance statements</strong>, prompting warnings of prosecution under the National Assembly Testimony Act. President Lee Jae-myung issued a directive to <strong>'make punitive damages systems realistic,'</strong> and Deputy Prime Minister Baek Kyung-hoon raised the possibility of <strong>business suspension</strong>. On January 8, 2026, the People Power Party submitted a <strong>national investigation request signed by 107 lawmakers</strong>, demanding a formal investigation into SKT, KT, LGU+, and Coupang.<br><br>
         <strong>Fine Outlook:</strong> The "maximum KRW 1.2 trillion" figure is a media estimate (★☆☆) based on 3% of Coupang's revenue, and precedes the official PIPC resolution. The actual fine will vary depending on the scope of infringing revenue and the degree of violation.
       </div>
     </div>
@@ -5093,11 +5114,12 @@ Furthermore, government systems accessible through stolen certificates contain v
     <div class="analysis-section">
       <div class="analysis-label">Background</div>
       <div class="analysis-text">
-        <strong>Summary:</strong> In July 2025, SGI Seoul Guarantee Insurance, the only surety insurance company in Korea, was attacked by the Gunra ransomware group, resulting in
+        <strong>Summary:</strong> In July 2025, SGI Seoul Guarantee Insurance, the only surety insurance company in Korea, was attacked by the Gunra (emerged April 2025) ransomware group, resulting in
 <strong>a complete 4-day suspension of guarantee operations worth KRW 478 trillion</strong>.
 Surety insurance is a foundational economic infrastructure for construction, bidding, and performance, and the service disruption caused
 <strong>widespread economic ripple effects</strong>
 including construction site start delays and public bidding impossibility. The Financial Security Institute successfully decrypted the data, so no ransom was paid.<br><br>
+        According to NARS Issue Analysis (March 2026), the attacker gained access through <strong>brute-force login attempts via the SSH port on an SSL-VPN device</strong>, exploiting the absence of <strong>login attempt rate limiting, delay insertion, and multi-factor authentication</strong> — basic defenses against brute-force attacks. In particular, the system's <strong>default password '0000' had never been changed</strong> from its initial setting.<br><br>
         <strong>Personal data perspective:</strong> Surety insurance companies hold corporate representatives' credit information, resident registration numbers, financial statements, and trading partner information for guarantee screening purposes. Since both data encryption and
 <strong>pre-exfiltration (double extortion)</strong>
 are common in ransomware attacks, the possibility of personal data leakage cannot be ruled out. The Gunra group is known to employ double extortion tactics, and the same group also attacked Hwacheon Machinery&middot;Samhwa Capacitor (<a href="#i43">#43</a>).
@@ -6501,6 +6523,26 @@ Whether the controller (Korean Air) properly fulfilled its obligation to manage 
   <p><strong>Institutional reform direction:</strong> To eliminate regulatory blind spots, the basis of regulation must shift from "the nature of the institution" to "the nature and volume of data processed." First, ISMS-P certification obligations should be expanded from "information and communications service providers" to "all businesses processing personal information of 10,000 or more individuals." Second, technical inspections by the Financial Security Institute should be mandated for non-financial institutions processing financial data (local public corporations, insurance agencies, lending companies). Third, to ensure the effectiveness of extraterritorial application to foreign companies, mechanisms for restricting services within Korea upon fine non-payment (app store removal, payment blocking) should be codified. The existence of regulatory blind spots is not the absence of regulation but a design flaw in regulation, requiring redesign to match the reality of data processing.</p>
 </div>
 
+<div class="insight-card">
+  <div class="insight-label">Insight 6</div>
+  <strong>The Economics of Evidence Destruction — 4 Companies' 'Rational' Investigation Obstruction</strong>
+  <p>NARS Issue Analysis No. 401 (March 26, 2026) confirmed that in 4 out of 7 major 2025 breach incidents, <strong>companies systematically failed to preserve digital evidence, repeatedly causing difficulties for investigations</strong>. This is not individual misconduct but a product of the incentive structure created by the current regulatory framework.</p>
+  <p><strong>(1) SK Telecom (<a href="#i09">#09</a>):</strong> Despite the Ministry of Science and ICT's data preservation order, arbitrarily modified servers and submitted them in a forensically unexaminable state. <strong>(2) KT (<a href="#i23">#23</a>):</strong> Falsely reported server disposal timeline and withheld the existence of backup logs from investigators. <strong>(3) LG Uplus (<a href="#i28">#28</a>):</strong> After receiving breach intelligence from KISA, reinstalled OS or disposed of all key servers on the suspected breach path, making investigation impossible. <strong>(4) Coupang (<a href="#i29">#29</a>):</strong> Independently identified the perpetrator and collected evidence without consulting investigators, then commissioned its own external forensics firm.</p>
+  <p>The common incentive structure across these 4 cases is clear: incident disclosure triggers <strong>certain costs</strong> (fines up to 3% of revenue + reputational damage + class action lawsuits), while evidence destruction costs nothing if undetected, and even if caught, criminal penalties (up to 2 years imprisonment / KRW 20 million fine) are trivial compared to fines. NARS proposes three corrective measures: (1) mandatory evidence preservation triggered immediately upon awareness of breach indicators, (2) mandatory board and CISO reporting when server reinstallation or disposal is undertaken, (3) statutory presumption of corporate fault when evidence destruction makes investigation impossible. The September 2025 Network Act amendment (compliance surcharges for server alteration/disposal) was the first institutional response, but as NARS notes, it does not cover evidence destruction occurring before a preservation order is issued.</p>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">Insight 7</div>
+  <strong>Zero Trust Adoption Gap &mdash; Only 4&ndash;8% of Korean Companies Implementing Zero Trust Security</strong>
+  <p>According to Okta data (October 2025), only <strong>4&ndash;8% of Korean companies</strong> are currently implementing zero trust security. This figure explains the systemic vulnerability patterns observed across 2025 incidents. The SK Telecom case (<a href="#i09">#09</a>) exemplifies how traditional perimeter-based security fails against APTs that have already breached the perimeter &mdash; once BPFDoor was inside, the absence of zero trust principles (continuous verification, least-privilege access, micro-segmentation) allowed 3 years and 8 months of undetected lateral movement. Similarly, the former employee credential incidents at Coupang (<a href="#i29">#29</a>) and Netmarble (<a href="#i30">#30</a>) &mdash; which together account for 60%+ of total damages &mdash; would have been mitigated by zero trust's core principle of "never trust, always verify." The 4&ndash;8% adoption rate places Korea significantly behind the US (~30%), revealing a structural gap that regulatory mandates alone cannot close. Accelerating zero trust adoption requires both government incentives (tax credits, subsidized implementation programs) and integration into ISMS-P certification requirements.</p>
+</div>
+
+<div class="insight-card">
+  <div class="insight-label">Insight 8</div>
+  <strong>Bug Bounty Desert &mdash; 13 Years, 33 Companies, 90% Government-Funded</strong>
+  <p>In 13 years of KISA's bug bounty program, only <strong>33 companies</strong> have participated. The government funds <strong>90% of all rewards</strong>. Only <strong>5 companies</strong> (Naver, Kakao, Samsung SDS, LG Electronics, Genians) operate independent bug bounty programs &mdash; reflecting chronic underinvestment in proactive vulnerability discovery. This stands in stark contrast to the 2025 incident landscape: 8 companies were sanctioned for SQL injection, a vulnerability class routinely discovered through bug bounties. Had the affected companies &mdash; Black Yak, NHN Commerce, BusinessOn, Korea Topic, EZEN, Douzone Housing, Leisure Plus &mdash; operated even minimal bug bounty programs, external researchers would likely have reported these SQL injection flaws before attackers exploited them. The cost comparison is instructive: a typical bug bounty payout for a SQL injection finding is USD 500&ndash;2,000, while the resulting PIPC fines ranged from KRW 5 million to KRW 95.4 million per company. Korea's bug bounty ecosystem remains structurally underdeveloped because (1) companies fear that disclosing vulnerabilities will trigger regulatory scrutiny, (2) there is no safe harbor provision protecting good-faith security researchers, and (3) the cultural norm treats vulnerability reports as threats rather than contributions. Institutional reform should include mandatory bug bounty programs for companies processing personal data above certain thresholds, legal safe harbor for security researchers, and tax incentives for corporate bug bounty expenditure.</p>
+</div>
+
 <!-- Classification by Root Cause -->
 <div class="chapter" id="causes">
   <div class="chapter-title">Classification by Root Cause</div>
@@ -6622,7 +6664,7 @@ Whether the controller (Korean Air) properly fulfilled its obligation to manage 
     <tr><th>Jul 2025</th><td><strong>4th PIPA Amendment bill introduced.</strong> Key provisions: (1) Fine ceiling raised from 3% to <strong>10%</strong> of revenue (punitive fines), (2) Strengthened personal liability for CEOs and CPOs, (3) Changed breach notification trigger point (from confirmation to awareness of possibility), (4) Mandatory ISMS-P certification (above certain scale). The SK Telecom and Coupang incidents served as direct legislative drivers.</td></tr>
     <tr><th>Sep 2025</th><td><strong>Information and Communications Network Act amendment passed by National Assembly.</strong> (1) 3% of revenue fine for 2+ repeated breach incidents within 5 years, (2) <strong>Compliance coercion fines</strong> of 0.03% of daily average revenue for investigation obstruction (server destruction/alteration, etc.) (The LG Uplus and KT server destruction incidents were the direct trigger).</td></tr>
     <tr><th>Feb 12, 2026</th><td><strong>4th PIPA Amendment passed by National Assembly plenary session.</strong> Promulgated Mar 10, 2026, <strong>effective Sep 11, 2026</strong>. Key provisions: Punitive fines of 10% of revenue, strengthened CEO/CPO liability, breach notification trigger changed to "awareness of possibility." Mandatory ISMS-P certification effective Jul 1, 2027.</td></tr>
-    <tr><th>Litigation Status</th><td><strong>Coupang class action</strong> (480K+ plaintiffs, 11 law firms), <strong>Lotte Card class action</strong> (120K+ plaintiffs), <strong>SK Telecom administrative appeal</strong> (filed Jan 19, 2026, challenging KRW 134.8B fine). Coupang also faces a US shareholder lawsuit for SEC disclosure obligation violation &mdash; expanding the global legal risk of Korean data breach incidents.</td></tr>
+    <tr><th>Litigation Status</th><td><strong>Coupang class action</strong> (480K+ plaintiffs, 11 law firms), <strong>Lotte Card class action</strong> (120K+ plaintiffs), <strong>SK Telecom administrative appeal</strong> (filed Jan 19, 2026, challenging KRW 134.8B fine). The <strong>first-ever collective dispute mediation under PIPA</strong> was filed against SK Telecom, but SKT refused to participate, resulting in non-establishment of mediation (Nov 20, 2025). Coupang also faces a US shareholder lawsuit for SEC disclosure obligation violation &mdash; expanding the global legal risk of Korean data breach incidents.</td></tr>
   </table>
 </div>
 
@@ -6989,6 +7031,7 @@ Whether the controller (Korean Air) properly fulfilled its obligation to manage 
     <tr><td><strong>Personal Information Protection Commission</strong> (pipc.go.kr)</td><td>Government Official</td><td>Resolutions &middot; press releases &mdash; highest reliability. Primary basis of this casebook</td></tr>
     <tr><td><strong>Korea Policy Briefing</strong> (korea.kr)</td><td>Government Official</td><td>Original text of government ministry press releases</td></tr>
     <tr><td><strong>National Police Agency Announcements</strong></td><td>Government Official</td><td>Criminal cases (via Korea Policy Briefing)</td></tr>
+    <tr><td><strong>National Assembly Research Service (NARS)</strong></td><td>Government Official</td><td>Issue Analysis No. 401 (2026.3.26) — Typology analysis of 7 major 2025 incidents and institutional reform proposals. Based on Joint Investigation Team confirmed findings</td></tr>
   </tbody>
 </table>
 
